@@ -141,6 +141,10 @@ in
 
   hardware.openrazer.enable = true;
 
+  programs.dconf.enable = true;
+
+  services.gvfs.enable = true;
+
   fonts.packages = with pkgs;
     [
       noto-fonts
@@ -161,8 +165,6 @@ in
     driSupport32Bit = true;
   };
 
-  services.gvfs.enable = true;
-
   hardware.nvidia = {
     modesetting.enable = true; #required
     powerManagement.enable = true;
@@ -170,23 +172,27 @@ in
     nvidiaSettings = true; #nvidia-settings menu
     # gpu offloading
     prime = {
+      # enable=true;
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
     };
 
-   # package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
   environment.pathsToLink = [ "/libexec" ];
   services.xserver = {
     enable = true;
-    # displayManager.gdm.enable = true;
     displayManager.defaultSession = "none+i3";
     desktopManager.xterm.enable = false;
     videoDrivers = [ "nvidia" ];
     windowManager.i3 = {
       enable = true;
-package=pkgs.i3-gaps;
+      package = pkgs.i3-gaps;
       extraPackages = with pkgs; [
         dmenu
         i3status
@@ -194,13 +200,12 @@ package=pkgs.i3-gaps;
         i3blocks
       ];
     };
-
-   # videoDrivers = [ "nvidia" ];
   };
 
   system.stateVersion = "23.05";
-	boot.initrd.kernelModules = ["nvidia"];
-	boot.extraModulePackages = [config.boot.kernelPackages.nvidia_x11];
-	boot.kernelPackages = pkgs.linuxPackages_latest;	
-#boot.kernelParams = ["module_blacklist=i915"];
+  boot.initrd.kernelModules = [ "nvidia" ];
+  boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelParams = [ "module_blacklist=i915" ];
+
 }

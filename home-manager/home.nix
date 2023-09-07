@@ -7,6 +7,9 @@
     # ./rofi-wayland-unwrapped/rofi-wayland-unwrapped.nix
     # ./picom/picom.nix
     # ./waybar/waybar.nix
+    ./i3/i3.nix
+    ./rofi/rofi.nix
+    ./picom/picom.nix
   ];
 
   home.username = "bobymoby";
