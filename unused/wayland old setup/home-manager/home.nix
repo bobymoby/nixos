@@ -4,9 +4,9 @@
 
   imports = [
     # ./polybar/polybar.nix
-    # ./rofi-wayland-unwrapped/rofi-wayland-unwrapped.nix
+    ./rofi-wayland-unwrapped/rofi-wayland-unwrapped.nix
     # ./picom/picom.nix
-    # ./waybar/waybar.nix
+    ./waybar/waybar.nix
   ];
 
   home.username = "bobymoby";
@@ -62,6 +62,7 @@
 
   programs = {
     home-manager.enable = true;
+    waybar.enable = true;
     direnv = {
       enable = true;
       enableZshIntegration = true;
@@ -69,7 +70,7 @@
     };
   };
 
-  # xdg.configFile."sway/config".source = lib.mkForce ./config/sway;
+  xdg.configFile."sway/config".source = lib.mkForce ./config/sway;
 
   home.stateVersion = "23.05";
 }
