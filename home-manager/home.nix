@@ -10,6 +10,9 @@
     ./i3/i3.nix
     ./rofi/rofi.nix
     ./picom/picom.nix
+    ./polybar/polybar.nix
+    # ./i3status-rust/i3status-rust.nix
+    # ./libinput/libinput.nix
   ];
 
   home.username = "bobymoby";
@@ -24,7 +27,7 @@
     gnome.adwaita-icon-theme
     gnome.gnome-system-monitor
     libreoffice
-    webcord
+    discord
   ];
 
   gtk = {

@@ -62,6 +62,14 @@ in
   };
 
   environment.systemPackages = with pkgs; [
+    dmenu
+    i3status
+    i3lock
+    i3blocks
+    picom
+    dex
+    xss-lock
+    networkmanagerapplet
     configure-gtk
     xdg-utils
     #dmenu #application launcher most people use
@@ -79,6 +87,7 @@ in
     git
     zsh
     neofetch
+    fastfetch
     alacritty
     lshw # list gpus
     # io(controlled with sway bindings)
@@ -170,9 +179,7 @@ in
     powerManagement.enable = true;
     open = true; #open source driver
     nvidiaSettings = true; #nvidia-settings menu
-    # gpu offloading
     prime = {
-      # enable=true;
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
       offload = {
@@ -187,25 +194,44 @@ in
   environment.pathsToLink = [ "/libexec" ];
   services.xserver = {
     enable = true;
-    displayManager.defaultSession = "none+i3";
+    displayManager = {
+      defaultSession = "none+i3";
+      autoLogin = {
+        # WIP disable later
+        enable = true;
+        user = "bobymoby";
+      };
+      lightdm = {
+        enable = true;
+        background = ../home-manager/i3/background.png;
+        greeter.enable = false; # WIP disable later
+      };
+    };
     desktopManager.xterm.enable = false;
     videoDrivers = [ "nvidia" ];
     windowManager.i3 = {
       enable = true;
       package = pkgs.i3-gaps;
-      extraPackages = with pkgs; [
-        dmenu
-        i3status
-        i3lock
-        i3blocks
-      ];
+    };
+    libinput = {
+      enable = true;
+      touchpad.naturalScrolling = true;
     };
   };
 
-  system.stateVersion = "23.05";
-  boot.initrd.kernelModules = [ "nvidia" ];
-  boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
-  # boot.kernelParams = [ "module_blacklist=i915" ];
+  boot = {
+    initrd.kernelModules = [ "nvidia" ];
+    extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+    plymouth.enable = true; # nix icon
+    initrd.systemd.enable = true;
+    kernelParams = [ "quiet" ];
+    # kernelPackages = pkgs.linuxPackages_latest;
+    # kernelParams = [ "module_blacklist=i915" ];
+  };
 
+
+
+
+
+  system.stateVersion = "23.05";
 }
