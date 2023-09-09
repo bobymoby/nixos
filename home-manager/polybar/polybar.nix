@@ -65,5 +65,12 @@ in
   #       "${polybar-themes}/simple/colorblocks"
   #     ];
   # };
-  home.file.".config/polybar/config.ini".source = ./config.ini;
+  home.file.".config/polybar/colors.ini".source = ./pamela/colors.ini;
+  home.file.".config/polybar/config.ini".source = ./pamela/config.ini;
+  home.file.".config/polybar/eww.scss".source = ./pamela/eww.scss;
+  home.file.".config/polybar/eww.yuck".source = ./pamela/eww.yuck;
+  home.file.".config/polybar/launcher.rasi".source = ./pamela/launcher.rasi;
+  home.file.".config/polybar/modules.ini".source = ./pamela/modules.ini;
+  home.file.".config/polybar/system.ini".source = ./pamela/system.ini;
+  home.file.".config/polybar/WidgetLaunchers".source = ./pamela/WidgetLaunchers;
 }

@@ -72,6 +72,7 @@ in
     networkmanagerapplet
     configure-gtk
     xdg-utils
+    eww # widget framework
     #dmenu #application launcher most people use
     #i3status # gives you the default i3 status bar
     #i3lock #default i3 screen locker
@@ -99,14 +100,14 @@ in
     # gaming and windows emulation
     # wine
     # winetricks
-    wineWowPackages.waylandFull
+    wineWowPackages.full
     # wineWowPackages.staging
     lutris
     protonup-qt
     # vulkan-tools
     # dxvk
     bottles
-
+    heroic
     # nvidia-dkms
     # nvidia-utils
     # lib32-nvidia-utils
@@ -186,6 +187,9 @@ in
         enable = true;
         enableOffloadCmd = true;
       };
+      # reverseSync.enable = true;
+      # allowExternalGpu = false;
+      # sync.enable = true;
     };
 
     package = config.boot.kernelPackages.nvidiaPackages.stable;
@@ -211,15 +215,22 @@ in
     videoDrivers = [ "nvidia" ];
     windowManager.i3 = {
       enable = true;
-      package = pkgs.i3-gaps;
     };
     libinput = {
       enable = true;
-      touchpad.naturalScrolling = true;
+      touchpad = {
+        naturalScrolling = true;
+      };
+      mouse = {
+        accelProfile = "flat";
+      };
     };
     layout = "us,bg";
     xkbVariant = "altgr-intl,phonetic";
     xkbOptions = "grp:alt_shift_toggle";
+    excludePackages = with pkgs; [
+      xterm
+    ];
   };
 
   boot = {
@@ -227,9 +238,11 @@ in
     extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
     plymouth.enable = true; # nix icon
     initrd.systemd.enable = true;
-    kernelParams = [ "quiet" ];
+    kernelParams = [
+      "quiet"
+      # "module_blacklist=i915" # disable intel gpu
+    ];
     # kernelPackages = pkgs.linuxPackages_latest;
-    # kernelParams = [ "module_blacklist=i915" ];
   };
 
 
