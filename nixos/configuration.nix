@@ -217,6 +217,9 @@ in
       enable = true;
       touchpad.naturalScrolling = true;
     };
+    layout = "us,bg";
+    xkbVariant = "altgr-intl,phonetic";
+    xkbOptions = "grp:alt_shift_toggle";
   };
 
   boot = {
