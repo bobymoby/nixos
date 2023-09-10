@@ -3,16 +3,16 @@
 {
 
   imports = [
-    # ./polybar/polybar.nix
+    # ./sway/sway.nix
     # ./rofi-wayland-unwrapped/rofi-wayland-unwrapped.nix
-    # ./picom/picom.nix
     # ./waybar/waybar.nix
+
     ./i3/i3.nix
     ./rofi/rofi.nix
     ./picom/picom.nix
-    ./polybar/polybar.nix
-    # ./i3status-rust/i3status-rust.nix
-    # ./libinput/libinput.nix
+    # ./polybar/polybar.nix
+    ./i3status-rust/i3status-rust.nix
+
   ];
 
   home.username = "bobymoby";
@@ -74,8 +74,6 @@
       nix-direnv.enable = true;
     };
   };
-
-  # xdg.configFile."sway/config".source = lib.mkForce ./config/sway;
 
   home.stateVersion = "23.05";
 }
