@@ -2,7 +2,10 @@
 
 {
   # x+i3 setup
-  environment.pathsToLink = [ "/libexec" ];
+  environment.pathsToLink = [
+    "/libexec"
+    "/share/zsh"
+  ];
   services.xserver = {
     enable = true;
     displayManager = {

@@ -15,6 +15,9 @@
     ./polybar/polybar.nix
     # ./i3status-rust/i3status-rust.nix
 
+    #terminal
+    ./zsh/zsh.nix
+    ./alacritty/alacritty.nix
   ];
 
   home.username = "bobymoby";

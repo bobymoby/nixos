@@ -47,6 +47,7 @@ let
   # };
 in
 {
+  programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
     # wayland+sway
     # dbus-sway-environment
@@ -98,10 +99,10 @@ in
 
     # terminal + minor utils
     git
-    zsh
+    # zsh
     neofetch
     fastfetch
-    alacritty
+    # alacritty
     lshw # list gpus
 
     # gaming and windows emulation

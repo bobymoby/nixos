@@ -7,6 +7,7 @@
       efi.canTouchEfiVariables = true;
     };
     plymouth.enable = true; # boot splash
+    plymouth.theme = "breeze";
     initrd.systemd.enable = true;
     kernelParams = [
       "quiet"
