@@ -1,17 +1,19 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
 
   imports = [
+    #wayland
     # ./sway/sway.nix
     # ./rofi-wayland-unwrapped/rofi-wayland-unwrapped.nix
     # ./waybar/waybar.nix
 
+    #xorg
     ./i3/i3.nix
     ./rofi/rofi.nix
     ./picom/picom.nix
-    # ./polybar/polybar.nix
-    ./i3status-rust/i3status-rust.nix
+    ./polybar/polybar.nix
+    # ./i3status-rust/i3status-rust.nix
 
   ];
 

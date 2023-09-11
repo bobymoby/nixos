@@ -32,6 +32,13 @@ let
         gsettings set $gnome_schema gtk-theme 'Dracula'
       '';
   };
+  # custom-polybar = pkgs.polybar.override {
+  #   alsaSupport = true;
+  #   githubSupport = true;
+  #   mpdSupport = true;
+  #   pulseSupport = true;
+  #   i3Support = true;
+  # };
 in
 {
   environment.systemPackages = with pkgs; [
@@ -51,7 +58,12 @@ in
     # wdisplays
 
     #x+i3
-    i3status
+    # i3status
+    # polybar
+    # custom-polybar
+    polybarFull
+    xclip
+    maim
     picom
     dex
     xss-lock
@@ -62,6 +74,7 @@ in
     # qol
     chromium
     qbittorrent
+    cinnamon.nemo
     # editors + utils
     vscode
     neovim
@@ -74,7 +87,7 @@ in
     alacritty
     lshw # list gpus
     # io(controlled with sway bindings)
-    pulseaudio
+    # pulseaudio
     brightnessctl
     # razer mouse control
     openrazer-daemon

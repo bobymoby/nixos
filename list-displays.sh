@@ -1,1 +1,0 @@
-sudo lshw -c display
