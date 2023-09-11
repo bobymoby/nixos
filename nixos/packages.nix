@@ -82,9 +82,12 @@ in
     openrazer-daemon # razer mouse control
     polychromatic # razer gui
     pulseaudioFull
+    pavucontrol
+    easyeffects
 
     # qol
-    chromium
+    # chromium
+    google-chrome
     qbittorrent
     cinnamon.nemo # file manager
 
@@ -95,19 +98,20 @@ in
     # editors + utils
     vscode
     neovim
-    nixpkgs-fmt
+    nixpkgs-fmt # nix formatter
 
     # terminal + minor utils
     git
-    # zsh
+    # zsh # moved to home-manager
     neofetch
     fastfetch
-    # alacritty
+    # alacritty # moved to home-manager
     lshw # list gpus
+    kitty
 
     # gaming and windows emulation
-    wineWowPackages.full
-    lutris
+    wineWowPackages.full # wine
+    lutris # game manager
     protonup-qt # proton installer
     bottles # container manager
     heroic # epic games launcher
