@@ -47,6 +47,9 @@ let
   # };
 in
 {
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-12.2.3"
+  ];
   programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
     # wayland+sway
@@ -90,6 +93,7 @@ in
     google-chrome
     qbittorrent
     cinnamon.nemo # file manager
+    etcher
 
     # dev
     python3
