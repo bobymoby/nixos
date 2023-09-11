@@ -50,7 +50,7 @@ in
   nixpkgs.config.permittedInsecurePackages = [
     "electron-12.2.3"
   ];
-  programs.zsh.enable = true;
+  # programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
     # wayland+sway
     # dbus-sway-environment
@@ -89,8 +89,8 @@ in
     easyeffects
 
     # qol
-    # chromium
-    google-chrome
+    chromium
+    # google-chrome
     qbittorrent
     cinnamon.nemo # file manager
     etcher
@@ -109,7 +109,7 @@ in
     # zsh # moved to home-manager
     neofetch
     fastfetch
-    # alacritty # moved to home-manager
+    alacritty
     lshw # list gpus
     kitty
 

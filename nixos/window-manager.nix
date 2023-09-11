@@ -4,7 +4,7 @@
   # x+i3 setup
   environment.pathsToLink = [
     "/libexec"
-    "/share/zsh"
+    # "/share/zsh"
   ];
   services.xserver = {
     enable = true;
