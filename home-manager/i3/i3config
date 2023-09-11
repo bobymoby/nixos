@@ -224,4 +224,4 @@ default_floating_border pixel 0
 # exec_always systemctl --user stop wireplumber pipewire pipewire-pulse
 # exec_always systemctl --user start wireplumber pipewire pipewire-pulse
 
-exec --no-startup-id polybar -q -r main
+exec --no-startup-id polybar -q main

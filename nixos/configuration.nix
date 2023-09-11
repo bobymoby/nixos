@@ -27,7 +27,10 @@
   services.blueman.enable = true;
   hardware = {
     openrazer.enable = true; # razer mouse control
-    bluetooth.enable = true;
+    bluetooth = {
+      enable = true;
+      powerOnBoot = false;
+    };
   };
 
   networking.hostName = "nixos";

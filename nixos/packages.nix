@@ -32,6 +32,12 @@ let
         gsettings set $gnome_schema gtk-theme 'Dracula'
       '';
   };
+  tray = pkgs.writeTextFile {
+    name = "tray";
+    destination = "/bin/tray";
+    executable = true;
+    text = "polybar tray";
+  };
   # custom-polybar = pkgs.polybar.override {
   #   alsaSupport = true;
   #   githubSupport = true;
@@ -42,7 +48,7 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    #wayland+sway
+    # wayland+sway
     # dbus-sway-environment
     # configure-gtk
     # wayland
@@ -57,28 +63,39 @@ in
     # mako
     # wdisplays
 
-    #x+i3
-    # i3status
-    # polybar
-    # custom-polybar
+    # xorg+i3
     polybarFull
+    tray
     xclip
     maim
     picom
     dex
     xss-lock
     networkmanagerapplet
-    configure-gtk
+    # configure-gtk
     xdg-utils
     eww # widget framework
+
+    # io(controlled with sway bindings)
+    brightnessctl
+    openrazer-daemon # razer mouse control
+    polychromatic # razer gui
+    pulseaudioFull
+
     # qol
     chromium
     qbittorrent
-    cinnamon.nemo
+    cinnamon.nemo # file manager
+
+    # dev
+    python3
+    nodejs
+
     # editors + utils
     vscode
     neovim
     nixpkgs-fmt
+
     # terminal + minor utils
     git
     zsh
@@ -86,29 +103,12 @@ in
     fastfetch
     alacritty
     lshw # list gpus
-    # io(controlled with sway bindings)
-    # pulseaudio
-    brightnessctl
-    # razer mouse control
-    openrazer-daemon
-    polychromatic # gui
-    # gaming and windows emulation
-    # wine
-    # winetricks
-    wineWowPackages.full
-    # wineWowPackages.staging
-    lutris
-    protonup-qt
-    # vulkan-tools
-    # dxvk
-    bottles
-    heroic
-    # nvidia-dkms
-    # nvidia-utils
-    # lib32-nvidia-utils
-    # nvidia-settings
-    # vulkan-icd-loader
-    # lib32-vulkan-icd-loader
 
+    # gaming and windows emulation
+    wineWowPackages.full
+    lutris
+    protonup-qt # proton installer
+    bottles # container manager
+    heroic # epic games launcher
   ];
 }
