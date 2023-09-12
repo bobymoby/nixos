@@ -6,17 +6,17 @@ let
   # https://github.com/emersion/xdg-desktop-portal-wlr/wiki/"It-doesn't-work"-Troubleshooting-Checklist
   # note: this is pretty much the same as  /etc/sway/config.d/nixos.conf but also restarts  
   # some user services to make sure they have the correct environment variables
-  dbus-sway-environment = pkgs.writeTextFile {
-    name = "dbus-sway-environment";
-    destination = "/bin/dbus-sway-environment";
-    executable = true;
+  # dbus-sway-environment = pkgs.writeTextFile {
+  #   name = "dbus-sway-environment";
+  #   destination = "/bin/dbus-sway-environment";
+  #   executable = true;
 
-    text = ''
-      dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-      systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
-      systemctl --user start pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
-    '';
-  };
+  #   text = ''
+  #     dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+  #     systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
+  #     systemctl --user start pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
+  #   '';
+  # };
   configure-gtk = pkgs.writeTextFile {
     name = "configure-gtk";
     destination = "/bin/configure-gtk";
@@ -38,19 +38,20 @@ let
     executable = true;
     text = "polybar tray";
   };
-  # custom-polybar = pkgs.polybar.override {
-  #   alsaSupport = true;
-  #   githubSupport = true;
-  #   mpdSupport = true;
-  #   pulseSupport = true;
-  #   i3Support = true;
-  # };
+  load-nix-index = ''
+    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+  '';
+  unpFull = pkgs.unp.override {
+    extraBackends = with pkgs; [
+      unrar
+    ];
+  };
 in
 {
   nixpkgs.config.permittedInsecurePackages = [
     "electron-12.2.3"
   ];
-  # programs.zsh.enable = true;
+  programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [
     # wayland+sway
     # dbus-sway-environment
@@ -76,9 +77,11 @@ in
     dex
     xss-lock
     networkmanagerapplet
-    # configure-gtk
+    configure-gtk
+    glib
     xdg-utils
     eww # widget framework
+    lxappearance
 
     # io(controlled with sway bindings)
     brightnessctl
@@ -94,6 +97,7 @@ in
     qbittorrent
     cinnamon.nemo # file manager
     etcher
+    unpFull
 
     # dev
     python3
@@ -109,7 +113,7 @@ in
     # zsh # moved to home-manager
     neofetch
     fastfetch
-    alacritty
+    # alacritty
     lshw # list gpus
     kitty
 
@@ -120,4 +124,8 @@ in
     bottles # container manager
     heroic # epic games launcher
   ];
+
+  programs.command-not-found.enable = false;
+  programs.bash.interactiveShellInit = load-nix-index;
+  programs.zsh.interactiveShellInit = load-nix-index;
 }

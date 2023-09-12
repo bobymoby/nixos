@@ -15,9 +15,12 @@
     ./polybar/polybar.nix
     # ./i3status-rust/i3status-rust.nix
 
+    ./gtk/gtk.nix
+
     #terminal
-    # ./zsh/zsh.nix
-    # ./alacritty/alacritty.nix
+    # ./command-not-found.nix # done in packages.nix
+    ./zsh/zsh.nix
+    ./alacritty/alacritty.nix
   ];
 
   home.username = "bobymoby";
@@ -34,35 +37,6 @@
     libreoffice
     discord
   ];
-
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Gruvbox-Dark-B";
-      package = pkgs.gruvbox-gtk-theme;
-    };
-    iconTheme = {
-      name = "oomox-gruvbox-dark";
-      package = pkgs.gruvbox-dark-icons-gtk;
-    };
-    cursorTheme = {
-      name = "Bibata-Modern-Classic";
-      package = pkgs.bibata-cursors;
-      size = 24;
-    };
-
-    gtk3.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-
-    gtk4.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-  };
 
   xdg.configFile."networkmanager-dmenu/config.ini".text = ''
     [dmenu]
