@@ -45,7 +45,3 @@ Run
 # Known issues
 
 -   command-not-found might not work even after running setup-scripts. It is currently not supported with flakes
-
-```sh
-
-```
