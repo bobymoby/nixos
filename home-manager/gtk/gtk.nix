@@ -11,11 +11,11 @@
       name = "oomox-gruvbox-dark";
       package = pkgs.gruvbox-dark-icons-gtk;
     };
-    cursorTheme = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-      size = 24;
-    };
+    # cursorTheme = {
+    #   name = "Bibata-Modern-Ice";
+    #   package = pkgs.bibata-cursors;
+    #   size = 24;
+    # };
 
     gtk3.extraConfig = {
       Settings = ''
@@ -28,5 +28,13 @@
         gtk-application-prefer-dark-theme=1
       '';
     };
+  };
+
+  home.pointerCursor = {
+    x11.enable = true;
+    gtk.enable = true;
+    name = "Bibata-Modern-Ice";
+    package = pkgs.bibata-cursors;
+    size = 24;
   };
 }

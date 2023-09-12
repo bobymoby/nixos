@@ -20,21 +20,13 @@
     #terminal
     ./zsh/zsh.nix
     ./alacritty/alacritty.nix
+
+    #misc
+    ./direnv/direnv.nix
   ];
 
-  home.username = "bobymoby";
-  home.homeDirectory = "/home/bobymoby";
-
   home.packages = with pkgs; [
-    htop
-    killall
-    gnome.gnome-software
-    networkmanager_dmenu
-    spotify
-    gnome.adwaita-icon-theme
-    gnome.gnome-system-monitor
-    libreoffice
-    discord
+    # gnome.adwaita-icon-theme
   ];
 
   xdg.configFile."networkmanager-dmenu/config.ini".text = ''
@@ -44,14 +36,8 @@
     gui_if_available = True
   '';
 
-  programs = {
-    home-manager.enable = true;
-    direnv = {
-      enable = true;
-      enableZshIntegration = true;
-      nix-direnv.enable = true;
-    };
-  };
-
+  home.username = "bobymoby";
+  home.homeDirectory = "/home/bobymoby";
+  programs.home-manager.enable = true;
   home.stateVersion = "23.05";
 }

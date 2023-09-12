@@ -17,30 +17,30 @@ let
   #     systemctl --user start pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
   #   '';
   # };
-  configure-gtk = pkgs.writeTextFile {
-    name = "configure-gtk";
-    destination = "/bin/configure-gtk";
-    executable = true;
-    text =
-      let
-        schema = pkgs.gsettings-desktop-schemas;
-        datadir = "${schema}/share/gsettings-schemas/${schema.name}";
-      in
-      ''
-        export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
-        gnome_schema=org.gnome.desktop.interface
-        gsettings set $gnome_schema gtk-theme 'Dracula'
-      '';
-  };
+  # configure-gtk = pkgs.writeTextFile {
+  #   name = "configure-gtk";
+  #   destination = "/bin/configure-gtk";
+  #   executable = true;
+  #   text =
+  #     let
+  #       schema = pkgs.gsettings-desktop-schemas;
+  #       datadir = "${schema}/share/gsettings-schemas/${schema.name}";
+  #     in
+  #     ''
+  #       export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
+  #       gnome_schema=org.gnome.desktop.interface
+  #       gsettings set $gnome_schema gtk-theme 'Dracula'
+  #     '';
+  # };
+  # load-nix-index = ''
+  #   source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
+  # '';
   tray = pkgs.writeTextFile {
     name = "tray";
     destination = "/bin/tray";
     executable = true;
     text = "polybar tray";
   };
-  load-nix-index = ''
-    source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
-  '';
   unpFull = pkgs.unp.override {
     extraBackends = with pkgs; [
       unrar
@@ -77,11 +77,11 @@ in
     dex
     xss-lock
     networkmanagerapplet
-    configure-gtk
+    # configure-gtk
     glib
     xdg-utils
     eww # widget framework
-    lxappearance
+    lxappearance # (kinda)bad practice to be used with nixos
 
     # io(controlled with sway bindings)
     brightnessctl
@@ -91,13 +91,17 @@ in
     pavucontrol
     easyeffects
 
-    # qol
+    # misc
     chromium
     # google-chrome
     qbittorrent
     cinnamon.nemo # file manager
-    etcher
-    unpFull
+    etcher # usb flasher
+    unpFull # extract any archive
+    libreoffice
+    discord
+    spotify
+    gnome.gnome-software
 
     # dev
     python3
@@ -110,12 +114,14 @@ in
 
     # terminal + minor utils
     git
-    # zsh # moved to home-manager
     neofetch
     fastfetch
-    # alacritty
     lshw # list gpus
     kitty
+    htop
+    killall
+    gnome.gnome-system-monitor
+    networkmanager_dmenu
 
     # gaming and windows emulation
     wineWowPackages.full # wine
