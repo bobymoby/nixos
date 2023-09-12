@@ -18,7 +18,6 @@
     ./gtk/gtk.nix
 
     #terminal
-    # ./command-not-found.nix # done in packages.nix
     ./zsh/zsh.nix
     ./alacritty/alacritty.nix
   ];

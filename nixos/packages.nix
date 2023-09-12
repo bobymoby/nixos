@@ -124,8 +124,4 @@ in
     bottles # container manager
     heroic # epic games launcher
   ];
-
-  programs.command-not-found.enable = false;
-  programs.bash.interactiveShellInit = load-nix-index;
-  programs.zsh.interactiveShellInit = load-nix-index;
 }
