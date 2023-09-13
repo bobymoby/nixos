@@ -8,7 +8,7 @@
     shellAliases = {
       ll = "ls -l";
       la = "ls -la";
-
+      eza = "eza --icons --hyperlink";
     };
     oh-my-zsh = {
       enable = true;

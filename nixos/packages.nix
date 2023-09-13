@@ -122,6 +122,7 @@ in
     killall
     gnome.gnome-system-monitor
     networkmanager_dmenu
+    eza # ls alternative
 
     # gaming and windows emulation
     wineWowPackages.full # wine
