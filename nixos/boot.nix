@@ -34,6 +34,18 @@ in
     initrd.systemd.enable = true;
     kernelParams = [
       "quiet"
+
+      # fix for crash after suspend
+      # "acpi_rev_override=1"
+      # "acpi_osi=Linux"
+      # "nouveau.modeset=0"
+      # "pcie_aspm=force"
+      # "drm.vblankoffdelay=1"
+      # "scsi_mod.use_blk_mq=1"
+      # "nouveau.runpm=0"
+      # "mem_sleep_default=deep"
+      # "ibt=off"
+
       # "module_blacklist=i915" # disable intel gpu
     ];
     # kernelPackages = pkgs.linuxPackages_latest;

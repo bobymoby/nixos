@@ -10,15 +10,15 @@
     enable = true;
     displayManager = {
       defaultSession = "none+i3";
-      autoLogin = {
-        # WIP disable later
-        enable = true;
-        user = "bobymoby";
-      };
+      # autoLogin = {
+      #   # WIP disable later
+      #   enable = true;
+      #   user = "bobymoby";
+      # };
       lightdm = {
         enable = true;
         background = ../home-manager/i3/background.png;
-        greeter.enable = false; # WIP enable later
+        # greeter.enable = false; # WIP enable later
       };
     };
     desktopManager.xterm.enable = false;

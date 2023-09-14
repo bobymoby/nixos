@@ -1,14 +1,15 @@
-{ config, ... }:
+{ pkgs, config, ... }:
 
 {
   boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+  # environment.systemPackages = with pkgs; [ linuxPackages.nvidia_x11 ];
   boot.initrd.kernelModules = [ "nvidia" ];
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware = {
     nvidia = {
-      modesetting.enable = true; #required
+      modesetting.enable = true;
       powerManagement.enable = true;
-      open = true; #open source driver
+      open = true; #open source kernel module
       nvidiaSettings = true; #nvidia-settings menu
       prime = {
         intelBusId = "PCI:0:2:0";

@@ -45,3 +45,4 @@ Run
 # Known issues
 
 -   command-not-found might not work even after running setup-scripts. It is currently not supported with flakes
+-   X sometimes hangs after suspend and closes all windows. https://github.com/NVIDIA/open-gpu-kernel-modules/issues/472
