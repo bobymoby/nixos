@@ -16,7 +16,7 @@
       margin-right = 15;
       tray = { spacing = 10; };
       #   modules-center = [ "sway/window" ];
-      modules-left = [ "sway/workspaces" "sway/mode" ];
+      modules-left = [ "hyprland/workspaces" "hyprland/mode" ];
       modules-right = [
         "tray"
         "pulseaudio"

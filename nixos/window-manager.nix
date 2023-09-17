@@ -40,6 +40,20 @@
     ];
   };
 
+  # programs.hyprland = {
+  #   enable = true;
+  #   enableNvidiaPatches = true;
+  #   xwayland.enable = true;
+  # };
+
+  # services.xserver = {
+  #   enable = true;
+  #   displayManager.gdm = {
+  #     enable = true;
+  #     wayland = true;
+  #   };
+  # };
+
   #wayland+sway setup
   # services.xserver = {
   #   enable = true;

@@ -3,12 +3,17 @@
 {
 
   imports = [
-    #wayland
+    #wayland + sway
     # ./sway/sway.nix
     # ./rofi-wayland-unwrapped/rofi-wayland-unwrapped.nix
     # ./waybar/waybar.nix
 
-    #xorg
+    #wayland + hyprland
+    # ./rofi-wayland-unwrapped/rofi-wayland-unwrapped.nix
+    # ./waybar/waybar.nix
+    # ./hyprland/hyprland.nix
+
+    #xorg + i3
     ./i3/i3.nix
     ./rofi/rofi.nix
     ./picom/picom.nix

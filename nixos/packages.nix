@@ -77,6 +77,7 @@ in
     # bemenu
     # mako
     # wdisplays
+    # configure-gtk
 
     # xorg+i3
     polybarFull
@@ -87,7 +88,6 @@ in
     dex
     xss-lock
     networkmanagerapplet
-    # configure-gtk
     glib
     xdg-utils
     eww # widget framework
