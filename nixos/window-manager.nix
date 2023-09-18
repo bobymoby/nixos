@@ -13,6 +13,22 @@
       lightdm = {
         enable = true;
         background = ../home-manager/i3/background.png;
+
+        greeters.gtk = {
+          cursorTheme = {
+            name = "Bibata-Modern-Ice";
+            package = pkgs.bibata-cursors;
+          };
+
+          indicators = [
+            "~session"
+            "~spacer"
+            "~clock"
+            "~spacer"
+            "~language"
+            "~power"
+          ];
+        };
       };
     };
     desktopManager.xterm.enable = false;

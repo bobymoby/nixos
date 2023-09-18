@@ -46,6 +46,9 @@ let
       unrar
     ];
   };
+  Xvlc = pkgs.vlc.override {
+    waylandSupport = false;
+  };
   nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
     export __NV_PRIME_RENDER_OFFLOAD=1
     export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
@@ -112,6 +115,7 @@ in
     discord
     spotify
     gnome.gnome-software
+    Xvlc
 
     # dev
     python3
