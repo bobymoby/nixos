@@ -28,6 +28,7 @@
 
     #misc
     ./direnv/direnv.nix
+    ./easyeffects/easyeffects.nix
   ];
 
   home.packages = with pkgs; [

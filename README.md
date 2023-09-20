@@ -20,7 +20,7 @@ Run:
 -   `sudo nixos-rebuild switch`
 -   `sudo mv /etc/nixos ~/nixos`
 -   `sudo git clone https://github.com/bobymoby/nixos /etc/nixos`
--   `sudo chown \<username> /etc/nixos`
+-   `sudo chown -R bobymoby /etc/nixos`
 
 Fix `/etc/nixos/nixos/hardware-configuration.nix` - get the ids from `~/nixos/hardware-configuration.nix`
 
@@ -35,6 +35,7 @@ Run
 -   `reboot`
 -   setup-scripts
 -   open chrome: `chrome://settings/appearance` and click `Use GTK`(will be automated in future commits)
+-   load easyeffects preset
 
 # Current fs setup
 
