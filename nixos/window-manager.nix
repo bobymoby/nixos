@@ -10,6 +10,7 @@
     enable = true;
     displayManager = {
       defaultSession = "none+i3";
+      startx.enable = true;
       lightdm = {
         enable = true;
         background = ../home-manager/i3/background.png;

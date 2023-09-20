@@ -95,6 +95,7 @@ in
     xdg-utils
     eww # widget framework
     lxappearance # (kinda)bad practice to be used with nixos
+	# xorg.xinit
 
     # io(controlled with sway bindings)
     brightnessctl
@@ -114,6 +115,7 @@ in
     libreoffice
     discord
     spotify
+    ncspot # rust spotify client/cli
     gnome.gnome-software
     Xvlc
 
@@ -137,6 +139,7 @@ in
     gnome.gnome-system-monitor
     networkmanager_dmenu
     eza # ls alternative
+    jq # json parser
 
     # gaming and windows emulation
     wineWowPackages.full # wine

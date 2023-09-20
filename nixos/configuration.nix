@@ -12,6 +12,7 @@
       ./hardware-configuration.nix
       ./gpu.nix
       ./sound.nix
+      ./ssh/ssh.nix
 
       ./i18n.nix
       ./environment.nix
