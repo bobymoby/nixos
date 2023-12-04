@@ -30,7 +30,7 @@ let
   #       export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
   #       gnome_schema=org.gnome.desktop.interface
   #       gsettings set $gnome_schema gtk-theme 'Dracula'
-  #     '';
+  #    '';
   # };
   # load-nix-index = ''
   #   source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
@@ -80,6 +80,7 @@ in
     # bemenu
     # mako
     # wdisplays
+
     # configure-gtk
 
     # xorg+i3
@@ -95,7 +96,7 @@ in
     xdg-utils
     eww # widget framework
     lxappearance # (kinda)bad practice to be used with nixos
-	# xorg.xinit
+    # xorg.xinit
 
     # io(controlled with sway bindings)
     brightnessctl
@@ -122,6 +123,7 @@ in
     # dev
     python3
     nodejs
+    gcc
 
     # editors + utils
     vscode

@@ -21,6 +21,7 @@
     # ./i3status-rust/i3status-rust.nix
 
     ./gtk/gtk.nix
+    ./eww/eww.nix
 
     #terminal
     ./zsh/zsh.nix

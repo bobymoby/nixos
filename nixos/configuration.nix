@@ -66,7 +66,10 @@
 
   services.gvfs.enable = true;
 
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    storageDriver = "btrfs";
+  };
 
   services.flatpak.enable = true;
 
