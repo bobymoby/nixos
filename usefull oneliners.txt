@@ -1,5 +1,0 @@
-list active workspaces
-i3-msg -t get_workspaces
-
-set workspace
-i3-msg -t command "workspace number 1"

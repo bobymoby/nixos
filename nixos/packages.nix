@@ -60,6 +60,7 @@ in
 {
   nixpkgs.config.permittedInsecurePackages = [
     "electron-12.2.3"
+    "electron-19.1.9"
   ];
   programs.zsh.enable = true;
   environment.systemPackages = with pkgs; [

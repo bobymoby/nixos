@@ -75,5 +75,9 @@
 
   programs.dconf.enable = true;
 
+
+
+  # DO NOT CHANGE. USED FOR COMPATIBILITY.
+  # maybe change on reinstall
   system.stateVersion = "23.05";
 }
