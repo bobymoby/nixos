@@ -29,6 +29,7 @@
 
     #misc
     ./direnv/direnv.nix
+    # ./vscode/vscode.nix
     ./easyeffects/easyeffects.nix
   ];
 

@@ -35,12 +35,12 @@ let
   # load-nix-index = ''
   #   source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
   # '';
-  tray = pkgs.writeTextFile {
-    name = "tray";
-    destination = "/bin/tray";
-    executable = true;
-    text = "polybar tray";
-  };
+  # tray = pkgs.writeTextFile {
+  #   name = "tray";
+  #   destination = "/bin/tray";
+  #   executable = true;
+  #   text = "polybar tray";
+  # };
   unpFull = pkgs.unp.override {
     extraBackends = with pkgs; [
       unrar
@@ -62,7 +62,10 @@ in
     "electron-12.2.3"
     "electron-19.1.9"
   ];
+
+
   programs.zsh.enable = true;
+  services.flatpak.enable = true;
   environment.systemPackages = with pkgs; [
     # gpu offloading
     nvidia-offload
@@ -86,7 +89,7 @@ in
 
     # xorg+i3
     polybarFull
-    tray
+    # tray
     xclip
     maim
     picom
@@ -124,12 +127,19 @@ in
     # dev
     python3
     nodejs
-    gcc
+    gcc # for vscode extension
+    # rustup # for vscode extension
+    cargo
+    clippy
+    rustc
+    rust-analyzer
 
     # editors + utils
+    # vscodeWithExtensions
     vscode
     neovim
     nixpkgs-fmt # nix formatter
+    rustfmt # rust formatter
 
     # terminal + minor utils
     git

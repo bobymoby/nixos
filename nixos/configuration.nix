@@ -4,6 +4,11 @@
   # nix settings
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
 
   # hardware settings
   imports =
@@ -61,7 +66,6 @@
     };
   };
 
-
   services.gnome.gnome-keyring.enable = true;
 
   services.gvfs.enable = true;
@@ -70,8 +74,6 @@
     enable = true;
     storageDriver = "btrfs";
   };
-
-  services.flatpak.enable = true;
 
   programs.dconf.enable = true;
 

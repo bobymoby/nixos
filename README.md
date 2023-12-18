@@ -28,7 +28,7 @@ Fix `/etc/nixos/nixos/hardware-configuration.nix` - get the ids from `~/nixos/ha
 
 Run
 
--   `chmod +x build.sh rebuild.sh rebuild-hm.sh ./setup-scripts/setup-channel.sh ./setup-flatpak.sh`
+-   `chmod +x build.sh rebuild.sh rebuild-hm.sh update.sh ./setup-scripts/setup-channel.sh ./setup-flatpak.sh`
 -   `./build.sh`
 -   `./rebuild-hm.sh`
 -   `./rebuild.sh`
