@@ -137,6 +137,8 @@ in
     # editors + utils
     # vscodeWithExtensions
     vscode
+    bruno # postman alternative (cant download postman atm for some reason)
+    dbeaver
     neovim
     nixpkgs-fmt # nix formatter
     rustfmt # rust formatter
@@ -156,7 +158,7 @@ in
 
     # gaming and windows emulation
     wineWowPackages.full # wine
-    lutris # game manager
+    lutris # wine prefix manager
     protonup-qt # proton installer
     bottles # container manager
     heroic # epic games launcher
