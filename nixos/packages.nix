@@ -61,6 +61,7 @@ in
   nixpkgs.config.permittedInsecurePackages = [
     "electron-12.2.3"
     "electron-19.1.9"
+    "electron-25.9.0"
   ];
 
 
@@ -162,5 +163,6 @@ in
     protonup-qt # proton installer
     bottles # container manager
     heroic # epic games launcher
+    r2modman
   ];
 }
