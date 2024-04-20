@@ -116,7 +116,7 @@ in
     # google-chrome
     qbittorrent
     cinnamon.nemo # file manager
-    etcher # usb flasher
+    # etcher # usb flasher
     unpFull # extract any archive
     libreoffice
     discord

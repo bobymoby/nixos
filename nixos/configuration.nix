@@ -67,13 +67,11 @@
   };
 
   services.gnome.gnome-keyring.enable = true;
+  security.pam.services.gdm.enableGnomeKeyring = true;
 
   services.gvfs.enable = true;
 
-  virtualisation.docker = {
-    enable = true;
-    storageDriver = "btrfs";
-  };
+  virtualisation.docker.enable = true;
 
   programs.dconf.enable = true;
 

@@ -11,10 +11,19 @@ let
 in
 {
   boot = {
+    supportedFilesystems = [ "ntfs" ];
     loader = {
-      systemd-boot.enable = true;
+      #systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
+
+      grub = {
+        enable = true;
+        efiSupport = true;
+        device = "nodev";
+        useOSProber = true;
+      };
     };
+
     plymouth = {
       enable = true; # boot splash
       # theme = "breeze";
@@ -50,4 +59,6 @@ in
     ];
     # kernelPackages = pkgs.linuxPackages_latest;
   };
+
+  time.hardwareClockInLocalTime = true;
 }
