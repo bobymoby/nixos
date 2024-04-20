@@ -17,14 +17,13 @@ environment.systemPackages = with pkgs; [
 
 Run:
 
+-   run `setup-scripts/setup-channel.sh` in order to fix command-not-found bug with flakes
 -   `sudo nixos-rebuild switch`
 -   `sudo mv /etc/nixos ~/nixos`
 -   `sudo git clone https://github.com/bobymoby/nixos /etc/nixos`
 -   `sudo chown -R bobymoby /etc/nixos`
 
 Fix `/etc/nixos/nixos/hardware-configuration.nix` - get the ids from `~/nixos/hardware-configuration.nix`
-
-`cd /etc/nixos`
 
 Run
 
@@ -34,14 +33,13 @@ Run
 -   `./rebuild.sh`
 -   `reboot`
 -   setup-scripts
--   open chrome: `chrome://settings/appearance` and click `Use GTK`(will be automated in future commits)
 -   load easyeffects preset
 
 # Current fs setup
 
--   boot - `512MiB FAT32` flagged with `boot` and mounted on `/boot`
+-   boot - `1GiB FAT32` flagged with `boot` and mounted on `/boot` shared with Windows
 -   swap - `35044MiB linuxswap` flagged with `swap`
--   root - `btrfs` flagged with `root` and mounted on `/`
+-   root - flagged with `root` and mounted on `/`
 
 # Known issues
 
