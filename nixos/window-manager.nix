@@ -7,14 +7,15 @@
     # "/share/zsh"
   ];
   services = {
-    displayManager.defaultSession = "none+i3";
-
     xserver = {
       enable = true;
       displayManager = {
-        startx.enable = true;
-        lightdm = {
+        desktopManager.xterm.enable = false;
+        desktopManager.gnome.enable = true;
+
+        gdm = {
           enable = true;
+<<<<<<< HEAD
           background = ../home-manager/gtk/background.png;
 
           greeters.gtk = {
@@ -33,20 +34,35 @@
               "~power"
             ];
           };
+=======
+          wayland = true;
+>>>>>>> fd9b0a9 (initial setup(very unstable))
         };
-      };
-      desktopManager.xterm.enable = false;
-      desktopManager.gnome.enable = true;
 
-      windowManager.i3 = {
-        enable = true;
-        extraPackages = with pkgs; [
-          dmenu
-          i3lock
-        ];
+        # session = [
+        #   {
+        #     manage = "desktop";
+        #     name = "nvidiasway";
+        #     start = ''
+        #       exec sway --unsupported-gpu
+        #     '';
+        #   }
+        # ];
       };
+      sessionPackages = with pkgs; [ sway ];
+    };
+
+    programs.sway = {
+      enable = true;
+      wrapperFeatures.gtk = true;
+      package = (pkgs.swayfx.overrideAttrs
+        (old: {
+          passthru.providedSessions = [ "sway" ];
+        }));
+      # extraOptions = [ "--unsupported-gpu" ];
     };
   };
+
 
   # programs.hyprland = {
   #   enable = true;

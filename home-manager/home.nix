@@ -4,9 +4,9 @@
 
   imports = [
     #wayland + sway
-    # ./sway/sway.nix
-    # ./rofi-wayland-unwrapped/rofi-wayland-unwrapped.nix
-    # ./waybar/waybar.nix
+    ./sway/sway.nix
+    ./rofi-wayland-unwrapped/rofi-wayland-unwrapped.nix
+    ./waybar/waybar.nix
 
     ./gnome-gdm
 
@@ -16,11 +16,11 @@
     # ./hyprland/hyprland.nix
 
     #xorg + i3
-    ./i3/i3.nix
-    ./rofi/rofi.nix
-    ./picom/picom.nix
-    ./polybar/polybar.nix
-    ./dunst/dunst.nix
+    # ./i3/i3.nix
+    # ./rofi/rofi.nix
+    # ./picom/picom.nix
+    # ./polybar/polybar.nix
+    # ./dunst/dunst.nix
     # ./i3status-rust/i3status-rust.nix
 
     ./gtk/gtk.nix
