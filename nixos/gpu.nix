@@ -1,8 +1,8 @@
 { pkgs, config, ... }:
 
 {
-  boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
-  boot.initrd.kernelModules = [ "nvidia" ];
+  # boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+  # boot.initrd.kernelModules = [ "nvidia" ];
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware = {
     nvidia = {
@@ -11,7 +11,7 @@
         # enable = true;
         finegrained = true;
       };
-      open = true; #open source kernel module
+      open = false; #open source kernel module
       nvidiaSettings = true; #nvidia-settings menu
       # nvidiaPersistenced = true;
       prime = {

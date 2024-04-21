@@ -75,7 +75,8 @@ in
 
       # "module_blacklist=i915" # disable intel gpu
     ];
-    # kernelPackages = pkgs.linuxPackages_latest;
+
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   time.hardwareClockInLocalTime = true;
