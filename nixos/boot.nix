@@ -20,11 +20,18 @@ in
         efiSupport = true;
         device = "nodev";
         devices = [ "nodev" ];
-        useOSProber = true;
+        # useOSProber = true;
 
         fontSize = 24;
 
         extraEntries = ''
+          menuentry 'Windows' --class windows --class os {
+            insmod part_gpt
+            insmod fat
+            search --no-floppy --fs-uuid --set=root 5C69-D966
+            chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+          }
+          
           menuentry "Firmware Settings" {
             fwsetup
           }

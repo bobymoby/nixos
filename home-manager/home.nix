@@ -18,6 +18,7 @@
     ./rofi/rofi.nix
     ./picom/picom.nix
     ./polybar/polybar.nix
+    ./dunst/dunst.nix
     # ./i3status-rust/i3status-rust.nix
 
     ./gtk/gtk.nix
