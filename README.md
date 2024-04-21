@@ -29,6 +29,7 @@ Run
 
 -   `chmod +x build.sh rebuild.sh rebuild-hm.sh update.sh ./setup-scripts/setup-channel.sh ./setup-flatpak.sh`
 -   `./build.sh`
+-   `./update.sh` (optional/might break current setup)
 -   `./rebuild-hm.sh`
 -   `./rebuild.sh`
 -   `reboot`

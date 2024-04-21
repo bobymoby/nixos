@@ -7,8 +7,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    grub2-themes.url = "github:vinceliuice/grub2-themes";
   };
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, grub2-themes, ... }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -21,8 +22,11 @@
     {
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          inherit system;
           modules = [
             ./nixos/configuration.nix
+            grub2-themes.nixosModules.default
           ];
         };
       };

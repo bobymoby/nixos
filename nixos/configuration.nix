@@ -7,7 +7,7 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 30d";
+    options = "--delete-older-than 7d";
   };
 
   # hardware settings
@@ -17,6 +17,7 @@
       ./hardware-configuration.nix
       ./gpu.nix
       ./sound.nix
+      ./input.nix
       ./ssh/ssh.nix
 
       ./i18n.nix
@@ -47,6 +48,7 @@
     enable = true;
     wlr.enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; #for gtk apps
+    config.common.default = "*";
   };
 
   security.polkit.enable = true;

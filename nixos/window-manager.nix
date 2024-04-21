@@ -6,55 +6,42 @@
     "/libexec"
     # "/share/zsh"
   ];
-  services.xserver = {
-    enable = true;
-    displayManager = {
-      defaultSession = "none+i3";
-      startx.enable = true;
-      lightdm = {
-        enable = true;
-        background = ../home-manager/i3/background.png;
+  services = {
+    displayManager.defaultSession = "none+i3";
+    xserver = {
+      enable = true;
+      displayManager = {
+        startx.enable = true;
+        lightdm = {
+          enable = true;
+          background = ../home-manager/i3/background.png;
 
-        greeters.gtk = {
-          cursorTheme = {
-            name = "Bibata-Modern-Ice";
-            package = pkgs.bibata-cursors;
+          greeters.gtk = {
+            cursorTheme = {
+              name = "Bibata-Modern-Ice";
+              package = pkgs.bibata-cursors;
+            };
+
+            indicators = [
+              "~session"
+              "~spacer"
+              "~clock"
+              "~spacer"
+              "~language"
+              "~power"
+            ];
           };
-
-          indicators = [
-            "~session"
-            "~spacer"
-            "~clock"
-            "~spacer"
-            "~language"
-            "~power"
-          ];
         };
       };
-    };
-    desktopManager.xterm.enable = false;
-    windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
-        dmenu
-        i3lock
-      ];
-    };
-    libinput = {
-      enable = true;
-      touchpad = {
-        naturalScrolling = true;
-      };
-      mouse = {
-        accelProfile = "flat";
+      desktopManager.xterm.enable = false;
+      windowManager.i3 = {
+        enable = true;
+        extraPackages = with pkgs; [
+          dmenu
+          i3lock
+        ];
       };
     };
-    layout = "us,bg";
-    xkbVariant = "altgr-intl,phonetic";
-    xkbOptions = "grp:alt_shift_toggle";
-    excludePackages = with pkgs; [
-      xterm
-    ];
   };
 
   # programs.hyprland = {

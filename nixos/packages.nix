@@ -90,6 +90,7 @@ in
 
     # xorg+i3
     polybarFull
+    dunst # notifications
     # tray
     xclip
     maim
@@ -165,4 +166,6 @@ in
     heroic # epic games launcher
     r2modman
   ];
+
+  services.xserver.excludePackages = with pkgs; [ xterm ];
 }

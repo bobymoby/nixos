@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 let
   #https://github.com/NixOS/nixpkgs/blob/nixos-23.05/pkgs/data/themes/adi1090x-plymouth-themes/shas.nix
@@ -15,13 +15,22 @@ in
     loader = {
       #systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
-
       grub = {
         enable = true;
         efiSupport = true;
         device = "nodev";
+        devices = [ "nodev" ];
         useOSProber = true;
+
+        fontSize = 24;
+
+        extraEntries = ''
+          menuentry "Firmware Settings" {
+            fwsetup
+          }
+        '';
       };
+      grub2-theme.theme = "vimix";
     };
 
     plymouth = {
@@ -43,6 +52,8 @@ in
     initrd.systemd.enable = true;
     kernelParams = [
       "quiet"
+
+      # "intel_idle.max_cstate=1" # fix for random hangs
 
       # fix for crash after suspend
       # "acpi_rev_override=1"
