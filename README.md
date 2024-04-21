@@ -41,6 +41,11 @@ Run
 -   boot - `1GiB FAT32` flagged with `boot` and mounted on `/boot` shared with Windows
 -   swap - `35044MiB linuxswap` flagged with `swap`
 -   root - flagged with `root` and mounted on `/`
+-   windowsC - ntfs volume mounted on `/windowsC`
+
+# Windows setup
+
+-   Do the steps from this answer and it's comments: https://askubuntu.com/a/1251469
 
 # Known issues
 

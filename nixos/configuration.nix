@@ -40,7 +40,7 @@
     };
   };
 
-  networking.hostName = "nixos";
+  networking.hostName = "BobiLaptopNixOS";
   networking.networkmanager.enable = true;
 
   services.dbus.enable = true;

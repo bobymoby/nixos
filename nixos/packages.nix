@@ -64,14 +64,17 @@ in
     "electron-25.9.0"
   ];
 
-
   programs.zsh.enable = true;
   services.flatpak.enable = true;
   environment.systemPackages = with pkgs; [
+    #
     # gpu offloading
+    #
     nvidia-offload
 
+    #
     # wayland+sway
+    #
     # dbus-sway-environment
     # configure-gtk
     # wayland
@@ -85,10 +88,11 @@ in
     # bemenu
     # mako
     # wdisplays
-
     # configure-gtk
 
+    #
     # xorg+i3
+    #
     polybarFull
     dunst # notifications
     # tray
@@ -104,7 +108,9 @@ in
     lxappearance # (kinda)bad practice to be used with nixos
     # xorg.xinit
 
-    # io(controlled with sway bindings)
+    #
+    # io(controlled with sway/i3 bindings)
+    #
     brightnessctl
     openrazer-daemon # razer mouse control
     polychromatic # razer gui
@@ -112,7 +118,9 @@ in
     pavucontrol
     easyeffects
 
+    #
     # misc
+    #
     # chromium
     google-chrome
     qbittorrent
@@ -122,11 +130,13 @@ in
     libreoffice
     discord
     spotify
-    ncspot # rust spotify client/cli
+    # ncspot # rust spotify client/cli
     gnome.gnome-software
     Xvlc
 
+    #
     # dev
+    #
     python3
     nodejs
     gcc # for vscode extension
@@ -136,7 +146,9 @@ in
     rustc
     rust-analyzer
 
+    #
     # editors + utils
+    #
     # vscodeWithExtensions
     vscode
     bruno # postman alternative (cant download postman atm for some reason)
@@ -145,7 +157,9 @@ in
     nixpkgs-fmt # nix formatter
     rustfmt # rust formatter
 
+    #
     # terminal + minor utils
+    #
     git
     neofetch
     fastfetch
@@ -157,14 +171,17 @@ in
     networkmanager_dmenu
     eza # ls alternative
     jq # json parser
+    # curlWithGnutls
 
+    #
     # gaming and windows emulation
+    #
     wineWowPackages.full # wine
     lutris # wine prefix manager
     protonup-qt # proton installer
     bottles # container manager
     heroic # epic games launcher
-    r2modman
+    r2modman # mod manager
   ];
 
   services.xserver.excludePackages = with pkgs; [ xterm ];
