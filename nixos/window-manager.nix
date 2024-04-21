@@ -8,6 +8,7 @@
   ];
   services = {
     displayManager.defaultSession = "none+i3";
+
     xserver = {
       enable = true;
       displayManager = {
@@ -20,6 +21,7 @@
             cursorTheme = {
               name = "Bibata-Modern-Ice";
               package = pkgs.bibata-cursors;
+              size = 24;
             };
 
             indicators = [
@@ -34,6 +36,8 @@
         };
       };
       desktopManager.xterm.enable = false;
+      desktopManager.gnome.enable = true;
+
       windowManager.i3 = {
         enable = true;
         extraPackages = with pkgs; [

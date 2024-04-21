@@ -1,1 +1,1 @@
-nix flake update
+sudo nix flake update && sudo nixos-rebuild switch --upgrade-all --flake .#nixos

@@ -46,9 +46,9 @@
   services.dbus.enable = true;
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; #for gtk apps
-    config.common.default = "*";
+    #  wlr.enable = true;
+    #  extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; #for gtk apps
+    #  config.common.default = "*";
   };
 
   security.polkit.enable = true;

@@ -1,0 +1,1 @@
+sudo nixos-rebuild --install-bootloader --flake .#nixos switch

@@ -113,8 +113,8 @@ in
     easyeffects
 
     # misc
-    chromium
-    # google-chrome
+    # chromium
+    google-chrome
     qbittorrent
     cinnamon.nemo # file manager
     # etcher # usb flasher
