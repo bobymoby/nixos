@@ -43,8 +43,19 @@ in
       # grub2-theme.theme = "vimix";
     };
 
+<<<<<<< HEAD
     # plymouth = {
     #   enable = true; # boot splash
+=======
+    plymouth = {
+      enable = false; # boot splash
+      # theme = "breeze";
+      # NixOS BGRT
+      # logo = pkgs.fetchurl {
+      #   url = "https://nixos.org/logo/nixos-hires.png";
+      #   sha256 = "1ivzgd7iz0i06y36p8m5w48fd8pjqwxhdaavc0pxs7w1g7mcy5si";
+      # };
+>>>>>>> eebe912 (waybar fixed/plymouth removed)
 
     #   themePackages = with pkgs; [
     #     nixos-bgrt-plymouth

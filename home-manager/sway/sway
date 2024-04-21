@@ -53,7 +53,7 @@ set $menu dmenu_path | wmenu | xargs swaymsg exec --
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec alacritty -e $SHELL -c 'neofetch && $SHELL'
+    bindsym $mod+Return exec alacritty -e $SHELL -c '$SHELL'
 
     # Kill focused window
     bindsym $mod+Shift+q kill

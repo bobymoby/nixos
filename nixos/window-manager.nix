@@ -9,6 +9,7 @@
   services = {
     xserver = {
       enable = true;
+<<<<<<< HEAD
       displayManager = {
         desktopManager.xterm.enable = false;
         desktopManager.gnome.enable = true;
@@ -48,19 +49,26 @@
         #     '';
         #   }
         # ];
+=======
+      desktopManager.xterm.enable = false;
+      desktopManager.gnome.enable = true;
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
+>>>>>>> eebe912 (waybar fixed/plymouth removed)
       };
-      sessionPackages = with pkgs; [ sway ];
     };
+    displayManager.sessionPackages = with pkgs; [ sway ];
+  };
 
-    programs.sway = {
-      enable = true;
-      wrapperFeatures.gtk = true;
-      package = (pkgs.swayfx.overrideAttrs
-        (old: {
-          passthru.providedSessions = [ "sway" ];
-        }));
-      # extraOptions = [ "--unsupported-gpu" ];
-    };
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+    package = (pkgs.swayfx.overrideAttrs
+      (old: {
+        passthru.providedSessions = [ "sway" ];
+      }));
+    # extraOptions = [ "--unsupported-gpu" ];
   };
 
 

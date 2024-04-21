@@ -17,6 +17,7 @@
 }
 
 #workspaces,
+#window,
 #mode,
 #tray,
 #pulseaudio,
@@ -26,7 +27,7 @@
 #temperature,
 #clock,
 #battery {
-	padding: 4px 16px;
+	padding: 5px 10px;
 }
 
 #workspaces button {
@@ -36,7 +37,11 @@
 	border-bottom: 3px solid #031417;
 }
 
-#workspaces button.visible {
+/* #workspaces button.visible {
+	border-bottom: 3px solid #d4be98;
+} */
+
+#workspaces .focused {
 	border-bottom: 3px solid #d4be98;
 }
 
@@ -49,4 +54,8 @@
 
 #workspaces > * {
 	padding: 0 2px;
+}
+
+#waybar.empty .modules-center > * {
+	background-color: transparent;
 }

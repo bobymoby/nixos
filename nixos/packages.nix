@@ -46,9 +46,6 @@ let
       unrar
     ];
   };
-  Xvlc = pkgs.vlc.override {
-    waylandSupport = false;
-  };
   nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
     export __NV_PRIME_RENDER_OFFLOAD=1
     export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
@@ -77,22 +74,22 @@ in
     #
     # dbus-sway-environment
     # configure-gtk
-    # wayland
-    # xdg-utils
-    # glib
-    # swaylock
-    # swayidle
-    # grim
-    # slurp
-    # wl-clipboard
-    # bemenu
-    # mako
-    # wdisplays
-    # configure-gtk
+    wayland
+    xdg-utils
+    glib
+    swaylock
+    swayidle
+    grim
+    slurp
+    wl-clipboard
+    bemenu
+    mako
+    wdisplays
 
     #
     # xorg+i3
     #
+<<<<<<< HEAD
     polybarFull
     # tray
     xclip
@@ -106,6 +103,20 @@ in
     eww # widget framework
     lxappearance # (kinda)bad practice to be used with nixos
     # xorg.xinit
+=======
+    # polybarFull
+    # dunst # notifications
+    # xclip
+    # maim
+    # picom
+    # dex
+    # xss-lock
+    # networkmanagerapplet
+    # glib
+    # xdg-utils
+    # eww # widget framework
+    # lxappearance # (kinda)bad practice to be used with nixos
+>>>>>>> eebe912 (waybar fixed/plymouth removed)
 
     #
     # io(controlled with sway/i3 bindings)
@@ -131,7 +142,7 @@ in
     spotify
     # ncspot # rust spotify client/cli
     gnome.gnome-software
-    Xvlc
+    vlc
 
     #
     # dev
