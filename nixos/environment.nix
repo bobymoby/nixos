@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   environment.sessionVariables = rec {
@@ -12,5 +12,7 @@
     PATH = [
       "${XDG_BIN_HOME}"
     ];
+
+    # NIXOS_OZONE_WL = 1;
   };
 }

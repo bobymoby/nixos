@@ -210,9 +210,11 @@ gaps bottom 5
 gaps left 5
 gaps right 5
 
+output * background ~/.background-image fill
+
 exec waybar
-exec_always swww init
-exec sleep 5; exec systemctl --user start swww.service
+# exec_always swww init
+# exec sleep 5; exec systemctl --user start swww.service
 
 exec dbus-sway-environment
 exec configure-gtk
