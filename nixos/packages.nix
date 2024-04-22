@@ -138,6 +138,8 @@ in
 >>>>>>> ee331c3 (users video group/gdm default session/sway+gnome configs/vscode flags)
     dunst # notifications
     google-chrome
+    chromium
+    (wrapFirefox (pkgs.firefox-unwrapped.override { pipewireSupport = true; }) { })
     qbittorrent
     cinnamon.nemo # file manager
     # etcher # usb flasher

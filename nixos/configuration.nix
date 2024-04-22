@@ -58,7 +58,7 @@
         buildPortalsInGnome = false;
       })
     ];
-    gtkUsePortal = true;
+    # gtkUsePortal = true;
     # config.common.default = "*";
   };
 >>>>>>> ee331c3 (users video group/gdm default session/sway+gnome configs/vscode flags)
