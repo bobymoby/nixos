@@ -44,6 +44,24 @@
   networking.networkmanager.enable = true;
 
   services.dbus.enable = true;
+<<<<<<< HEAD
+=======
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    # extraPortals = [ pkgs.xdg-desktop-portal-gtk ]; #for gtk apps
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      pkgs.xdg-desktop-portal-gnome
+      (pkgs.xdg-desktop-portal-gtk.override {
+        # Do not build portals that we already have.
+        buildPortalsInGnome = false;
+      })
+    ];
+    gtkUsePortal = true;
+    # config.common.default = "*";
+  };
+>>>>>>> ee331c3 (users video group/gdm default session/sway+gnome configs/vscode flags)
 
   security.polkit.enable = true;
   systemd = {

@@ -59,6 +59,7 @@
       };
     };
     displayManager.sessionPackages = with pkgs; [ sway ];
+    displayManager.defaultSession = "sway";
   };
 
   programs.sway = {
@@ -84,38 +85,5 @@
   #     enable = true;
   #     wayland = true;
   #   };
-  # };
-
-  #wayland+sway setup
-  # services.xserver = {
-  #   enable = true;
-  #   displayManager = {
-  #     sddm.enable = true;
-  #     # gdm = {
-  #     #   enable = true;
-  #     #   wayland = true;
-  #     # };
-  #     # # sessionPackages = with pkgs; [ sway ];
-  #     # defaultSession = "nvidiasway";
-  #     session = [
-  #       {
-  #         manage = "desktop";
-  #         name = "nvidiasway";
-  #         start = ''
-  #           exec sway --unsupported-gpu
-  #         '';
-  #       }
-  #     ];
-  #   };
-  #   videoDrivers = [ "nvidia" ];
-  # };
-  # programs.sway = {
-  #   enable = true;
-  #   wrapperFeatures.gtk = true;
-  #   package = (pkgs.swayfx.overrideAttrs
-  #     (old: {
-  #       passthru.providedSessions = [ "sway" ];
-  #     }));
-  #   extraOptions = [ "--unsupported-gpu" ];
   # };
 }

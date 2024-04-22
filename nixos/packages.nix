@@ -85,6 +85,8 @@ in
     bemenu
     mako
     wdisplays
+    imagemagick
+    webcord
 
     #
     # xorg+i3
@@ -105,7 +107,6 @@ in
     # xorg.xinit
 =======
     # polybarFull
-    # dunst # notifications
     # xclip
     # maim
     # picom
@@ -131,6 +132,10 @@ in
     #
     # misc
     #
+<<<<<<< HEAD
+=======
+    # chromium
+>>>>>>> ee331c3 (users video group/gdm default session/sway+gnome configs/vscode flags)
     dunst # notifications
     google-chrome
     qbittorrent

@@ -66,7 +66,11 @@ in
     initrd.systemd.enable = true;
     kernelParams = [
       "quiet"
+<<<<<<< HEAD
       # "psmouse.synaptics_intertouch=0"
+=======
+      "psmouse.synaptics_intertouch=0"
+>>>>>>> ee331c3 (users video group/gdm default session/sway+gnome configs/vscode flags)
       # "intel_idle.max_cstate=1" # fix for random hangs
 
       # fix for crash after suspend
