@@ -16,4 +16,9 @@
 
   networking.hostName = "BobiLaptopNixOS";
   networking.networkmanager.enable = true;
+
+  proprietary-nvidia-drivers = {
+    enable = true;
+    prime.enable = true;
+  };
 }

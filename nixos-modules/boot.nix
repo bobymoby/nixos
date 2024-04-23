@@ -16,7 +16,6 @@ in
   boot = {
     supportedFilesystems = [ "ntfs" ];
     loader = {
-      #systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
       grub = {
         enable = true;
@@ -60,17 +59,6 @@ in
       "quiet"
       # "psmouse.synaptics_intertouch=0"
       # "intel_idle.max_cstate=1" # fix for random hangs
-
-      # fix for crash after suspend
-      # "acpi_rev_override=1"
-      # "acpi_osi=Linux"
-      # "nouveau.modeset=0"
-      # "pcie_aspm=force"
-      # "drm.vblankoffdelay=1"
-      # "scsi_mod.use_blk_mq=1"
-      # "nouveau.runpm=0"
-      # "mem_sleep_default=deep"
-      # "ibt=off"
 
       # "module_blacklist=i915" # disable intel gpu
     ];

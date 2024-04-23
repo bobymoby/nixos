@@ -4,7 +4,7 @@
   # hardware settings
   imports = [
     ./boot.nix
-    ./gpu.nix
+    ./gpu
     ./sound.nix
     ./input.nix
     ./ssh/ssh.nix
