@@ -15,7 +15,7 @@
         startx.enable = true;
         lightdm = {
           enable = true;
-          background = ../home-manager/i3/background.png;
+          background = ../home-manager/gtk/background.png;
 
           greeters.gtk = {
             cursorTheme = {

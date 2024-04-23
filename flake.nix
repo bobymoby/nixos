@@ -26,7 +26,7 @@
           inherit system;
           modules = [
             ./nixos/configuration.nix
-            grub2-themes.nixosModules.default
+            # grub2-themes.nixosModules.default
           ];
         };
       };

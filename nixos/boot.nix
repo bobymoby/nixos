@@ -22,7 +22,7 @@ in
         devices = [ "nodev" ];
         # useOSProber = true;
 
-        fontSize = 24;
+        # fontSize = 24;
 
         extraEntries = ''
           menuentry 'Windows' --class windows --class os {
@@ -36,30 +36,26 @@ in
             fwsetup
           }
         '';
+
+        gfxmodeEfi = "text";
+        gfxmodeBios = "text";
       };
-      grub2-theme.theme = "vimix";
+      # grub2-theme.theme = "vimix";
     };
 
-    plymouth = {
-      enable = true; # boot splash
-      # theme = "breeze";
-      # NixOS BGRT
-      # logo = pkgs.fetchurl {
-      #   url = "https://nixos.org/logo/nixos-hires.png";
-      #   sha256 = "1ivzgd7iz0i06y36p8m5w48fd8pjqwxhdaavc0pxs7w1g7mcy5si";
-      # };
+    # plymouth = {
+    #   enable = true; # boot splash
 
-      themePackages = with pkgs; [
-        nixos-bgrt-plymouth
-        plymouth-themes
-      ];
-      theme = "nixos-bgrt"; # spinning nixos logo
-      # theme = "lone";
-    };
+    #   themePackages = with pkgs; [
+    #     nixos-bgrt-plymouth
+    #     plymouth-themes
+    #   ];
+    #   theme = "nixos-bgrt"; # spinning nixos logo
+    # };
     initrd.systemd.enable = true;
     kernelParams = [
       "quiet"
-
+      # "psmouse.synaptics_intertouch=0"
       # "intel_idle.max_cstate=1" # fix for random hangs
 
       # fix for crash after suspend

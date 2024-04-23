@@ -94,7 +94,6 @@ in
     # xorg+i3
     #
     polybarFull
-    dunst # notifications
     # tray
     xclip
     maim
@@ -121,7 +120,7 @@ in
     #
     # misc
     #
-    # chromium
+    dunst # notifications
     google-chrome
     qbittorrent
     cinnamon.nemo # file manager
@@ -137,30 +136,33 @@ in
     #
     # dev
     #
-    python3
-    nodejs
-    gcc # for vscode extension
+    # python3
+    # nodejs
+    # gcc # for vscode extension
     # rustup # for vscode extension
-    cargo
+    # cargo
     clippy
-    rustc
-    rust-analyzer
+    # rustc
+    # rust-analyzer
 
     #
     # editors + utils
     #
     # vscodeWithExtensions
     vscode
+    vscode.fhs
+    jetbrains.rider
+    jetbrains.idea-ultimate
     bruno # postman alternative (cant download postman atm for some reason)
     dbeaver
     neovim
     nixpkgs-fmt # nix formatter
-    rustfmt # rust formatter
+    # rustfmt # rust formatter
 
     #
     # terminal + minor utils
     #
-    git
+    gitFull
     neofetch
     fastfetch
     lshw # list gpus

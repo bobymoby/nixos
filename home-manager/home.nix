@@ -8,6 +8,8 @@
     # ./rofi-wayland-unwrapped/rofi-wayland-unwrapped.nix
     # ./waybar/waybar.nix
 
+    ./gnome-gdm
+
     #wayland + hyprland
     # ./rofi-wayland-unwrapped/rofi-wayland-unwrapped.nix
     # ./waybar/waybar.nix

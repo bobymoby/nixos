@@ -6,6 +6,7 @@
       enable = true;
       touchpad = {
         naturalScrolling = true;
+        accelProfile = "flat";
       };
       mouse = {
         accelProfile = "flat";
