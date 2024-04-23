@@ -16,18 +16,7 @@
 
   hardware.pulseaudio.enable = false;
 
-  # environment.etc."wireplumber/main.lua.d/90-suspend-timeout.lua" = {
-  #   text = ''
-  #     ["session.suspend-timeout-seconds"] = 0
-  #   '';
-  # };
-
-  # hardware.pulseaudio.extraConfig = ''
-  #   .nofail
-  #   unload-module module-suspend-on-idle
-  #   .fail
-  # '';
-
+  #WIP test
   services.pipewire.wireplumber.configPackages = with pkgs; [
     (writeTextDir "share/wireplumber/main.lua.d/51-disable-suspension.lua" ''
       table.insert (alsa_monitor.rules, {

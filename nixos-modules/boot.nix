@@ -1,13 +1,16 @@
-{ inputs, pkgs, ... }:
+{ pkgs
+, # inputs
+  ...
+}:
 
 let
   #https://github.com/NixOS/nixpkgs/blob/nixos-23.05/pkgs/data/themes/adi1090x-plymouth-themes/shas.nix
   #https://github.com/adi1090x/plymouth-themes/tree/master
-  plymouth-themes = pkgs.adi1090x-plymouth-themes.override {
-    selected_themes = [
-      "lone"
-    ];
-  };
+  # plymouth-themes = pkgs.adi1090x-plymouth-themes.override {
+  #   selected_themes = [
+  #     "lone"
+  #   ];
+  # };
 in
 {
   boot = {

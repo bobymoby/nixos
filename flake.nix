@@ -31,7 +31,7 @@
           inherit system;
           modules = [
             ./hosts/laptop/configuration.nix
-            ./nixosModules
+            ./nixos-modules
             # grub2-themes.nixosModules.default
           ];
         };
