@@ -173,6 +173,8 @@ in
     networkmanager_dmenu
     eza # ls alternative
     jq # json parser
+    nh
+    nom
     # curlWithGnutls
 
     #

@@ -1,1 +1,1 @@
-sudo nix flake update && sudo nixos-rebuild switch --upgrade-all --flake .#nixos
+sudo nix flake update && sudo nixos-rebuild switch --upgrade-all --flake .#BobiLaptopNixOS

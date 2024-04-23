@@ -12,5 +12,6 @@
     PATH = [
       "${XDG_BIN_HOME}"
     ];
+    FLAKE = "/etc/nixos";
   };
 }
