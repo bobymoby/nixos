@@ -8,13 +8,7 @@
     ./sound.nix
     ./input.nix
     ./ssh/ssh.nix
-
-    ./i18n.nix
-    ./environment.nix
-    ./window-manager.nix
-    ./users.nix
-
+    ./common
     ./packages.nix
-    ./fonts.nix
   ];
 }
