@@ -30,7 +30,8 @@
           specialArgs = { inherit inputs; };
           inherit system;
           modules = [
-            ./nixos/configuration.nix
+            ./hosts/laptop/configuration.nix
+            ./nixosModules
             # grub2-themes.nixosModules.default
           ];
         };
