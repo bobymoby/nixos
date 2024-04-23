@@ -95,21 +95,6 @@ in
     #
     # xorg+i3
     #
-<<<<<<< HEAD
-    polybarFull
-    # tray
-    xclip
-    maim
-    picom
-    dex
-    xss-lock
-    networkmanagerapplet
-    glib
-    xdg-utils
-    eww # widget framework
-    lxappearance # (kinda)bad practice to be used with nixos
-    # xorg.xinit
-=======
     # polybarFull
     # xclip
     # maim
@@ -121,7 +106,6 @@ in
     # xdg-utils
     # eww # widget framework
     # lxappearance # (kinda)bad practice to be used with nixos
->>>>>>> eebe912 (waybar fixed/plymouth removed)
 
     #
     # io(controlled with sway/i3 bindings)
@@ -136,10 +120,6 @@ in
     #
     # misc
     #
-<<<<<<< HEAD
-=======
-    # chromium
->>>>>>> ee331c3 (users video group/gdm default session/sway+gnome configs/vscode flags)
     dunst # notifications
     google-chrome
     chromium

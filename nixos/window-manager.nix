@@ -9,53 +9,11 @@
   services = {
     xserver = {
       enable = true;
-<<<<<<< HEAD
-      displayManager = {
-        desktopManager.xterm.enable = false;
-        desktopManager.gnome.enable = true;
-
-        gdm = {
-          enable = true;
-<<<<<<< HEAD
-          background = ../home-manager/gtk/background.png;
-
-          greeters.gtk = {
-            cursorTheme = {
-              name = "Bibata-Modern-Ice";
-              package = pkgs.bibata-cursors;
-              size = 24;
-            };
-
-            indicators = [
-              "~session"
-              "~spacer"
-              "~clock"
-              "~spacer"
-              "~language"
-              "~power"
-            ];
-          };
-=======
-          wayland = true;
->>>>>>> fd9b0a9 (initial setup(very unstable))
-        };
-
-        # session = [
-        #   {
-        #     manage = "desktop";
-        #     name = "nvidiasway";
-        #     start = ''
-        #       exec sway --unsupported-gpu
-        #     '';
-        #   }
-        # ];
-=======
       desktopManager.xterm.enable = false;
       desktopManager.gnome.enable = true;
       displayManager.gdm = {
         enable = true;
         wayland = true;
->>>>>>> eebe912 (waybar fixed/plymouth removed)
       };
     };
     displayManager.sessionPackages = with pkgs; [ sway ];
