@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, config, ... }:
 
 {
   imports = [
@@ -6,4 +6,14 @@
     ./sway/sway.nix
     ./waybar/waybar.nix
   ];
+
+  options.bobymoby.wayland.enable = lib.mkEnableOption "Enable Wayland support";
+
+  config = lib.mkIf config.bobymoby.wayland.enable {
+    bobymoby.wayland = {
+      sway.enable = true;
+      waybar.enable = true;
+      rofi.enable = true;
+    };
+  };
 }
