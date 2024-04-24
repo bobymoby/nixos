@@ -45,11 +45,22 @@
           ];
         };
       };
+
       homeConfigurations = {
-        bobymoby = home-manager.lib.homeManagerConfiguration {
+        #nix run .#bobymoby@laptop.activationPackage
+        "bobymoby@BobiLaptopNixOS" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
-            ./home-manager/home.nix
+            ./hosts/laptop/home.nix
+            ./home-modules
+          ];
+        };
+        #nix run .#bobymoby@laptop.activationPackage
+        "bobymoby@BobiNixOS" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./hosts/pc/home.nix
+            ./home-modules
           ];
         };
       };

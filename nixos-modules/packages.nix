@@ -149,6 +149,7 @@ in
     neovim
     nixpkgs-fmt # nix formatter
     nil
+    # nixd
     # rustfmt # rust formatter
 
     #
