@@ -107,7 +107,7 @@ in
     pulseaudioFull
     pavucontrol
     easyeffects
-
+    libinput-gestures
     #
     # misc
     #

@@ -19,6 +19,8 @@
 
     ./gtk/gtk.nix
 
+    ./libinput-gestures/libinput-gestures.nix
+
     #terminal
     ./zsh/zsh.nix
     ./alacritty/alacritty.nix
