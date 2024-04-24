@@ -34,5 +34,5 @@
     size = 24;
   };
 
-  home.file."./.background-image".source = ../../shared/background.png;
+  home.file."./.background-image".source = ../../../shared/background.png;
 }
