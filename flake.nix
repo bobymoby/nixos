@@ -35,6 +35,15 @@
             # grub2-themes.nixosModules.default
           ];
         };
+        BobiNixOS = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          inherit system;
+          modules = [
+            ./hosts/pc/configuration.nix
+            ./nixos-modules
+            # grub2-themes.nixosModules.default
+          ];
+        };
       };
       homeConfigurations = {
         bobymoby = home-manager.lib.homeManagerConfiguration {
