@@ -18,7 +18,6 @@ environment.systemPackages = with pkgs; [
 
 Run:
 
--   run this in order to fix command-not-found bug with flakes
 -   ```bash
     sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos
     sudo nix-channel --update
