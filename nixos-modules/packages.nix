@@ -145,6 +145,7 @@ in
     jetbrains.rider
     jetbrains.idea-ultimate
     bruno # postman alternative (cant download postman atm for some reason)
+    postman
     dbeaver
     neovim
     nixpkgs-fmt # nix formatter
