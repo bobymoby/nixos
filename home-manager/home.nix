@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
 
@@ -22,15 +22,12 @@
     #terminal
     ./zsh/zsh.nix
     ./alacritty/alacritty.nix
+    ./fastfetch/fastfetch.nix
 
     #misc
     ./direnv/direnv.nix
     # ./vscode/vscode.nix
     ./easyeffects/easyeffects.nix
-  ];
-
-  home.packages = with pkgs; [
-    # gnome.adwaita-icon-theme
   ];
 
   xdg.configFile."networkmanager-dmenu/config.ini".text = ''

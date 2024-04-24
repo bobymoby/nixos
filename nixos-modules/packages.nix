@@ -32,15 +32,6 @@ let
   #       gsettings set $gnome_schema gtk-theme 'Dracula'
   #    '';
   # };
-  # load-nix-index = ''
-  #   source ${pkgs.nix-index}/etc/profile.d/command-not-found.sh
-  # '';
-  # tray = pkgs.writeTextFile {
-  #   name = "tray";
-  #   destination = "/bin/tray";
-  #   executable = true;
-  #   text = "polybar tray";
-  # };
   unpFull = pkgs.unp.override {
     extraBackends = with pkgs; [
       unrar
@@ -157,6 +148,7 @@ in
     dbeaver
     neovim
     nixpkgs-fmt # nix formatter
+    nil
     # rustfmt # rust formatter
 
     #
@@ -174,7 +166,6 @@ in
     eza # ls alternative
     jq # json parser
     nh
-    nom
     # curlWithGnutls
 
     #
