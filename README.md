@@ -18,30 +18,28 @@ environment.systemPackages = with pkgs; [
 
 Run:
 
--   ````bash
+-   run this in order to fix command-not-found bug with flakes
+-   ```bash
     sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos
     sudo nix-channel --update
-    ```run this in order to fix command-not-found bug with flakes
-    ````
--   `sudo nixos-rebuild switch`
--   `sudo mv /etc/nixos ~/nixos`
--   `sudo git clone https://github.com/bobymoby/nixos /etc/nixos`
--   `sudo chown -R bobymoby /etc/nixos`
+    sudo nixos-rebuild switch
+    sudo mv /etc/nixos ~/nixos
+    sudo git clone https://github.com/bobymoby/nixos /etc/nixos
+    sudo chown -R bobymoby /etc/nixos
+    ```
 
-Fix `/etc/nixos/nixos/hardware-configuration.nix` - get the ids from `~/nixos/hardware-configuration.nix`
+Fix `hardware-configuration.nix` - get the ids from `~/nixos/hardware-configuration.nix`
 
 Run
 
 -   ```bash
     nix build --no-link .#homeConfigurations.bobymoby@Bobi<Laptop>NixOS.activationPackage
     "$(nix path-info .#homeConfigurations.bobymoby@Bobi<Laptop>NixOS.activationPackage)"/activate
-    ```
--   ```bash
     nh os switch
     nh home switch
+    sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    reboot
     ```
--   `reboot`
--   `sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo`
 -   load easyeffects preset
 
 # Current fs setup
