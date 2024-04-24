@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
 
@@ -10,34 +10,24 @@
 
     ./gnome-gdm
 
-    #wayland + hyprland
-    # ./rofi-wayland-unwrapped/rofi-wayland-unwrapped.nix
-    # ./waybar/waybar.nix
-    # ./hyprland/hyprland.nix
-
     #xorg + i3
     ./i3/i3.nix
     ./rofi/rofi.nix
     ./picom/picom.nix
     ./polybar/polybar.nix
     ./dunst/dunst.nix
-    # ./i3status-rust/i3status-rust.nix
 
     ./gtk/gtk.nix
-    ./eww/eww.nix
 
     #terminal
     ./zsh/zsh.nix
     ./alacritty/alacritty.nix
+    ./fastfetch/fastfetch.nix
 
     #misc
     ./direnv/direnv.nix
     # ./vscode/vscode.nix
     ./easyeffects/easyeffects.nix
-  ];
-
-  home.packages = with pkgs; [
-    # gnome.adwaita-icon-theme
   ];
 
   xdg.configFile."networkmanager-dmenu/config.ini".text = ''

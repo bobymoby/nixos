@@ -41,7 +41,7 @@ tiling_drag modifier titlebar
 
 # start a terminal
 # bindsym $mod+Return exec alacritty -e $SHELL -c 'neofetch && $SHELL'
-bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+Return exec --no-startup-id alacritty -e $SHELL -c 'fastfetch && $SHELL'
 
 # kill focused window
 bindsym $mod+Shift+q kill
