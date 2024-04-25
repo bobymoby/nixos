@@ -52,6 +52,8 @@
     gnome-photos
     gnome-tour
     gedit # text editor
+    gnome-text-editor
+    gnome-console
   ]) ++ (with pkgs.gnome; [
     cheese # webcam tool
     gnome-music
@@ -65,5 +67,13 @@
     iagno # go game
     hitori # sudoku game
     atomix # puzzle game
+    gnome-color-manager
+    gnome-clocks
+    gnome-contacts
+    gnome-font-viewer
+    gnome-logs
+    gnome-maps
+    gnome-weather
+    nautilus
   ]);
 }

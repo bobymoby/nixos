@@ -160,7 +160,7 @@ in
     neofetch
     fastfetch
     lshw # list gpus
-    kitty
+    # kitty
     htop
     killall
     gnome.gnome-system-monitor
