@@ -9,6 +9,7 @@
     ./nix-settings.nix
     ./systemd-services
     ./fonts.nix
+    ./boot.nix
   ];
 
   services.dbus.enable = true;

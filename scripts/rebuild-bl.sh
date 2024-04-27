@@ -1,1 +1,1 @@
-sudo nixos-rebuild --install-bootloader --flake .#BobiLaptopNixOS switch
+sudo nixos-rebuild --install-bootloader --flake .#Bobi<Laptop>NixOS switch
