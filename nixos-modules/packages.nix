@@ -146,10 +146,11 @@ in
     jetbrains.idea-ultimate
     bruno # postman alternative (cant download postman atm for some reason)
     postman
-    dbeaver
-    neovim
+    dbeaver-bin
     nixpkgs-fmt # nix formatter
     nil
+    arduino-ide
+    # zed-editor
     # nixd
     # rustfmt # rust formatter
 
@@ -168,6 +169,8 @@ in
     eza # ls alternative
     jq # json parser
     nh
+
+    distrobox
     # curlWithGnutls
 
     #
@@ -180,6 +183,11 @@ in
     heroic # epic games launcher
     r2modman # mod manager
   ];
+
+  programs.nix-ld = {
+    enable = true;
+    # libraries = with pkgs; [ ];
+  };
 
   services.xserver.excludePackages = with pkgs; [ xterm ];
 }

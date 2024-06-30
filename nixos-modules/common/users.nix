@@ -15,6 +15,7 @@
       "i2c"
       "openrazer"
       "plugdev"
+      "dialout"
     ];
   };
 
