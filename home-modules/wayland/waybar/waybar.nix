@@ -73,6 +73,7 @@
           format-source = " {volume}%";
           format-source-muted = "";
           on-click = "pavucontrol";
+          ignored-sources = [ "Easy Effects Sink" ];
         };
         # "sway/mode" = { format = ''<span style="italic">{}</span>''; };
         temperature = {

@@ -26,6 +26,8 @@
     environment.systemPackages = with pkgs; [
       hyprshot
       swww
+      hypridle
+      hyprlock
     ];
   };
 }
