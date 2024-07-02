@@ -19,13 +19,11 @@
         margin-right = 15;
         tray = { spacing = 10; };
         #   modules-center = [ "sway/window" ];
-        modules-left = [ "hyprland/workspaces" "hyprland/mode" ];
+        modules-left = [ "hyprland/workspaces" ];
         modules-right = [
           "tray"
           "pulseaudio"
           "network"
-          "cpu"
-          "memory"
           "temperature"
           "battery"
           "clock"
@@ -45,18 +43,18 @@
           format-alt = "{:%d-%m-%Y}";
           tooltip-format = "{:%d-%m-%Y | %H:%M}";
         };
-        cpu = {
-          format = " {usage}%";
-          tooltip = false;
-        };
-        memory = { format = " {}%"; };
+        # cpu = {
+        #   format = " {usage}%";
+        #   tooltip = false;
+        # };
+        # memory = { format = " {}%"; };
         network = {
           interval = 1;
           format-alt = "{ifname}: {ipaddr}/{cidr}";
-          format-disconnected = "⚠ Disconnected";
-          format-ethernet = " {ifname}: {ipaddr}/{cidr}  up: {bandwidthUpBits} down: {bandwidthDownBits}";
-          format-linked = " {ifname} (No IP)";
-          format-wifi = " {essid} ({signalStrength}%)";
+          format-disconnected = "⚠   Disconnected";
+          format-ethernet = "   {ifname}: {ipaddr}/{cidr}  up: {bandwidthUpBits} down: {bandwidthDownBits}";
+          format-linked = "   {ifname} (No IP)";
+          format-wifi = "   {essid} ({signalStrength}%)";
         };
         pulseaudio = {
           format = "{icon} {volume}% {format_source}";
@@ -76,11 +74,12 @@
           format-source-muted = "";
           on-click = "pavucontrol";
         };
-        "sway/mode" = { format = ''<span style="italic">{}</span>''; };
+        # "sway/mode" = { format = ''<span style="italic">{}</span>''; };
         temperature = {
           critical-threshold = 80;
-          format = "{icon} {temperatureC}°C";
-          format-icons = [ "" "" "" ];
+          thermal-zone = 7;
+          format = "{icon}    {temperatureC}°C";
+          format-icons = [ "" "" "" ];
         };
       }];
     };

@@ -60,6 +60,7 @@ in
     google-chrome
     qbittorrent
     cinnamon.nemo # file manager
+    firefox
     # etcher # usb flasher
     unpFull # extract any archive
     libreoffice
