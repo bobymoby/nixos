@@ -25,7 +25,7 @@ in
 
   programs.zsh.enable = true;
   services.flatpak.enable = true;
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     nvidia-offload
     #
     # xorg+i3
@@ -67,9 +67,8 @@ in
     discord
     spotify
     # ncspot # rust spotify client/cli
-    gnome.gnome-software
     # Xvlc
-    # vlc
+    vlc
 
     #
     # editors + utils
@@ -98,11 +97,11 @@ in
     # kitty
     htop
     killall
-    gnome.gnome-system-monitor
     networkmanager_dmenu
     eza # ls alternative
     jq # json parser
     nh
+    cli-visualizer
 
     distrobox
     # curlWithGnutls
@@ -116,7 +115,13 @@ in
     bottles # container manager
     heroic # epic games launcher
     r2modman # mod manager
-  ];
+  ]) ++
+  (with pkgs.gnome;
+  [
+    gnome-system-monitor
+    gnome-software
+    eog
+  ]);
 
   programs.nix-ld = {
     enable = true;
