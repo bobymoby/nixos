@@ -17,36 +17,37 @@
   networking.hostName = "BobiLaptopNixOS";
   networking.networkmanager.enable = true;
 
-  proprietary-nvidia-drivers = {
+  bobymoby.proprietary-nvidia-drivers = {
     enable = true;
     prime.enable = true;
   };
 
   boot = {
     supportedFilesystems = [ "ntfs" ];
-    loader = {
-      grub = {
-        enable = true;
-        efiSupport = true;
-        device = "nodev";
-        devices = [ "nodev" ];
+    loader.grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+      devices = [ "nodev" ];
 
-        default = "saved";
+      default = "saved";
 
-        extraEntries = ''
-          menuentry 'Windows' --class windows --class os {
-            savedefault
-            insmod part_gpt
-            insmod fat
-            search --no-floppy --fs-uuid --set=root 5C69-D966
-            chainloader /EFI/Microsoft/Boot/bootmgfw.efi
-          }
+      extraEntries = ''
+        menuentry 'Windows' --class windows --class os {
+          savedefault
+          insmod part_gpt
+          insmod fat
+          search --no-floppy --fs-uuid --set=root 5C69-D966
+          chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+        }
 
-          menuentry "Firmware Settings" {
-            fwsetup
-          }
-        '';
-      };
+        menuentry "Firmware Settings" {
+          fwsetup
+        }
+      '';
     };
   };
+
+  # bobymoby.windowManager.i3Gnome.enable = true;
+  bobymoby.windowManager.hyprlandGdm.enable = true;
 }

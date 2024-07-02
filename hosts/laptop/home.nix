@@ -9,8 +9,13 @@
   #   libinput-gestures.enable = true;
   # };
 
-  bobymoby.X11 = {
+  bobymoby.wayland = {
     enable = true;
-    libinput-gestures.enable = true;
+    hyprland.enable = true;
   };
+
+  # bobymoby.X11 = {
+  #   enable = true;
+  #   libinput-gestures.enable = true;
+  # };
 }

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
 {
   gtk = {
@@ -11,11 +11,6 @@
       name = "oomox-gruvbox-dark";
       package = pkgs.gruvbox-dark-icons-gtk;
     };
-    # cursorTheme = {
-    #   name = "Bibata-Modern-Ice";
-    #   package = pkgs.bibata-cursors;
-    #   size = 24;
-    # };
 
     gtk2.extraConfig = ''
       gtk-application-prefer-dark-theme = true
@@ -27,7 +22,6 @@
   dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
   home.pointerCursor = {
-    x11.enable = true;
     gtk.enable = true;
     name = "Bibata-Modern-Ice";
     package = pkgs.bibata-cursors;

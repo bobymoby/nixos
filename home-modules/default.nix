@@ -7,8 +7,6 @@
 
     ./gnome-gdm
 
-    ./dunst/dunst.nix
-
     ./common
   ];
 

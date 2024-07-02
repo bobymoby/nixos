@@ -8,6 +8,7 @@
     ./input.nix
     ./ssh/ssh.nix
     ./packages.nix
+    ./window-manager
 
     ./common
   ];

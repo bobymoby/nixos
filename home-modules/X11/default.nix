@@ -18,5 +18,7 @@
       polybar.enable = true;
       rofi.enable = true;
     };
+
+    home.pointerCursor.x11.enable = true;
   };
 }

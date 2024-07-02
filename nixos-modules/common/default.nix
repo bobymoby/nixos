@@ -5,7 +5,6 @@
     ./environment.nix
     ./i18n.nix
     ./users.nix
-    ./window-manager.nix
     ./nix-settings.nix
     ./systemd-services
     ./fonts.nix
