@@ -6,6 +6,7 @@
     ./sway/sway.nix
     ./waybar/waybar.nix
     ./hyprland/hyprland.nix
+    ./wofi/wofi.nix
   ];
 
   options.bobymoby.wayland = {
@@ -16,7 +17,6 @@
   config = lib.mkIf config.bobymoby.wayland.enable {
     bobymoby.wayland = {
       waybar.enable = true;
-      rofi.enable = true;
     };
   };
 }

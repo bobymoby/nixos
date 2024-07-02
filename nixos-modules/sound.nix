@@ -14,7 +14,10 @@
     # jack.enable = true; #for JACK applications
   };
 
-  hardware.pulseaudio.enable = false;
+  hardware.pulseaudio = {
+    enable = false;
+    package = pkgs.pulseaudioFull;
+  };
 
   #WIP test
   services.pipewire.wireplumber.configPackages = with pkgs; [

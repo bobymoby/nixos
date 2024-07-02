@@ -1,15 +1,23 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, ... }:
 
 {
   gtk = {
     enable = true;
+    # theme = {
+    #   name = "Gruvbox-Dark-B";
+    #   package = pkgs.gruvbox-gtk-theme;
+    # };
+    # iconTheme = {
+    #   name = "oomox-gruvbox-dark";
+    #   package = pkgs.gruvbox-dark-icons-gtk;
+    # };
     theme = {
-      name = "Gruvbox-Dark-B";
-      package = pkgs.gruvbox-gtk-theme;
+      name = "Dracula";
+      package = pkgs.dracula-theme;
     };
     iconTheme = {
-      name = "oomox-gruvbox-dark";
-      package = pkgs.gruvbox-dark-icons-gtk;
+      name = "Dracula";
+      package = pkgs.dracula-icon-theme;
     };
 
     gtk2.extraConfig = ''

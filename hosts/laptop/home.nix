@@ -11,7 +11,11 @@
 
   bobymoby.wayland = {
     enable = true;
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      useLaptopConfig = true;
+    };
+    rofi.enable = true;
   };
 
   # bobymoby.X11 = {
