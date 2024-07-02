@@ -7,18 +7,18 @@
     #   name = "Gruvbox-Dark-B";
     #   package = pkgs.gruvbox-gtk-theme;
     # };
-    # iconTheme = {
-    #   name = "oomox-gruvbox-dark";
-    #   package = pkgs.gruvbox-dark-icons-gtk;
-    # };
+    iconTheme = {
+      name = "oomox-gruvbox-dark";
+      package = pkgs.gruvbox-dark-icons-gtk;
+    };
     theme = {
       name = "Dracula";
       package = pkgs.dracula-theme;
     };
-    iconTheme = {
-      name = "Dracula";
-      package = pkgs.dracula-icon-theme;
-    };
+    # iconTheme = {
+    #   name = "Dracula";
+    #   package = pkgs.dracula-icon-theme;
+    # };
 
     gtk2.extraConfig = ''
       gtk-application-prefer-dark-theme = true

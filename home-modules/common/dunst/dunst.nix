@@ -3,7 +3,7 @@
 {
   home.file."./.config/dunst/dunstrc".text = ''
       # See dunst(5) for all configuration options
-
+      #https://github.com/dracula/dunst
     [global]
         ### Display ###
 
@@ -200,7 +200,7 @@
         max_icon_size = 64
 
         # Paths to default icons.
-        icon_path = ${pkgs.dracula-icon-theme}/share/icons/Dracula/16/devices
+        icon_path = ${pkgs.gruvbox-dark-icons-gtk}/share/icons/oomox-gruvbox-dark/16x16/status/:${pkgs.gruvbox-dark-icons-gtk}/share/icons/oomox-gruvbox-dark/16x16/devices/
 
         ### History ###
 
@@ -217,7 +217,7 @@
         dmenu = /usr/bin/dmenu -p dunst:
 
         # Browser for opening urls in context menu.
-        browser = ${pkgs.firefox}/bin/firefox -new-tab
+        browser = ${pkgs.google-chrome}/bin/google-chrome-stable --new-window
 
         # Always run rule-defined scripts, even if the notification is suppressed
         always_run_script = true
