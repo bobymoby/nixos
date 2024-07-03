@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, config, ... }:
 
 {
   environment.sessionVariables = rec {
@@ -13,5 +13,7 @@
     ];
 
     FLAKE = "/etc/nixos";
+
+    NIXOS_OZONE_WL = lib.mkIf config.bobymoby.windowManager.hyprland.enable "1";
   };
 }

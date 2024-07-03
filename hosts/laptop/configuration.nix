@@ -46,10 +46,10 @@
   # bobymoby.windowManager.i3Gnome.enable = true;
   bobymoby = {
     windowManager.hyprland.enable = true;
+    desktopManager.gdm.enable = true;
     proprietary-nvidia-drivers = {
       enable = true;
       prime.enable = true;
     };
-    desktopManager.gdm.enable = true;
   };
 }
