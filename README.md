@@ -1,8 +1,6 @@
 # First build
 
-`sudo nano /etc/nixos/configuration.nix`
-
-Add these lines:
+Add these lines to configuration.nix:
 
 ```nix
 nixpkgs.config.allowUnfree = true;
@@ -39,7 +37,7 @@ Run
     sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
     reboot
     ```
--   load easyeffects preset
+-   load easyeffects preset(should not be necessary after latest commits)
 
 # Current fs setup
 
@@ -50,15 +48,13 @@ Run
 
 # Windows setup
 
--   Do the steps from this answer and it's comments: https://askubuntu.com/a/1251469 https://forums.linuxmint.com/viewtopic.php?t=344835
-
-# Useful commands
-
--   `nh os switch -u`
--   `nh home switch`
--   `nh clean all`
+-   Do the steps from this answer and it's comments: https://askubuntu.com/a/1251469 https://forums.linuxmint.com/viewtopic.php?t=344835.
 
 # Known issues
 
--   command-not-found might not work even after running setup-scripts. It is currently not supported with flakes
+-   command-not-found might not work even after running setup-scripts. https://github.com/NixOS/nixpkgs/issues/171054
 -   X sometimes hangs after suspend and closes all windows. https://github.com/NVIDIA/open-gpu-kernel-modules/issues/472
+-   Chromium-based/Electron apps have problems with resizing. https://github.com/hyprwm/Hyprland/issues/6552
+-   Gruvbox theme nixpkgs package does not provide some of the themes. https://github.com/NixOS/nixpkgs/issues/323833
+-   Sound device idling causes a pop sound. Might be fixed in some of the latest commits. Requires further testing.
+-   Wifi sometimes does not work after using windows due to a windows issue.
