@@ -6,12 +6,9 @@
   config = lib.mkIf config.bobymoby.windowManager.hyprland.enable {
     programs.hyprland.enable = true;
 
-    xdg.portal = {
-      enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-gtk
-      ];
-    };
+    xdg.portal.extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
 
     environment.systemPackages = with pkgs; [
       hyprshot

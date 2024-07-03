@@ -117,5 +117,7 @@ in
     # libraries = with pkgs; [ ];
   };
 
+  xdg.portal.enable = true;
+
   services.xserver.excludePackages = with pkgs; [ xterm ];
 }
