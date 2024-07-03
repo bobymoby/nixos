@@ -52,6 +52,7 @@ in
     pavucontrol
     easyeffects
     libinput-gestures
+    pamixer
 
     #
     # misc
