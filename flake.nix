@@ -1,6 +1,4 @@
 {
-  description = "Your new nix config";
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
@@ -47,7 +45,7 @@
       };
 
       homeConfigurations = {
-        #nix run .#bobymoby@laptop.activationPackage
+        #nix run .#bobymoby@BobiLaptopNixOS.activationPackage
         "bobymoby@BobiLaptopNixOS" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
@@ -55,7 +53,7 @@
             ./home-modules
           ];
         };
-        #nix run .#bobymoby@laptop.activationPackage
+        #nix run .#bobymoby@BobiNixOS.activationPackage
         "bobymoby@BobiNixOS" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [

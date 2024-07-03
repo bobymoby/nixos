@@ -50,3 +50,24 @@
 #workspaces > * {
 	padding: 0 2px;
 }
+
+#battery.warning,
+#battery.critical {
+	border-radius: 16px;
+	background-color: #031417;
+}
+
+#battery.warning.discharging {
+	border: 2px solid yellow;
+	color: yellow;
+}
+
+#battery.critical.discharging {
+	border: 2px solid red;
+	color: red;
+}
+
+#battery.charging {
+	border: none;
+	color: #d4be98;
+}

@@ -34,7 +34,11 @@
 
 
   boot = {
-    kernelParams = [ "quiet" ];
+    kernelParams = [
+      "quiet"
+      "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+    ];
+
     kernelPackages = pkgs.linuxPackages_latest;
     initrd.systemd.enable = true;
     loader.efi.canTouchEfiVariables = true;

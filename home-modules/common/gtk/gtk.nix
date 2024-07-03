@@ -3,18 +3,21 @@
 {
   gtk = {
     enable = true;
-    theme = {
-      name = "Gruvbox-Dark-B";
-      package = pkgs.gruvbox-gtk-theme;
-    };
+    # theme = {
+    #   name = "Gruvbox-Dark-B";
+    #   package = pkgs.gruvbox-gtk-theme;
+    # };
     iconTheme = {
       name = "oomox-gruvbox-dark";
       package = pkgs.gruvbox-dark-icons-gtk;
     };
-    # cursorTheme = {
-    #   name = "Bibata-Modern-Ice";
-    #   package = pkgs.bibata-cursors;
-    #   size = 24;
+    theme = {
+      name = "Dracula";
+      package = pkgs.dracula-theme;
+    };
+    # iconTheme = {
+    #   name = "Dracula";
+    #   package = pkgs.dracula-icon-theme;
     # };
 
     gtk2.extraConfig = ''
@@ -27,7 +30,6 @@
   dconf.settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
 
   home.pointerCursor = {
-    x11.enable = true;
     gtk.enable = true;
     name = "Bibata-Modern-Ice";
     package = pkgs.bibata-cursors;

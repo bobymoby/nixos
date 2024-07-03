@@ -4,10 +4,11 @@
   # hardware settings
   imports = [
     ./gpu
-    ./sound.nix
-    ./input.nix
+    ./boot/boot.nix
     ./ssh/ssh.nix
-    ./packages.nix
+    ./window-manager
+    ./desktop-manager
+    ./shell
 
     ./common
   ];
