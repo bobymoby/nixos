@@ -2,12 +2,15 @@
 
 {
   imports = [
+    ./libinput-gestures/libinput-gestures.nix
+    
     ./wayland
     ./X11
 
     ./gnome-gdm
 
     ./common
+
   ];
 
   xdg.configFile."networkmanager-dmenu/config.ini".text = ''

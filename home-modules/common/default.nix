@@ -10,7 +10,6 @@
     ./gtk/gtk.nix
     ./neovim/neovim.nix
     ./shell
-    ./libinput-gestures/libinput-gestures.nix
 
     # ./vscode/vscode.nix
   ];

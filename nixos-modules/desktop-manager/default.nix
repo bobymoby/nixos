@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./hyprland.nix
-    ./i3.nix
+    ./gdm.nix
+    ./lightdm.nix
   ];
 }

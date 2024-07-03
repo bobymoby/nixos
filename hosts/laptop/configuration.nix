@@ -17,11 +17,6 @@
   networking.hostName = "BobiLaptopNixOS";
   networking.networkmanager.enable = true;
 
-  bobymoby.proprietary-nvidia-drivers = {
-    enable = true;
-    prime.enable = true;
-  };
-
   boot = {
     supportedFilesystems = [ "ntfs" ];
     loader.grub = {
@@ -49,5 +44,12 @@
   };
 
   # bobymoby.windowManager.i3Gnome.enable = true;
-  bobymoby.windowManager.hyprlandGdm.enable = true;
+  bobymoby = {
+    windowManager.hyprland.enable = true;
+    proprietary-nvidia-drivers = {
+      enable = true;
+      prime.enable = true;
+    };
+    desktopManager.gdm.enable = true;
+  };
 }

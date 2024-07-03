@@ -1,9 +1,9 @@
 { inputs, pkgs, lib, config, ... }:
 
 {
-  options.bobymoby.windowManager.hyprlandGdm.enable = lib.mkEnableOption "Enable Hyprland with GDM";
+  options.bobymoby.windowManager.hyprland.enable = lib.mkEnableOption "Enable Hyprland with GDM";
 
-  config = lib.mkIf config.bobymoby.windowManager.hyprlandGdm.enable {
+  config = lib.mkIf config.bobymoby.windowManager.hyprland.enable {
     services.xserver = {
       enable = true;
       displayManager.gdm.enable = true;
