@@ -37,5 +37,9 @@
         driSupport32Bit = true;
       };
     };
+
+    boot.kernelParams = [
+      "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+    ];
   };
 }

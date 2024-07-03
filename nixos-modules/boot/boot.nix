@@ -36,7 +36,6 @@
   boot = {
     kernelParams = [
       "quiet"
-      "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
     ];
 
     kernelPackages = pkgs.linuxPackages_latest;
