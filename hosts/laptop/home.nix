@@ -9,13 +9,17 @@
   #   libinput-gestures.enable = true;
   # };
 
-  bobymoby.wayland = {
-    enable = true;
-    hyprland = {
+  bobymoby = {
+    wayland = {
       enable = true;
-      useLaptopConfig = true;
+      hyprland = {
+        enable = true;
+        useLaptopConfig = true;
+      };
+      rofi.enable = true;
     };
-    rofi.enable = true;
+
+    libinput-gestures.enable = true;
   };
 
   # bobymoby.X11 = {

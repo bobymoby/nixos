@@ -103,6 +103,7 @@ in
     jq # json parser
     nh
     cli-visualizer
+    ydotool
 
     distrobox
     # curlWithGnutls
@@ -117,8 +118,7 @@ in
     heroic # epic games launcher
     r2modman # mod manager
   ]) ++
-  (with pkgs.gnome;
-  [
+  (with pkgs.gnome; [
     gnome-system-monitor
     gnome-software
     eog

@@ -22,7 +22,7 @@
     };
 
     # for rofi-emoji to insert emojis directly
-    home.packages = [ pkgs.xdotool ];
+    # home.packages = [ pkgs.xdotool ];
   };
 
 }
