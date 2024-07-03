@@ -7,6 +7,8 @@
 
     ./gaming/gaming.nix
 
+    ./jetbrains/jetbrains.nix
+
     ./wayland
     ./X11
 

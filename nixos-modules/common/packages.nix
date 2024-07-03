@@ -77,8 +77,6 @@ in
     # vscodeWithExtensions
     vscode
     vscode.fhs
-    jetbrains.rider
-    jetbrains.idea-ultimate
     postman
     dbeaver-bin
     nixpkgs-fmt # nix formatter
@@ -111,7 +109,7 @@ in
   (with pkgs.gnome; [
     gnome-system-monitor
     gnome-software
-    eog
+    eog # image viewer
   ]);
 
   programs.nix-ld = {

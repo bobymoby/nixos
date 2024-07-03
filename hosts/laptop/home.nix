@@ -15,13 +15,26 @@
       hyprland = {
         enable = true;
         useLaptopConfig = true;
+
+        usePcConfig = false;
       };
       rofi.enable = true;
+
+      withSway = false;
+      wofi.enable = false;
+    };
+
+    X11 = {
+      enable = false;
     };
 
     libinput-gestures.enable = true;
-    shell.zsh.enable = true;
-    # gaming.enable = true;
+    shell = {
+      zsh.enable = true;
+    };
+
+    gaming.enable = false;
+    jetbrains.enable = false;
   };
 
   # bobymoby.X11 = {

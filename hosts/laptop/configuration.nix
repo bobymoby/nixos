@@ -45,13 +45,23 @@
 
   # bobymoby.windowManager.i3Gnome.enable = true;
   bobymoby = {
-    windowManager.hyprland.enable = true;
-    desktopManager.gdm.enable = true;
+    windowManager = {
+      hyprland.enable = true;
+
+      i3.enable = false;
+    };
+    desktopManager = {
+      gdm.enable = true;
+
+      lightdm.enable = false;
+    };
     proprietary-nvidia-drivers = {
       enable = true;
       prime.enable = true;
     };
 
-    shell.zsh.enable = true;
+    shell = {
+      zsh.enable = true;
+    };
   };
 }
