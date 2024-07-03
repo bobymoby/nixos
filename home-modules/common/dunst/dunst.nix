@@ -9,18 +9,6 @@
 
         # Which monitor should the notifications be displayed on.
         monitor = 0
-
-        # Display notification on focused monitor.  Possible modes are:
-        #   mouse: follow mouse pointer
-        #   keyboard: follow window with keyboard focus
-        #   none: don't follow anything
-        #
-        # "keyboard" needs a window manager that exports the
-        # _NET_ACTIVE_WINDOW property.
-        # This should be the case for almost all modern window managers.
-        #
-        # If this option is set to mouse or keyboard, the monitor option
-        # will be ignored.
         follow = mouse
 
         ### Geometry ###
@@ -121,28 +109,6 @@
         # font height, it will get raised to the font height.
         line_height = 0
 
-        # Possible values are:
-        # full: Allow a small subset of html markup in notifications:
-        #        <b>bold</b>
-        #        <i>italic</i>
-        #        <s>strikethrough</s>
-        #        <u>underline</u>
-        #
-        #        For a complete reference see
-        #        <https://developer.gnome.org/pango/stable/pango-Markup.html>.
-        #
-        # strip: This setting is provided for compatibility with some broken
-        #        clients that send markup even though it's not enabled on the
-        #        server. Dunst will try to strip the markup but the parsing is
-        #        simplistic so using this option outside of matching rules for
-        #        specific applications *IS GREATLY DISCOURAGED*.
-        #
-        # no:    Disable markup parsing, incoming notifications will be treated as
-        #        plain text. Dunst will not advertise that it has the body-markup
-        #        capability if this is set as a global setting.
-        #
-        # It's important to note that markup inside the format option will be parsed
-        # regardless of what this is set to.
         markup = full
 
         # The format of the message.  Possible variables are:
@@ -263,21 +229,6 @@
         # layout changes.
         force_xinerama = false
 
-        ### mouse
-
-        # Defines list of actions for each mouse event
-        # Possible values are:
-        # * none: Don't do anything.
-        # * do_action: Invoke the action determined by the action_name rule. If there is no
-        #              such action, open the context menu.
-        # * open_url: If the notification has exactly one url, open it. If there are multiple
-        #             ones, open the context menu.
-        # * close_current: Close current notification.
-        # * close_all: Close all notifications.
-        # * context: Open context menu for the notification.
-        # * context_all: Open context menu for all notifications.
-        # These values can be strung together for each mouse event, and
-        # will be executed in sequence.
         mouse_left_click = close_current
         mouse_middle_click = do_action, close_current
         mouse_right_click = close_all
@@ -316,127 +267,5 @@
         timeout = 0
         # Icon for notifications with critical urgency, uncomment to enable
         #new_icon = /path/to/icon
-
-    # Every section that isn't one of the above is interpreted as a rules to
-    # override settings for certain messages.
-    #
-    # Messages can be matched by
-    #    appname (discouraged, see desktop_entry)
-    #    body
-    #    category
-    #    desktop_entry
-    #    icon
-    #    match_transient
-    #    msg_urgency
-    #    stack_tag
-    #    summary
-    #
-    # and you can override the
-    #    background
-    #    foreground
-    #    format
-    #    frame_color
-    #    fullscreen
-    #    new_icon
-    #    set_stack_tag
-    #    set_transient
-    #    set_category
-    #    timeout
-    #    urgency
-    #    skip_display
-    #    history_ignore
-    #    action_name
-    #    word_wrap
-    #    ellipsize
-    #    alignment
-    #
-    # Shell-like globbing will get expanded.
-    #
-    # Instead of the appname filter, it's recommended to use the desktop_entry filter.
-    # GLib based applications export their desktop-entry name. In comparison to the appname,
-    # the desktop-entry won't get localized.
-    #
-    # SCRIPTING
-    # You can specify a script that gets run when the rule matches by
-    # setting the "script" option.
-    # The script will be called as follows:
-    #   script appname summary body icon urgency
-    # where urgency can be "LOW", "NORMAL" or "CRITICAL".
-    #
-    # NOTE: It might be helpful to run dunst -print in a terminal in order
-    # to find fitting options for rules.
-
-    # Disable the transient hint so that idle_threshold cannot be bypassed from the
-    # client
-    #[transient_disable]
-    #    match_transient = yes
-    #    set_transient = no
-    #
-    # Make the handling of transient notifications more strict by making them not
-    # be placed in history.
-    #[transient_history_ignore]
-    #    match_transient = yes
-    #    history_ignore = yes
-
-    # fullscreen values
-    # show: show the notifications, regardless if there is a fullscreen window opened
-    # delay: displays the new notification, if there is no fullscreen window active
-    #        If the notification is already drawn, it won't get undrawn.
-    # pushback: same as delay, but when switching into fullscreen, the notification will get
-    #           withdrawn from screen again and will get delayed like a new notification
-    #[fullscreen_delay_everything]
-    #    fullscreen = delay
-    #[fullscreen_show_critical]
-    #    msg_urgency = critical
-    #    fullscreen = show
-
-    #[espeak]
-    #    summary = "*"
-    #    script = dunst_espeak.sh
-
-    #[script-test]
-    #    summary = "*script*"
-    #    script = dunst_test.sh
-
-    #[ignore]
-    #    # This notification will not be displayed
-    #    summary = "foobar"
-    #    skip_display = true
-
-    #[history-ignore]
-    #    # This notification will not be saved in history
-    #    summary = "foobar"
-    #    history_ignore = yes
-
-    #[skip-display]
-    #    # This notification will not be displayed, but will be included in the history
-    #    summary = "foobar"
-    #    skip_display = yes
-
-    #[signed_on]
-    #    appname = Pidgin
-    #    summary = "*signed on*"
-    #    urgency = low
-    #
-    #[signed_off]
-    #    appname = Pidgin
-    #    summary = *signed off*
-    #    urgency = low
-    #
-    #[says]
-    #    appname = Pidgin
-    #    summary = *says*
-    #    urgency = critical
-    #
-    #[twitter]
-    #    appname = Pidgin
-    #    summary = *twitter.com*
-    #    urgency = normal
-    #
-    #[stack-volumes]
-    #    appname = "some_volume_notifiers"
-    #    set_stack_tag = "volume"
-    #
-    # vim: ft=cfg
   '';
 }

@@ -8,6 +8,7 @@
     ./ssh/ssh.nix
     ./window-manager
     ./desktop-manager
+    ./shell
 
     ./common
   ];

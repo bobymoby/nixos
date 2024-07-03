@@ -20,6 +20,8 @@
     };
 
     libinput-gestures.enable = true;
+    shell.zsh.enable = true;
+    # gaming.enable = true;
   };
 
   # bobymoby.X11 = {

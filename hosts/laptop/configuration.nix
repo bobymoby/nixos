@@ -51,5 +51,7 @@
       enable = true;
       prime.enable = true;
     };
+
+    shell.zsh.enable = true;
   };
 }

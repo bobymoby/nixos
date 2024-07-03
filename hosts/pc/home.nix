@@ -1,11 +1,15 @@
 { ... }:
 
 {
-  bobymoby.wayland = {
-    enable = true;
-    hyprland = {
+  bobymoby = {
+    wayland = {
       enable = true;
-      useLaptopConfig = true;
+      hyprland = {
+        enable = true;
+        useLaptopConfig = true;
+      };
     };
+    shell.zsh.enable = true;
+    # gaming.enable = true;
   };
 }

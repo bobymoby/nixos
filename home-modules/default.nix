@@ -3,7 +3,10 @@
 {
   imports = [
     ./libinput-gestures/libinput-gestures.nix
-    
+    ./shell
+
+    ./gaming/gaming.nix
+
     ./wayland
     ./X11
 

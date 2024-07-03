@@ -107,16 +107,6 @@ in
 
     distrobox
     # curlWithGnutls
-
-    #
-    # gaming and windows emulation
-    #
-    wineWowPackages.full # wine
-    lutris # wine prefix manager
-    protonup-qt # proton installer
-    bottles # container manager
-    heroic # epic games launcher
-    r2modman # mod manager
   ]) ++
   (with pkgs.gnome; [
     gnome-system-monitor

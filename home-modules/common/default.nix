@@ -8,8 +8,7 @@
     ./easyeffects/easyeffects.nix
     ./fastfetch/fastfetch.nix
     ./gtk/gtk.nix
-    ./neovim/neovim.nix
-    ./shell
+    # ./neovim/neovim.nix
 
     # ./vscode/vscode.nix
   ];
