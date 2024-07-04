@@ -51,7 +51,7 @@ in
     # xorg.xinit
 
     #
-    # io(controlled with sway/i3 bindings)
+    # io
     #
     brightnessctl
     pulseaudioFull
@@ -63,7 +63,7 @@ in
     #
     # misc
     #
-    dunst # notifications
+    dunst
     google-chrome
     firefox
     # etcher # usb flasher
@@ -77,7 +77,7 @@ in
     # vscodeWithExtensions
     vscode
     vscode.fhs
-    nixpkgs-fmt # nix formatter
+    nixpkgs-fmt
     nil # nix linter
     # zed-editor
     # nixd

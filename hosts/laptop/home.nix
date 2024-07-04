@@ -22,6 +22,11 @@
 
       withSway = false;
       wofi.enable = false;
+
+      waybar = {
+        showBattery = true;
+        thermal-zone = 7;
+      };
     };
 
     X11 = {

@@ -1,7 +1,15 @@
 { lib, config, ... }:
 
 {
-  options.bobymoby.wayland.waybar.enable = lib.mkEnableOption "Enable waybar";
+  options.bobymoby.wayland.waybar = {
+    enable = lib.mkEnableOption "Enable waybar";
+    showBattery = lib.mkEnableOption "Show battery";
+    thermal-zone = lib.mkOption {
+      type = lib.types.int;
+      default = 7;
+      description = "Thermal zone to monitor";
+    };
+  };
 
   config = lib.mkIf config.bobymoby.wayland.waybar.enable {
     programs.waybar = {
@@ -25,7 +33,9 @@
           "pulseaudio"
           "network"
           "temperature"
-          "battery"
+        ]
+        ++ (lib.optionals config.bobymoby.wayland.waybar.showBattery [ "battery" ])
+        ++ [
           "clock"
         ];
         battery = {
@@ -73,12 +83,15 @@
           format-source = "";
           format-source-muted = "";
           on-click = "pavucontrol";
-          ignored-sources = [ "Easy Effects Sink" ];
+          ignored-sources = [
+            "Easy Effects Sink"
+            "easyeffects_sink"
+          ];
         };
         # "sway/mode" = { format = ''<span style="italic">{}</span>''; };
         temperature = {
           critical-threshold = 80;
-          thermal-zone = 7;
+          thermal-zone = config.bobymoby.wayland.waybar.thermal-zone;
           format = "{icon}    {temperatureC}°C";
           format-icons = [ "" "" "" ];
         };
