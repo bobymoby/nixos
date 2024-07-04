@@ -38,6 +38,25 @@
         ++ [
           "clock"
         ];
+
+        "hyprland/workspaces" = {
+          # format = "{windows}";
+          # format-icons = {
+          #   "1" = " ";
+          #   "9" = "";
+          #   "10" = "󰨞";
+          # };
+          # format = "{icon}{windows}";
+          # format-window-separator = " ";
+          # window-rewrite-default = "";
+          # window-rewrite = {
+          #   "title<.*youtube.*>" = ""; # Windows whose titles contain "youtube"
+          #   "class<firefox>" = ""; # Windows whose classes are "firefox"
+          #   "class<firefox> title<.*github.*>" = ""; # Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+          #   "foot" = ""; # Windows that contain "foot" in either class or title. For optimization reasons; it will only match against a title if at least one other window explicitly matches against a title.
+          #   "code" = "󰨞";
+          # };
+        };
         battery = {
           format = "{capacity}% {icon}";
           format-alt = "{time} {icon}";
@@ -83,7 +102,7 @@
           format-source = "";
           format-source-muted = "";
           on-click = "pavucontrol";
-          ignored-sources = [
+          ignored-sinks = [
             "Easy Effects Sink"
             "easyeffects_sink"
           ];

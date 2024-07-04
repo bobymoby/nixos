@@ -6,7 +6,6 @@
     ./i18n.nix
     ./users.nix
     ./nix-settings.nix
-    ./systemd-services
     ./fonts.nix
     ./sound.nix
     ./packages.nix

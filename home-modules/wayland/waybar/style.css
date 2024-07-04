@@ -2,6 +2,7 @@
 	font-size: 14px;
 	min-height: 0;
 	color: #b7b6a1;
+	/* font-family: "Font Awesome 6 Free Solid"; */
 }
 
 #waybar {
@@ -71,3 +72,10 @@
 	border: none;
 	color: #d4be98;
 }
+
+/* .hypr-windows-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+} */

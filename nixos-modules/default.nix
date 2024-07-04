@@ -9,6 +9,7 @@
     ./window-manager
     ./desktop-manager
     ./shell
+    ./systemd-services
 
     ./common
   ];
