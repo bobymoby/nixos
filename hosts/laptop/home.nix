@@ -31,6 +31,7 @@
     libinput-gestures.enable = true;
     shell = {
       zsh.enable = true;
+      fish.enable = false;
     };
 
     gaming.enable = false;

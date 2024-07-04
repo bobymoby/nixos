@@ -62,6 +62,7 @@
 
     shell = {
       zsh.enable = true;
+      fish.enable = false;
     };
   };
 }
