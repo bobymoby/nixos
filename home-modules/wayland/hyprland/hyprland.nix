@@ -19,11 +19,14 @@ in
       "./.config/hypr/startup.conf".source = ./common/startup.conf;
       "./.config/hypr/input.conf".source = ./common/input.conf;
       "./.config/hypr/settings.conf".source = ./common/settings.conf;
-      "./.config/hypr/disable-animations.sh".source = ./common/disable-animations.sh;
       "./.config/hypr/common.conf".source = ./common/common.conf;
       "./.config/hypr/hyprland.conf".source = configPath;
       "./.config/hypr/hypridle.conf".source = ./extras/hypridle.conf;
       "./.config/hypr/hyprlock.conf".source = ./extras/hyprlock.conf;
+      "./.config/hypr/scripts" = {
+        source = ./scripts;
+        recursive = true;
+      };
     };
 
     wayland.windowManager.hyprland = {

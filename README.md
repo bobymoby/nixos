@@ -23,6 +23,7 @@ Run:
     sudo mv /etc/nixos ~/nixos
     sudo git clone https://github.com/bobymoby/nixos /etc/nixos
     sudo chown -R bobymoby /etc/nixos
+    find /etc/nixos -type f -name "*.sh" -exec chmod +x {} \;
     ```
 
 Fix `hardware-configuration.nix` - get the ids from `~/nixos/hardware-configuration.nix`

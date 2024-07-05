@@ -8,7 +8,7 @@
     cinnamon.nemo # file manager
     libreoffice
     discord
-    webcord
+    webcord-vencord
     spotify
     vlc
     postman

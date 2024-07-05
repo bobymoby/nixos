@@ -90,6 +90,7 @@ in
     neofetch
     fastfetch
     lshw # list gpus
+    libnotify
     # kitty
     htop
     killall
