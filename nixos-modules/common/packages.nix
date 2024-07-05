@@ -99,6 +99,7 @@ in
     jq # json parser
     nh
     ydotool
+    nwg-bar
 
     distrobox
     # curlWithGnutls

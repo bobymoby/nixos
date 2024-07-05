@@ -11,11 +11,9 @@
       terminal = "${pkgs.alacritty}/bin/alacritty";
     };
 
-    home.file = {
-      "./.config/rofi/onedark.rasi".source = ./onedark.rasi;
-      "./.config/rofi/launcher.rasi".source = ./launcher.rasi;
-      "./.config/rofi/fonts.rasi".source = ./fonts.rasi;
-      "./.config/rofi/colors.rasi".source = ./colors.rasi;
+    home.file."./.config/rofi" = {
+      source = ./config;
+      recursive = true;
     };
   };
 }
