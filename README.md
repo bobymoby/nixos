@@ -57,5 +57,4 @@ Run
 -   X sometimes hangs after suspend and closes all windows. https://github.com/NVIDIA/open-gpu-kernel-modules/issues/472
 -   Chromium-based/Electron apps have problems with resizing. https://github.com/hyprwm/Hyprland/issues/6552 https://github.com/hyprwm/Hyprland/issues/1462
 -   Gruvbox theme nixpkgs package does not provide some of the themes. https://github.com/NixOS/nixpkgs/issues/323833
--   Sound device idling causes a pop sound. Might be fixed in some of the latest commits. Requires further testing.
 -   Wifi sometimes does not work after using windows due to a windows issue.
