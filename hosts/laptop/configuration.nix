@@ -41,6 +41,10 @@
         }
       '';
     };
+
+    # extraModprobeConfig = ''
+    #   options snd_hda_intel power_save=0
+    # '';
   };
 
   # bobymoby.windowManager.i3Gnome.enable = true;

@@ -18,35 +18,6 @@
     enable = false;
     package = pkgs.pulseaudioFull;
   };
-
-  #WIP test
-  services.pipewire.wireplumber.configPackages = with pkgs; [
-    # (writeTextDir "share/wireplumber/main.lua.d/51-disable-suspension.lua" ''
-    #   table.insert (alsa_monitor.rules, {
-    #     matches = {
-    #       {
-    #         { "node.name", "matches", "alsa_input."},
-    #       },
-    #       {
-    #         { "node.name", "matches", "alsa_output."},
-    #       },
-    #     },
-    #     apply_properties = {
-    #       ["session.suspend-timeout-seconds"] = 0,
-    #     },
-    #   })
-    # '')
-    (writeTextDir "share/wireplumber/main.lua.d/51-disable-suspension.lua" ''
-      monitor.alsa.rules = [
-        {
-          matches = [
-            { node.name = "~alsa_input.pci." }
-            { node.name = "~alsa_output.pci." }
-          ]
-          actions = { update-props = { session.suspend-timeout-seconds = 0 } } } 
-      ]
-    '')
-  ];
 }
 
 
