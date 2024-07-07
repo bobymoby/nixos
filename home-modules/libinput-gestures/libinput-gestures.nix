@@ -8,6 +8,6 @@ in
 {
   options.bobymoby.libinput-gestures.enable = lib.mkEnableOption "Enable libinput-gestures for X11";
   config = lib.mkIf config.bobymoby.libinput-gestures.enable {
-    home.file."./.config/libinput-gestures.conf".source = configPath;
+    home.file.".config/libinput-gestures.conf".source = configPath;
   };
 }

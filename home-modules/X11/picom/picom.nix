@@ -8,7 +8,7 @@
   options.bobymoby.X11.picom.enable = lib.mkEnableOption "Enable picom compositor";
 
   config = lib.mkIf config.bobymoby.X11.picom.enable {
-    home.file."./.config/picom/picom.conf".source = ./picom.conf;
+    home.file.".config/picom/picom.conf".source = ./picom.conf;
   };
 }
 

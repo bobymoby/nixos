@@ -4,7 +4,7 @@
   options.bobymoby.shell.zsh.enable = lib.mkEnableOption "Enable zsh";
 
   config = lib.mkIf config.bobymoby.shell.zsh.enable {
-    home.file."./.config/custom-ohmyzsh" = {
+    home.file.".config/custom-ohmyzsh" = {
       source = ./zsh;
       recursive = true;
     };

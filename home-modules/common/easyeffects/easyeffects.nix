@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  home.file."./.config/easyeffects/input" = {
+  home.file.".config/easyeffects/input" = {
     source = ./presets;
     recursive = true;
   };

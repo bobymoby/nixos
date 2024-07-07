@@ -14,31 +14,18 @@ in
 
   config = lib.mkIf config.bobymoby.wayland.hyprland.enable {
     home.file = {
-      # "./.config/hypr/mocha.conf".source = ./common/mocha.conf;
-      # "./.config/hypr/binds.conf".source = ./common/binds.conf;
-      # "./.config/hypr/startup.conf".source = ./common/startup.conf;
-      # "./.config/hypr/input.conf".source = ./common/input.conf;
-      # "./.config/hypr/settings.conf".source = ./common/settings.conf;
-      # "./.config/hypr/common.conf".source = ./common/common.conf;
-      # "./.config/hypr/hyprland.conf".source = configPath;
-      # "./.config/hypr/hypridle.conf".source = ./extras/hypridle.conf;
-      # "./.config/hypr/hyprlock.conf".source = ./extras/hyprlock.conf;
-      # "./.config/hypr/scripts" = {
-      #   source = ./scripts;
-      #   recursive = true;
-      # };
-      "./.config/hypr/common" = {
+      ".config/hypr/common" = {
         source = ./common;
         recursive = true;
       };
-      "./.config/hypr/scripts" = {
+      ".config/hypr/scripts" = {
         source = ./scripts;
         recursive = true;
       };
 
-      "./.config/hypr/hyprland.conf".source = configPath;
-      "./.config/hypr/hypridle.conf".source = ./extras/hypridle.conf;
-      "./.config/hypr/hyprlock.conf".source = ./extras/hyprlock.conf;
+      "./.config/hypr/hyprland.conf".source = configPath; # ./ is required
+      ".config/hypr/hypridle.conf".source = ./extras/hypridle.conf;
+      ".config/hypr/hyprlock.conf".source = ./extras/hyprlock.conf;
     };
 
     wayland.windowManager.hyprland = {

@@ -4,7 +4,7 @@
   options.bobymoby.X11.polybar.enable = lib.mkEnableOption "Enable Polybar";
 
   config = lib.mkIf config.bobymoby.X11.polybar.enable {
-    home.file."./.config/polybar" = {
+    home.file.".config/polybar" = {
       source = ./config;
       recursive = true;
     };

@@ -11,7 +11,7 @@
       terminal = "${pkgs.alacritty}/bin/alacritty";
     };
 
-    home.file."./.config/rofi" = {
+    home.file.".config/rofi" = {
       source = ./config;
       recursive = true;
     };

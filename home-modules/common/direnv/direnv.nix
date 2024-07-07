@@ -9,5 +9,5 @@
     # git.ignores = [ ".direnv" ];
   };
 
-  home.file."./.config/direnv/direnvrc".source = ./direnvrc;
+  home.file.".config/direnv/direnvrc".source = ./direnvrc;
 }
