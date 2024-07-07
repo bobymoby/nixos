@@ -8,4 +8,6 @@
     nix-direnv.enable = true;
     # git.ignores = [ ".direnv" ];
   };
+
+  home.file."./.config/direnv/direnvrc".source = ./direnvrc;
 }

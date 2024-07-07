@@ -19,6 +19,3 @@
     package = pkgs.pulseaudioFull;
   };
 }
-
-
-

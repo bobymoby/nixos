@@ -100,6 +100,7 @@ in
     nh
     ydotool
     nwg-bar
+    tmux
 
     distrobox
     # curlWithGnutls
