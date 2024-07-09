@@ -48,8 +48,8 @@
     };
     proprietary-nvidia-drivers = {
       enable = true;
-      forceFullCompositionPipeline = true;
-      useBeta = true;
+      forceFullCompositionPipeline = false;
+      useBeta = false;
 
       prime.enable = false;
     };
@@ -59,20 +59,21 @@
       fish.enable = false;
     };
   };
-  #boot.initrd.kernelModules = [ "nvidia" ];
-  #boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
+  # boot.initrd.availableKernelModules = [ "nvidia" ];
+  # boot.initrd.kernelModules = [ "nvidia" ];
+  # boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
 
   boot.kernelParams = [
     "nvidia-drm.fbdev=1"
-    "nvidia-drm.modeset=1"
+    # "nvidia-drm.modeset=1"
   ];
 
-  boot.kernelModules = [
-    "nvidia"
-    "nvidia_modeset"
-    "nvidia_drm"
-    "nvidia_uvm"
-  ];
+  #  boot.kernelModules = [
+  #    "nvidia"
+  # "nvidia_modeset"
+  #   "nvidia_drm"
+  #  "nvidia_uvm"
+  #];
 
   boot.blacklistedKernelModules = [
     "nouveau"
@@ -81,9 +82,9 @@
     "tpm_crb"
   ];
 
-  security.tpm2 = {
-    enable = true;
-    pkcs11.enable = true;
-    tctiEnvironment.enable = true;
-  };
+  # security.tpm2 = {
+  #   enable = true;
+  #   pkcs11.enable = true;
+  #   tctiEnvironment.enable = true;
+  # };
 }
