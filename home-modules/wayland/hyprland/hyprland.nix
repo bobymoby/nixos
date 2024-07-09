@@ -22,10 +22,11 @@ in
         source = ./scripts;
         recursive = true;
       };
-	".config/hypr/nvidia.conf".source = ./specific/nvidia.conf;
+      ".config/hypr/nvidia.conf".source = ./specific/nvidia.conf;
       "./.config/hypr/hyprland.conf".source = configPath; # ./ is required
       ".config/hypr/hypridle.conf".source = ./extras/hypridle.conf;
       ".config/hypr/hyprlock.conf".source = ./extras/hyprlock.conf;
+      ".config/hypr/hyprpaper.conf".source = ./extras/hyprpaper.conf;
     };
 
     wayland.windowManager.hyprland = {

@@ -54,7 +54,7 @@
 
       i3.enable = false;
     };
-    desktopManager = {
+    loginManager = {
       gdm.enable = true;
 
       lightdm.enable = false;

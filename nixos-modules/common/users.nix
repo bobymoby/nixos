@@ -16,6 +16,7 @@
       "openrazer"
       "plugdev"
       "dialout"
+      "tss"
     ];
   };
 }

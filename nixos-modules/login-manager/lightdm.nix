@@ -2,9 +2,9 @@
 
 {
   #WIP move config to home manager
-  options.bobymoby.desktopManager.lightdm.enable = lib.mkEnableOption "Enable LightDM";
+  options.bobymoby.loginManager.lightdm.enable = lib.mkEnableOption "Enable LightDM";
 
-  config = lib.mkIf config.bobymoby.desktopManager.lightdm.enable {
+  config = lib.mkIf config.bobymoby.loginManager.lightdm.enable {
     services.xserver = {
       enable = true;
       displayManager = {

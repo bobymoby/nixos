@@ -15,6 +15,7 @@
       swww
       hypridle
       hyprlock
+      hyprpaper
     ];
   };
 }
