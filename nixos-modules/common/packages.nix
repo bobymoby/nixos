@@ -34,7 +34,7 @@ in
 
   services.xserver.excludePackages = with pkgs; [ xterm ];
   environment.systemPackages = (with pkgs; [
-    nvidia-offload
+    # nvidia-offload
     #
     # xorg+i3
     #
