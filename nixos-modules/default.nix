@@ -7,7 +7,7 @@
     ./boot/boot.nix
     ./ssh/ssh.nix
     ./window-manager
-    ./desktop-manager
+    ./login-manager
     ./shell
     ./systemd-services
 
