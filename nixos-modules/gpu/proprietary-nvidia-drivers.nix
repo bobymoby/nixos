@@ -20,7 +20,7 @@
         modesetting.enable = true;
         powerManagement = {
           enable = true;
-          finegrained = lib.mkIf config.bobymoby.proprietary-nvidia-drivers.prime.enable true;
+          finegrained = config.bobymoby.proprietary-nvidia-drivers.prime.enable;
         };
         open = false; #open source kernel module
         nvidiaSettings = true; #nvidia-settings menu
