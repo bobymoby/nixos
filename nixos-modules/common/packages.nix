@@ -93,6 +93,7 @@ in
     libnotify
     # kitty
     htop
+    btop
     killall
     networkmanager_dmenu
     eza # ls alternative
