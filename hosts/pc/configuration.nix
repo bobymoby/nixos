@@ -33,32 +33,16 @@
   networking.networkmanager.enable = true;
 
   bobymoby = {
-    windowManager = {
-      hyprland.enable = true;
-
-      i3.enable = false;
-    };
-    loginManager = {
-      sddm = {
-        enable = false;
-        withWayland = true;
-      };
-      gdm.enable = false;
-      lightdm.enable = false;
-    };
+    windowManager.hyprland.enable = true;
     proprietary-nvidia-drivers = {
       enable = true;
       forceFullCompositionPipeline = false;
       useBeta = false;
-
-      prime.enable = false;
     };
 
-    shell = {
-      zsh.enable = true;
-      fish.enable = false;
-    };
+    shell.zsh.enable = true;
   };
+
   # boot.initrd.availableKernelModules = [ "nvidia" ];
   # boot.initrd.kernelModules = [ "nvidia" ];
   # boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
@@ -69,12 +53,12 @@
     # "nvidia.NVreg_RestrictProfilingToAdminUsers=0"
   ];
 
-  #  boot.kernelModules = [
-  #    "nvidia"
-  # "nvidia_modeset"
+  # boot.kernelModules = [
+  #   "nvidia"
+  #   "nvidia_modeset"
   #   "nvidia_drm"
-  #  "nvidia_uvm"
-  #];
+  #   "nvidia_uvm"
+  # ];
 
   boot.blacklistedKernelModules = [
     "nouveau"

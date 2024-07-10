@@ -15,31 +15,14 @@
       hyprland = {
         enable = true;
         useLaptopConfig = true;
-
-        usePcConfig = false;
       };
-      rofi.enable = true;
 
-      withSway = false;
-      wofi.enable = false;
-
-      waybar = {
-        showBattery = true;
-        thermal-zone = 7;
-      };
-    };
-
-    X11 = {
-      enable = false;
+      waybar.useLaptopConfig = true;
     };
 
     libinput-gestures.enable = true;
-    shell = {
-      zsh.enable = true;
-      fish.enable = false;
-    };
+    shell.zsh.enable = true;
 
-    gaming.enable = false;
     jetbrains.enable = false;
   };
 

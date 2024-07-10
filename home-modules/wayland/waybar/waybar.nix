@@ -3,12 +3,8 @@
 {
   options.bobymoby.wayland.waybar = {
     enable = lib.mkEnableOption "Enable waybar";
-    showBattery = lib.mkEnableOption "Show battery";
-    thermal-zone = lib.mkOption {
-      type = lib.types.int;
-      default = 7;
-      description = "Thermal zone to monitor";
-    };
+    usePcConfig = lib.mkEnableOption "Use pc configuration";
+    useLaptopConfig = lib.mkEnableOption "Use laptop configuration";
   };
 
   config = lib.mkIf config.bobymoby.wayland.waybar.enable {
@@ -34,7 +30,7 @@
           "network"
           "temperature"
         ]
-        ++ (lib.optionals config.bobymoby.wayland.waybar.showBattery [ "battery" ])
+        ++ (lib.optionals config.bobymoby.wayland.waybar.useLaptopConfig [ "battery" ])
         ++ [
           "clock"
         ];
@@ -79,9 +75,9 @@
         # memory = { format = " {}%"; };
         network = {
           interval = 1;
-          format-alt = "{ifname}: {ipaddr}/{cidr}";
+          format-alt = "{ifname}: {ipaddr}/{cidr}  up: {bandwidthUpBits} down: {bandwidthDownBits}";
           format-disconnected = "⚠   Disconnected";
-          format-ethernet = "   {ifname}: {ipaddr}/{cidr}  up: {bandwidthUpBits} down: {bandwidthDownBits}";
+          format-ethernet = "   {ifname}: {ipaddr}/{cidr}";
           format-linked = "   {ifname} (No IP)";
           format-wifi = "   {essid} ({signalStrength}%)";
         };
@@ -110,7 +106,9 @@
         # "sway/mode" = { format = ''<span style="italic">{}</span>''; };
         temperature = {
           critical-threshold = 80;
-          thermal-zone = config.bobymoby.wayland.waybar.thermal-zone;
+          thermal-zone = lib.mkIf config.bobymoby.wayland.waybar.useLaptopConfig 7;
+          hwmon-path-abs = lib.mkIf config.bobymoby.wayland.waybar.usePcConfig "/sys/devices/pci0000:00/0000:00:18.3/hwmon";
+          input-filename = lib.mkIf config.bobymoby.wayland.waybar.usePcConfig "temp1_input";
           format = "{icon}    {temperatureC}°C";
           format-icons = [ "" "" "" ];
         };

@@ -58,3 +58,49 @@ Run
 -   Chromium-based/Electron apps have problems with resizing. https://github.com/hyprwm/Hyprland/issues/6552 https://github.com/hyprwm/Hyprland/issues/1462
 -   Gruvbox theme nixpkgs package does not provide some of the themes. https://github.com/NixOS/nixpkgs/issues/323833
 -   Wifi sometimes does not work after using windows due to a windows issue.
+
+# Options
+
+```
+nix:
+    bobymoby
+        loginManager
+            gdm.enable
+            lightdm.enable
+            sddm.enable
+        shell
+            fish.enable
+            zsh.enable
+        windowManager
+            i3.enable
+            hyprland.enable
+
+home-manager:
+    bobymoby
+        gaming.enable
+        jetbrains.enable
+        libinput-gestures.enable
+        shell
+            fish.enable
+            zsh.enable
+        wayland
+            enable
+            withSway
+            hyprland
+                enable
+                usePcConfig
+                useLaptopConfig
+            rofi.enable(true by default when wayland is enabled)
+            sway.enable
+            waybar
+                enable(true by default when wayland is enabled)
+                usePcConfig
+                useLaptopConfig
+            wofi.enable
+        X11
+            enable
+            i3.enable
+            polybar.enable
+            rofi.enable
+            picom.enable
+```
