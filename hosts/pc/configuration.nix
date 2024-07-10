@@ -43,13 +43,13 @@
         enable = false;
         withWayland = true;
       };
-      gdm.enable = true;
+      gdm.enable = false;
       lightdm.enable = false;
     };
     proprietary-nvidia-drivers = {
       enable = true;
       forceFullCompositionPipeline = false;
-      useBeta = true;
+      useBeta = false;
 
       prime.enable = false;
     };
