@@ -10,6 +10,7 @@
     ./gtk/gtk.nix
     ./packages.nix
     ./wireplumber/wireplumber.nix
+    ./btop/btop.nix
     # ./neovim/neovim.nix
 
     # ./vscode/vscode.nix

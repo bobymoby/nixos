@@ -15,6 +15,9 @@ let
     export __VK_LAYER_NV_optimus=NVIDIA_only
     exec -a "$0" "$@"
   '';
+  btopCuda = pkgs.btop.override {
+    cudaSupport = true;
+  };
 in
 {
   # nixpkgs.config.permittedInsecurePackages = [
@@ -93,7 +96,8 @@ in
     libnotify
     # kitty
     htop
-    btop
+    btopCuda
+    nvtop
     killall
     networkmanager_dmenu
     eza # ls alternative
