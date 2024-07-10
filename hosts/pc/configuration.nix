@@ -49,7 +49,7 @@
     proprietary-nvidia-drivers = {
       enable = true;
       forceFullCompositionPipeline = false;
-      useBeta = false;
+      useBeta = true;
 
       prime.enable = false;
     };
@@ -66,6 +66,7 @@
   boot.kernelParams = [
     "nvidia-drm.fbdev=1"
     # "nvidia-drm.modeset=1"
+    # "nvidia.NVreg_RestrictProfilingToAdminUsers=0"
   ];
 
   #  boot.kernelModules = [
