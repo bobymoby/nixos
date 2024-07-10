@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     openrazer-daemon # razer mouse control
     polychromatic # razer gui
     qbittorrent
@@ -15,5 +15,7 @@
     dbeaver-bin
     arduino-ide
     cli-visualizer
-  ];
+  ]) ++ (with pkgs.gnome; [
+    gnome-calculator
+  ]);
 }

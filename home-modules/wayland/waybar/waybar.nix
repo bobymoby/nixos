@@ -117,6 +117,7 @@
           exec = ./nixpkgs-behind/cmp.sh;
           interval = "once";
           format = "  {}";
+          on-click = "xdg-open https://github.com/NixOS/nixpkgs/tree/nixos-unstable";
         };
       }];
     };
