@@ -29,6 +29,7 @@
           "pulseaudio"
           "network"
           "temperature"
+          "custom/nixpkgs-behind"
         ]
         ++ (lib.optionals config.bobymoby.wayland.waybar.useLaptopConfig [ "battery" ])
         ++ [
@@ -111,6 +112,11 @@
           input-filename = lib.mkIf config.bobymoby.wayland.waybar.usePcConfig "temp1_input";
           format = "{icon}    {temperatureC}°C";
           format-icons = [ "" "" "" ];
+        };
+        "custom/nixpkgs-behind" = {
+          exec = ./nixpkgs-behind/cmp.sh;
+          interval = "once";
+          format = "  {}";
         };
       }];
     };
