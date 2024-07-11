@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   options.bobymoby.X11.rofi.enable = lib.mkEnableOption "Enable rofi";

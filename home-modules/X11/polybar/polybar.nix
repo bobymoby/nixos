@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   options.bobymoby.X11.polybar.enable = lib.mkEnableOption "Enable Polybar";
@@ -9,8 +14,6 @@
       recursive = true;
     };
 
-    home.packages = with pkgs; [
-      polybarFull
-    ];
+    home.packages = with pkgs; [ polybarFull ];
   };
 }

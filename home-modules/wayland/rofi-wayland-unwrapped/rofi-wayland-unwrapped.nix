@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   options.bobymoby.wayland.rofi.enable = lib.mkEnableOption "Enable rofi";

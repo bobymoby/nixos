@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   options.bobymoby.gaming.enable = lib.mkEnableOption "Enable gaming";

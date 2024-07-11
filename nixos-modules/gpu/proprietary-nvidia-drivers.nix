@@ -22,8 +22,8 @@
           enable = true;
           finegrained = config.bobymoby.proprietary-nvidia-drivers.prime.enable;
         };
-        open = false; #open source kernel module
-        nvidiaSettings = true; #nvidia-settings menu
+        open = false; # open source kernel module
+        nvidiaSettings = true; # nvidia-settings menu
         # nvidiaPersistenced = true;
         prime = lib.mkIf config.bobymoby.proprietary-nvidia-drivers.prime.enable {
           intelBusId = "PCI:0:2:0";
@@ -35,7 +35,8 @@
         };
 
         package = lib.mkIf config.bobymoby.proprietary-nvidia-drivers.useBeta config.boot.kernelPackages.nvidiaPackages.beta;
-        forceFullCompositionPipeline = config.bobymoby.proprietary-nvidia-drivers.forceFullCompositionPipeline;
+        forceFullCompositionPipeline =
+          config.bobymoby.proprietary-nvidia-drivers.forceFullCompositionPipeline;
       };
       opengl = {
         enable = true;

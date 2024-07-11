@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   options.bobymoby.jetbrains.enable = lib.mkEnableOption "Enable JetBrains IDEs";

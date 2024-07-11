@@ -1,7 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ./authentication-agent.nix
-  ];
+  imports = [ ./authentication-agent.nix ];
 }

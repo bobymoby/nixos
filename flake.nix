@@ -8,10 +8,11 @@
     # grub2-themes.url = "github:vinceliuice/grub2-themes";
   };
   outputs =
-    inputs@{ nixpkgs
-    , home-manager
+    inputs@{
+      nixpkgs,
+      home-manager,
       # , grub2-themes
-    , ...
+      ...
     }:
     let
       system = "x86_64-linux";
@@ -25,7 +26,9 @@
     {
       nixosConfigurations = {
         BobiLaptopNixOS = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs;
+          };
           inherit system;
           modules = [
             ./hosts/laptop/configuration.nix
@@ -34,7 +37,9 @@
           ];
         };
         BobiNixOS = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
+          specialArgs = {
+            inherit inputs;
+          };
           inherit system;
           modules = [
             ./hosts/pc/configuration.nix

@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 {
   options.bobymoby.windowManager.i3.enable = lib.mkEnableOption "Enable i3";

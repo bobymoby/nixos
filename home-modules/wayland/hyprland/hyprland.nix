@@ -1,9 +1,20 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 let
   shouldUsePcConfig = config.bobymoby.wayland.hyprland.usePcConfig;
   shouldUseLaptopConfig = config.bobymoby.wayland.hyprland.useLaptopConfig;
-  configPath = if shouldUsePcConfig then ./specific/pc.conf else if shouldUseLaptopConfig then ./specific/laptop.conf else null;
+  configPath =
+    if shouldUsePcConfig then
+      ./specific/pc.conf
+    else if shouldUseLaptopConfig then
+      ./specific/laptop.conf
+    else
+      null;
 in
 {
   options.bobymoby.wayland.hyprland = {

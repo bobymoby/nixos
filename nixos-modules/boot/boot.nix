@@ -32,11 +32,8 @@
   # kernelPackages = pkgs.linuxPackages_latest;
   # };
 
-
   boot = {
-    kernelParams = [
-      "quiet"
-    ];
+    kernelParams = [ "quiet" ];
 
     kernelPackages = pkgs.linuxPackages_latest;
     initrd.systemd.enable = true;
