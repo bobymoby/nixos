@@ -15,6 +15,7 @@
     dbeaver-bin
     arduino-ide
     cli-visualizer
+    obsidian
   ]) ++ (with pkgs.gnome; [
     gnome-calculator
   ]);

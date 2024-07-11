@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -71,5 +71,19 @@
   #   enable = true;
   #   pkcs11.enable = true;
   #   tctiEnvironment.enable = true;
+  # };
+
+  services.ratbagd.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    piper
+  ];
+
+  # services.netdata = {
+  #   enable = true;
+  #   python.recommendedPythonPackages = true;
+  #   configDir."python.d.conf" = pkgs.writeText "python.d.conf" ''
+  #     nvidia_smi: yes
+  #   '';
   # };
 }

@@ -17,6 +17,7 @@
       "plugdev"
       "dialout"
       "tss"
+      "netdata"
     ];
   };
 }
