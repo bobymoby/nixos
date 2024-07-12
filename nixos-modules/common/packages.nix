@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   unpFull = pkgs.unp.override { extraBackends = with pkgs; [ unrar ]; };
   Xvlc = pkgs.vlc.override { waylandSupport = false; };
@@ -18,94 +23,103 @@ in
   #   "electron-25.9.0"
   # ];
 
-  services.flatpak.enable = true;
-  xdg.portal.enable = true;
-
-  programs.nix-ld = {
-    enable = true;
-    # libraries = with pkgs; [ ];
+  options.bobymoby.useDefaultPackages = lib.mkOption {
+    default = true;
+    type = lib.types.bool;
+    description = "Use default packages";
   };
 
-  services.xserver.excludePackages = with pkgs; [ xterm ];
-  environment.systemPackages =
-    (with pkgs; [
-      # nvidia-offload
-      #
-      # xorg+i3
-      #
-      # polybarFull
-      # xclip
-      # maim
-      # picom
-      # dex
-      # xss-lock
-      networkmanagerapplet
-      glib
-      xdg-utils
-      # lxappearance # (kinda)bad practice to be used with nixos
-      # xorg.xinit
+  config = lib.mkIf config.bobymoby.useDefaultPackages {
+    services.flatpak.enable = true;
+    xdg.portal.enable = true;
 
-      #
-      # io
-      #
-      brightnessctl
-      pulseaudioFull
-      pavucontrol
-      easyeffects
-      libinput-gestures
-      pamixer
+    programs.nix-ld = {
+      enable = true;
+      # libraries = with pkgs; [ ];
+    };
 
-      #
-      # misc
-      #
-      dunst
-      google-chrome
-      firefox
-      # etcher # usb flasher
-      unpFull # extract any archive
-      # ncspot # rust spotify client/cli
-      # Xvlc
+    services.xserver.excludePackages = with pkgs; [ xterm ];
+    environment.systemPackages =
+      (with pkgs; [
+        # nvidia-offload
+        #
+        # xorg+i3
+        #
+        # polybarFull
+        # xclip
+        # maim
+        # picom
+        # dex
+        # xss-lock
+        networkmanagerapplet
+        glib
+        xdg-utils
+        # lxappearance # (kinda)bad practice to be used with nixos
+        # xorg.xinit
 
-      #
-      # editors + utils
-      #
-      # vscodeWithExtensions
-      vscode
-      vscode.fhs
-      nixpkgs-fmt
-      nixfmt-rfc-style
-      nil # nix linter
-      # zed-editor
-      # nixd
-      # rustfmt # rust formatter
+        #
+        # io
+        #
+        brightnessctl
+        pulseaudioFull
+        pavucontrol
+        easyeffects
+        libinput-gestures
+        pamixer
 
-      #
-      # terminal + minor utils
-      #
-      gitFull
-      neofetch
-      fastfetch
-      lshw # list gpus
-      libnotify
-      # kitty
-      htop
-      btopCuda
-      nvtop
-      killall
-      networkmanager_dmenu
-      eza # ls alternative
-      jq # json parser
-      nh
-      ydotool
-      nwg-bar
-      tmux
+        #
+        # misc
+        #
+        dunst
+        google-chrome
+        firefox
+        # etcher # usb flasher
+        unpFull # extract any archive
+        # ncspot # rust spotify client/cli
+        # Xvlc
 
-      distrobox
-      # curlWithGnutls
-    ])
-    ++ (with pkgs.gnome; [
-      gnome-system-monitor
-      gnome-software
-      eog # image viewer
-    ]);
+        #
+        # editors + utils
+        #
+        # vscodeWithExtensions
+        vscode
+        vscode.fhs
+        nixpkgs-fmt
+        nixfmt-rfc-style
+        nil # nix linter
+        # zed-editor
+        # nixd
+        # rustfmt # rust formatter
+
+        #
+        # terminal + minor utils
+        #
+        gitFull
+        neofetch
+        fastfetch
+        lshw # list gpus
+        libnotify
+        # kitty
+        htop
+        btopCuda
+        nvtop
+        killall
+        networkmanager_dmenu
+        eza # ls alternative
+        jq # json parser
+        nh
+        ydotool
+        nwg-bar
+        tmux
+
+        distrobox
+        # curlWithGnutls
+      ])
+      ++ (with pkgs.gnome; [
+        gnome-system-monitor
+        gnome-software
+        eog # image viewer
+      ]);
+  };
+
 }

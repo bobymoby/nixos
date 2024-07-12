@@ -64,6 +64,7 @@ Run
 ```
 nix:
     bobymoby
+        useDefaultPackages(true by default)
         loginManager
             gdm.enable
             lightdm.enable
