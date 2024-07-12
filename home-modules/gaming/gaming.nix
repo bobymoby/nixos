@@ -13,9 +13,9 @@
       wineWowPackages.full # wine
       lutris # wine prefix manager
       protonup-qt # proton installer
-      bottles # container manager
-      heroic # epic games launcher
-      r2modman # mod manager
+      # bottles # container manager
+      # heroic # epic games launcher
+      # r2modman # mod manager
     ];
   };
 }

@@ -10,6 +10,7 @@
     ./login-manager
     ./shell
     ./systemd-services
+    ./steam/steam.nix
 
     ./common
   ];

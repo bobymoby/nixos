@@ -12,7 +12,7 @@
     };
 
     shell.zsh.enable = true;
-
+    # gaming.enable = true;
     jetbrains.enable = false;
   };
 }

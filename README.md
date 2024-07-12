@@ -74,6 +74,7 @@ nix:
         windowManager
             i3.enable
             hyprland.enable
+        steam.enable
 
 home-manager:
     bobymoby
