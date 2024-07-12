@@ -1,7 +1,6 @@
 { ... }:
 
 {
-  # hardware settings
   imports = [
     ./gpu
     ./boot/boot.nix
