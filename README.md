@@ -115,9 +115,8 @@ home-manager:
 
 # default.nix with code
 
--   home-modules(nothing important)
 -   home-modules/wayland(enables rofi and waybar)
 -   home-modules/X11(enables i3, polybar, rofi, picom)
--   hosts/\*\*/hardware-config(host specific hardware settings)
 -   home-modules/common
 -   nixos-modules/common
+-   hosts/\*\*/hardware-config(host specific hardware settings)
