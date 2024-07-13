@@ -3,10 +3,7 @@
 {
   home.packages =
     (with pkgs; [
-      openrazer-daemon # razer mouse control
-      polychromatic # razer gui
       qbittorrent
-      cinnamon.nemo # file manager
       libreoffice
       discord
       webcord-vencord
@@ -18,5 +15,8 @@
       cli-visualizer
       obsidian
     ])
-    ++ (with pkgs.gnome; [ gnome-calculator ]);
+    ++ (with pkgs.gnome; [ gnome-calculator ])
+    ++ (with pkgs.cinnamon; [
+      nemo # file manager
+    ]);
 }

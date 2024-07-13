@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   options.bobymoby.easyeffects.enable = lib.mkEnableOption "Enable easyeffects";

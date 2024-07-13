@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   # bobymoby.X11 = {
@@ -27,6 +27,11 @@
 
     easyeffects.enable = true;
   };
+
+  home.packages = with pkgs; [
+    openrazer-daemon # razer mouse control
+    polychromatic # razer gui
+  ];
 
   # bobymoby.X11 = {
   #   enable = true;
