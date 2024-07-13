@@ -76,10 +76,16 @@ nix:
             i3.enable
             hyprland.enable
         steam.enable
+        bluetooth.enable
+        netdata.enable
+        virtualization.enable
 
 home-manager:
     bobymoby
-        gaming.enable
+        gaming
+            enable
+            withWine
+            withTools
         jetbrains.enable
         libinput-gestures.enable
         shell
@@ -106,3 +112,12 @@ home-manager:
             rofi.enable
             picom.enable
 ```
+
+# default.nix with code
+
+-   home-modules(nothing important)
+-   home-modules/wayland(enables rofi and waybar)
+-   home-modules/X11(enables i3, polybar, rofi, picom)
+-   hosts/\*\*/hardware-config(host specific hardware settings)
+-   home-modules/common
+-   nixos-modules/common

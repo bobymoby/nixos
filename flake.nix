@@ -32,6 +32,7 @@
           inherit system;
           modules = [
             ./hosts/laptop/configuration.nix
+            ./hosts/laptop/hardware-config
             ./nixos-modules
             # grub2-themes.nixosModules.default
           ];
@@ -43,6 +44,7 @@
           inherit system;
           modules = [
             ./hosts/pc/configuration.nix
+            ./hosts/pc/hardware-config
             ./nixos-modules
             # grub2-themes.nixosModules.default
           ];

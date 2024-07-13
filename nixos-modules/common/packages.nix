@@ -51,7 +51,6 @@ in
         # picom
         # dex
         # xss-lock
-        networkmanagerapplet
         glib
         xdg-utils
         # lxappearance # (kinda)bad practice to be used with nixos
@@ -60,17 +59,13 @@ in
         #
         # io
         #
-        brightnessctl
         pulseaudioFull
         pavucontrol
-        easyeffects
-        libinput-gestures
         pamixer
 
         #
         # misc
         #
-        dunst
         google-chrome
         firefox
         # etcher # usb flasher
@@ -104,15 +99,11 @@ in
         btopCuda
         nvtop
         killall
-        networkmanager_dmenu
         eza # ls alternative
         jq # json parser
         nh
-        ydotool
         nwg-bar
         tmux
-
-        distrobox
         # curlWithGnutls
       ])
       ++ (with pkgs.gnome; [

@@ -24,6 +24,8 @@
     shell.zsh.enable = true;
 
     jetbrains.enable = false;
+
+    easyeffects.enable = true;
   };
 
   # bobymoby.X11 = {

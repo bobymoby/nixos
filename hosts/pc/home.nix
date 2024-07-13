@@ -12,7 +12,13 @@
     };
 
     shell.zsh.enable = true;
-    # gaming.enable = true;
+    gaming = {
+      enable = true;
+      withWine = false;
+      withTools = false;
+    };
     jetbrains.enable = false;
+
+    easyeffects.enable = true;
   };
 }
