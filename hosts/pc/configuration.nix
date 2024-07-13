@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  imports = [ ./hardware-config ];
+
   networking.hostName = "BobiNixOS";
 
   bobymoby = {

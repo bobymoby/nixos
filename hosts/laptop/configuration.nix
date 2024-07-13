@@ -1,6 +1,8 @@
 { ... }:
 
 {
+  imports = [ ./hardware-config ];
+
   networking.hostName = "BobiLaptopNixOS";
 
   hardware.openrazer.enable = true; # razer mouse control

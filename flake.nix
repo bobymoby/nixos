@@ -8,66 +8,23 @@
     # grub2-themes.url = "github:vinceliuice/grub2-themes";
   };
   outputs =
-    inputs@{
-      nixpkgs,
-      home-manager,
-      # , grub2-themes
-      ...
-    }:
+    inputs:
     let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-        config = {
-          allowUnfree = true;
-        };
-      };
+      tools = import ./tools { inherit inputs; };
     in
     {
+      nixosModules.default = ./nixos-modules;
       nixosConfigurations = {
-        BobiLaptopNixOS = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-          };
-          inherit system;
-          modules = [
-            ./hosts/laptop/configuration.nix
-            ./hosts/laptop/hardware-config
-            ./nixos-modules
-            # grub2-themes.nixosModules.default
-          ];
-        };
-        BobiNixOS = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-          };
-          inherit system;
-          modules = [
-            ./hosts/pc/configuration.nix
-            ./hosts/pc/hardware-config
-            ./nixos-modules
-            # grub2-themes.nixosModules.default
-          ];
-        };
+        BobiLaptopNixOS = tools.mkSystem ./hosts/laptop/configuration.nix;
+        BobiNixOS = tools.mkSystem ./hosts/pc/configuration.nix;
       };
 
+      homeModules.default = ./home-modules;
       homeConfigurations = {
         #nix run .#bobymoby@BobiLaptopNixOS.activationPackage
-        "bobymoby@BobiLaptopNixOS" = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./hosts/laptop/home.nix
-            ./home-modules
-          ];
-        };
+        "bobymoby@BobiLaptopNixOS" = tools.mkHome ./hosts/laptop/home.nix;
         #nix run .#bobymoby@BobiNixOS.activationPackage
-        "bobymoby@BobiNixOS" = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./hosts/pc/home.nix
-            ./home-modules
-          ];
-        };
+        "bobymoby@BobiNixOS" = tools.mkHome ./hosts/pc/home.nix;
       };
     };
 }

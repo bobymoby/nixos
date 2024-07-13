@@ -19,7 +19,7 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.gdm.enableGnomeKeyring = true;
 
-  services.gvfs.enable = true;
+  services.gvfs.enable = true; # needed for some file managers
 
   programs.dconf.enable = true;
 
