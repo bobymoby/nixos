@@ -1,4 +1,4 @@
-# First build
+# First build (Outdated but still useful)
 
 Add these lines to configuration.nix:
 
@@ -12,27 +12,31 @@ environment.systemPackages = with pkgs; [
     vscode
     nh
 ];
+
+networking.hostName = "Bobi<Laptop>NixOS";
 ```
 
 Run:
 
 -   ```bash
-    sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos
-    sudo nix-channel --update
-    sudo nixos-rebuild switch
-    sudo mv /etc/nixos ~/nixos
-    sudo git clone https://github.com/bobymoby/nixos /etc/nixos
-    sudo chown -R bobymoby /etc/nixos
-    find /etc/nixos -type f -name "*.sh" -exec chmod +x {} \;
+     sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos
+     sudo nix-channel --update
+     sudo nixos-rebuild switch
+    ```
+-   clone this repo
+-   ```bash
+      sudo chown -R bobymoby /etc/nixos
+      find /etc/nixos -type f -name "\*.sh" -exec chmod +x {} \;
     ```
 
-Fix `hardware-configuration.nix` - get the ids from `~/nixos/hardware-configuration.nix`
+Fix `/hosts/**/hardware-configuration.nix`
 
 Run
 
 -   ```bash
     nix build --no-link .#homeConfigurations.bobymoby@Bobi<Laptop>NixOS.activationPackage
     "$(nix path-info .#homeConfigurations.bobymoby@Bobi<Laptop>NixOS.activationPackage)"/activate
+    FLAKE="/etc/nixos"
     nh os switch
     nh home switch
     sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
