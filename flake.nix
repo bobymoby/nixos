@@ -5,12 +5,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    bobymoby-nix-flakes = {
+      url = "github:bobymoby/nix-flakes";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # grub2-themes.url = "github:vinceliuice/grub2-themes";
   };
   outputs =
     inputs:
     let
-      tools = import ./tools { inherit inputs; };
+      tools = inputs.bobymoby-nix-flakes.lib.system-flake-tools { inherit inputs; };
     in
     {
       nixosModules.default = ./nixos-modules;

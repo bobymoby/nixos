@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "bobymoby-nix-flakes": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1720894728,
+        "narHash": "sha256-FnfnlxIBNcAoclljhhbqkw1KoRzm2I0Ch5YQamkp+RY=",
+        "owner": "bobymoby",
+        "repo": "nix-flakes",
+        "rev": "cebbaacb47892b0ce14e9ea91d70a3524cf6bfce",
+        "type": "github"
+      },
+      "original": {
+        "owner": "bobymoby",
+        "repo": "nix-flakes",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -7,11 +27,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1720646128,
-        "narHash": "sha256-BivO5yIQukDlJL+1875Sqf3GuOPxZDdA48dYDi3PkL8=",
+        "lastModified": 1720734513,
+        "narHash": "sha256-neWQ8eNtLTd+YMesb7WjKl1SVCbDyCm46LUgP/g/hdo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "c085b984ff2808bf322f375b10fea5a415a9c43d",
+        "rev": "90ae324e2c56af10f20549ab72014804a3064c7f",
         "type": "github"
       },
       "original": {
@@ -38,6 +58,7 @@
     },
     "root": {
       "inputs": {
+        "bobymoby-nix-flakes": "bobymoby-nix-flakes",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }
