@@ -5,7 +5,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    bobymoby-nix-flakes = {
+    nix-flakes = {
       url = "github:bobymoby/nix-flakes";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -14,7 +14,7 @@
   outputs =
     inputs:
     let
-      tools = inputs.bobymoby-nix-flakes.lib.system-flake-tools { inherit inputs; };
+      tools = inputs.nix-flakes.lib.system-flake-tools { inherit inputs; };
     in
     {
       nixosModules.default = ./nixos-modules;
