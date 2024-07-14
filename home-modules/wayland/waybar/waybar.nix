@@ -10,8 +10,6 @@
   config = lib.mkIf config.bobymoby.wayland.waybar.enable {
     programs.waybar = {
       enable = true;
-      systemd.enable = true;
-      systemd.target = "sway-session.target";
       style = ./style.css;
       settings = [
         {
@@ -27,6 +25,7 @@
           };
           #   modules-center = [ "sway/window" ];
           modules-left = [ "hyprland/workspaces" ];
+          # modules-center = [ "hyprland/window" ];
           modules-right = [
             "tray"
             "pulseaudio"
@@ -35,24 +34,24 @@
             "custom/nixpkgs-behind"
           ] ++ (lib.optionals config.bobymoby.wayland.waybar.useLaptopConfig [ "battery" ]) ++ [ "clock" ];
 
-          "hyprland/workspaces" = {
-            # format = "{windows}";
-            # format-icons = {
-            #   "1" = " ";
-            #   "9" = "";
-            #   "10" = "󰨞";
-            # };
-            # format = "{icon}{windows}";
-            # format-window-separator = " ";
-            # window-rewrite-default = "";
-            # window-rewrite = {
-            #   "title<.*youtube.*>" = ""; # Windows whose titles contain "youtube"
-            #   "class<firefox>" = ""; # Windows whose classes are "firefox"
-            #   "class<firefox> title<.*github.*>" = ""; # Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
-            #   "foot" = ""; # Windows that contain "foot" in either class or title. For optimization reasons; it will only match against a title if at least one other window explicitly matches against a title.
-            #   "code" = "󰨞";
-            # };
-          };
+          # "hyprland/workspaces" = {
+          # format = "{windows}";
+          # format-icons = {
+          #   "1" = " ";
+          #   "9" = "";
+          #   "10" = "󰨞";
+          # };
+          # format = "{icon}{windows}";
+          # format-window-separator = " ";
+          # window-rewrite-default = "";
+          # window-rewrite = {
+          #   "title<.*youtube.*>" = ""; # Windows whose titles contain "youtube"
+          #   "class<firefox>" = ""; # Windows whose classes are "firefox"
+          #   "class<firefox> title<.*github.*>" = ""; # Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+          #   "foot" = ""; # Windows that contain "foot" in either class or title. For optimization reasons; it will only match against a title if at least one other window explicitly matches against a title.
+          #   "code" = "󰨞";
+          # };
+          # };
           battery = {
             format = "{capacity}% {icon}";
             format-alt = "{time} {icon}";
@@ -119,7 +118,7 @@
             thermal-zone = lib.mkIf config.bobymoby.wayland.waybar.useLaptopConfig 7;
             hwmon-path-abs = lib.mkIf config.bobymoby.wayland.waybar.usePcConfig "/sys/devices/pci0000:00/0000:00:18.3/hwmon";
             input-filename = lib.mkIf config.bobymoby.wayland.waybar.usePcConfig "temp1_input";
-            format = "{icon}    {temperatureC}°C";
+            format = "{icon}   {temperatureC}°C";
             format-icons = [
               ""
               ""
@@ -128,7 +127,7 @@
           };
           "custom/nixpkgs-behind" = {
             exec = ./nixpkgs-behind/cmp.sh;
-            interval = "once";
+            interval = 60 * 60; # once an hour
             format = "  {}";
             on-click = "xdg-open https://github.com/NixOS/nixpkgs/tree/nixos-unstable";
           };
