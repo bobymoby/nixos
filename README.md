@@ -86,6 +86,11 @@ nix:
         windowManager
             i3.enable
             hyprland.enable
+        gpu.proprietary-nvidia-drivers
+            enable
+            prime.enable
+            useBeta
+            forceFullCompositionPipeline
 
 home-manager:
     bobymoby

@@ -10,6 +10,7 @@ let
   isZero = import ./isZero.nix;
   isSet = import ./isSet.nix;
   hasEnableOption = import ./hasEnableOption.nix;
+  enabledSubmoduleCount = import ./enabledSubmoduleCount.nix;
   hasEnabledModules = import ./hasEnabledModules.nix;
 
   tools = {
@@ -21,6 +22,7 @@ let
       isZero
       isSet
       hasEnableOption
+      enabledSubmoduleCount
       hasEnabledModules
       ;
   };

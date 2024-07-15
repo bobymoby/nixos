@@ -2,15 +2,6 @@ attrSet:
 let
   tools = import ./tools.nix;
   isZero = tools.isZero;
-  isSet = tools.isSet;
-  hasEnableOption = tools.hasEnableOption;
+  enabledSubmoduleCount = tools.enabledSubmoduleCount;
 in
-(
-  !isZero (
-    builtins.length (
-      builtins.filter (item: (isSet item) && (hasEnableOption item) && item.enable) (
-        builtins.attrValues attrSet
-      )
-    )
-  )
-)
+!isZero (enabledSubmoduleCount attrSet)

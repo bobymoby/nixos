@@ -11,7 +11,7 @@
   environment.systemPackages = with pkgs; [ brightnessctl ];
 
   bobymoby = {
-    proprietary-nvidia-drivers = {
+    gpu.proprietary-nvidia-drivers = {
       enable = true;
       prime.enable = true;
     };

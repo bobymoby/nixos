@@ -46,7 +46,7 @@
 
   services.fstrim.enable = lib.mkDefault true; # Enable periodic TRIM for SSDs
 
-  bobymoby.proprietary-nvidia-drivers = {
+  bobymoby.gpu.proprietary-nvidia-drivers = {
     enable = true;
     forceFullCompositionPipeline = false;
     useBeta = false;
