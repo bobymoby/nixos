@@ -5,6 +5,7 @@
     ./direnv/direnv.nix
     ./dunst/dunst.nix
     ./fastfetch/fastfetch.nix
+    ./fzf/fzf.nix
     ./gtk/gtk.nix
     ./networkmanager/networkmanager.nix
     ./wireplumber/wireplumber.nix
