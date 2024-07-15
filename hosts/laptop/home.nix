@@ -15,9 +15,14 @@
     libinput-gestures.enable = true;
     shell.zsh.enable = true;
 
-    jetbrains.enable = false;
-
     easyeffects.enable = true;
+
+    dev = {
+      nix.enable = true;
+      web.enable = true;
+      integrated.enable = true;
+      # jetbrainsTools.enable = true;
+    };
   };
 
   home.packages = with pkgs; [
