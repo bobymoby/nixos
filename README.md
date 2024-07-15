@@ -69,6 +69,11 @@ Run
 nix:
     bobymoby
         useDefaultPackages(true by default)
+        steam.enable
+        bluetooth.enable
+        netdata.enable
+        virtualization.enable
+        debug.enable
         loginManager
             gdm.enable
             lightdm.enable
@@ -79,36 +84,33 @@ nix:
         windowManager
             i3.enable
             hyprland.enable
-        steam.enable
-        bluetooth.enable
-        netdata.enable
-        virtualization.enable
 
 home-manager:
     bobymoby
+        jetbrains.enable
+        libinput-gestures.enable
+        alacritty.enableDebugInfo
         gaming
             enable
             withWine
             withTools
-        jetbrains.enable
-        libinput-gestures.enable
         shell
             fish.enable
             zsh.enable
         wayland
             enable
             withSway
+            sway.enable
+            wofi.enable
+            rofi.enable(true by default when wayland is enabled)
             hyprland
                 enable
                 usePcConfig
                 useLaptopConfig
-            rofi.enable(true by default when wayland is enabled)
-            sway.enable
             waybar
                 enable(true by default when wayland is enabled)
                 usePcConfig
                 useLaptopConfig
-            wofi.enable
         X11
             enable
             i3.enable

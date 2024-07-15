@@ -104,6 +104,7 @@ in
         nh
         nwg-bar
         tmux
+        libGL
         # curlWithGnutls
       ])
       ++ (with pkgs.gnome; [

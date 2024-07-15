@@ -9,7 +9,7 @@
     windowManager.hyprland.enable = true;
     shell.zsh.enable = true;
     virtualization.enable = true;
-    steam.enable = true;
+    debug.enable = true;
     # netdata.enable = true;
   };
 

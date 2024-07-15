@@ -11,6 +11,7 @@
     ./bluetooth/bluetooth.nix
     ./netdata/netdata.nix
     ./virtualization/virtualization.nix
+    ./debug/debug.nix
 
     ./common
   ];
