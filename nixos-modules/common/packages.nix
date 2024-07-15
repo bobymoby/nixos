@@ -94,7 +94,6 @@ in
         fastfetch
         lshw # list gpus
 
-        tmux
         libGL
       ])
       ++ (with pkgs.gnome; [

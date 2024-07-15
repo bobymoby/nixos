@@ -8,6 +8,7 @@
     ./fzf/fzf.nix
     ./gtk/gtk.nix
     ./networkmanager/networkmanager.nix
+    ./tmux/tmux.nix
     ./wireplumber/wireplumber.nix
 
     ./packages.nix

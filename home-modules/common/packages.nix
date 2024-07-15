@@ -10,6 +10,7 @@
       vlc
       obsidian
       google-chrome
+      bat
       # firefox
     ])
     ++ (with pkgs.gnome; [ gnome-calculator ])
