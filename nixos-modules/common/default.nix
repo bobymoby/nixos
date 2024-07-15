@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   imports = [
     ./ssh/ssh.nix

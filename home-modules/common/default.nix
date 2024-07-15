@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   imports = [
     ./alacritty/alacritty.nix

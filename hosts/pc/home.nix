@@ -1,5 +1,3 @@
-{ ... }:
-
 {
   bobymoby = {
     wayland = {
