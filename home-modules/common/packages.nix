@@ -5,15 +5,12 @@
     (with pkgs; [
       qbittorrent
       libreoffice
-      discord
       webcord-vencord
       spotify
       vlc
-      postman
-      dbeaver-bin
-      arduino-ide
-      cli-visualizer
       obsidian
+      google-chrome
+      # firefox
     ])
     ++ (with pkgs.gnome; [ gnome-calculator ])
     ++ (with pkgs.cinnamon; [

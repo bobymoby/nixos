@@ -87,13 +87,13 @@ nix:
 
 home-manager:
     bobymoby
-        jetbrains.enable
         libinput-gestures.enable
         alacritty.enableDebugInfo
-        gaming
-            enable
-            withWine
-            withTools
+        dev
+            nix.enable
+            web.enable
+            integrated.enable
+            jetbrainsTools.enable
         shell
             fish.enable
             zsh.enable
@@ -111,6 +111,10 @@ home-manager:
                 enable(true by default when wayland is enabled)
                 usePcConfig
                 useLaptopConfig
+        gaming
+            enable
+            withWine
+            withTools
         X11
             enable
             i3.enable

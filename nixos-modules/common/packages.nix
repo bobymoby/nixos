@@ -17,12 +17,6 @@ let
   btopCuda = pkgs.btop.override { cudaSupport = true; };
 in
 {
-  # nixpkgs.config.permittedInsecurePackages = [
-  #   "electron-12.2.3"
-  #   "electron-19.1.9"
-  #   "electron-25.9.0"
-  # ];
-
   options.bobymoby.useDefaultPackages = lib.mkOption {
     default = true;
     type = lib.types.bool;
@@ -53,56 +47,50 @@ in
         # xss-lock
         glib
         xdg-utils
-        # lxappearance # (kinda)bad practice to be used with nixos
+        # lxappearance
         # xorg.xinit
 
         #
         # io
         #
-        pulseaudioFull
+        # pulseaudioFull
         pavucontrol
         pamixer
 
         #
         # misc
         #
-        google-chrome
-        firefox
-        # etcher # usb flasher
         unpFull # extract any archive
-        # ncspot # rust spotify client/cli
-        # Xvlc
 
         #
         # editors + utils
         #
-        # vscodeWithExtensions
         vscode
         vscode.fhs
-        nixpkgs-fmt
-        nixfmt-rfc-style
-        nil # nix linter
         # zed-editor
         # nixd
-        # rustfmt # rust formatter
 
         #
         # terminal + minor utils
         #
         gitFull
-        neofetch
-        fastfetch
-        lshw # list gpus
         libnotify
-        # kitty
-        htop
-        btopCuda
-        nvtop
         killall
         eza # ls alternative
         jq # json parser
-        nh
-        nwg-bar
+        nh # nix cli helper
+        # kitty
+
+        #
+        # system monitoring
+        #
+        htop
+        btopCuda
+        nvtop
+        neofetch
+        fastfetch
+        lshw # list gpus
+
         tmux
         libGL
         # curlWithGnutls

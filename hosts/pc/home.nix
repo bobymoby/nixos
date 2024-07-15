@@ -11,8 +11,15 @@
       waybar.usePcConfig = true;
     };
     shell.zsh.enable = true;
-    jetbrains.enable = false;
+
     easyeffects.enable = true;
     alacritty.enableDebugInfo = true;
+
+    dev = {
+      nix.enable = true;
+      # web.enable = true;
+      # integrated.enable = true;
+      # jetbrainsTools.enable = true;
+    };
   };
 }

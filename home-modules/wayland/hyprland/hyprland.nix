@@ -1,7 +1,7 @@
 {
-  pkgs,
   lib,
   config,
+  pkgs,
   ...
 }:
 
@@ -40,11 +40,19 @@ in
       ".config/hypr/hyprpaper.conf".source = ./extras/hyprpaper.conf;
     };
 
-    wayland.windowManager.hyprland = {
-      enable = true;
-      # plugins = with pkgs.hyprlandPlugins; [
-      #   hy3
-      # ];
-    };
+    home.packages = with pkgs; [
+      hyprshot
+      hypridle
+      hyprlock
+      hyprpaper
+      nwg-bar
+    ];
+
+    # wayland.windowManager.hyprland = {
+    #   enable = true;
+    #   # plugins = with pkgs.hyprlandPlugins; [
+    #   #   hy3
+    #   # ];
+    # };
   };
 }
