@@ -19,7 +19,12 @@ in
   options.bobymoby.libinput-gestures.enable = lib.mkEnableOption "Enable libinput-gestures";
 
   config = lib.mkIf config.bobymoby.libinput-gestures.enable {
-
+    assertions = [
+      {
+        assertion = !builtins.isNull configPath;
+        message = "You must enable i3 or Hyprland to use libinput-gestures";
+      }
+    ];
     home = {
       packages =
         [ pkgs.libinput-gestures ]

@@ -1,3 +1,1 @@
-{
-  imports = [ ./proprietary-nvidia-drivers.nix ];
-}
+{ imports = [ ./proprietary-nvidia-drivers.nix ]; }

@@ -24,6 +24,12 @@ in
   };
 
   config = lib.mkIf config.bobymoby.wayland.hyprland.enable {
+    assertions = [
+      {
+        assertion = !builtins.isNull configPath;
+        message = "You have to specify which hyprland configuration to use";
+      }
+    ];
     home = {
       file = {
         ".config/hypr/common" = {
