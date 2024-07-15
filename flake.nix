@@ -6,16 +6,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
   outputs =
     inputs:
     let
       tools = import ./tools/tools.nix;
-      pkgs = import inputs.nixpkgs {
-        system = tools.systems.x86_64-linux;
-        config = {
-          allowUnfree = true;
-        };
-      };
+      pkgs = tools.mkPkgs { inherit inputs; };
       pointerTheme = {
         name = "Bibata-Modern-Ice";
         package = pkgs.bibata-cursors;
@@ -28,7 +24,7 @@
         };
       };
       mkHome = tools.mkHome {
-        inherit inputs pkgs;
+        inherit inputs;
         mySpecialArgs = {
           inherit pointerTheme;
         };
@@ -43,9 +39,7 @@
 
       homeModules.default = ./home-modules;
       homeConfigurations = {
-        #nix run .#bobymoby@BobiLaptopNixOS.activationPackage
         "bobymoby@BobiLaptopNixOS" = mkHome ./hosts/laptop/home.nix;
-        #nix run .#bobymoby@BobiNixOS.activationPackage
         "bobymoby@BobiNixOS" = mkHome ./hosts/pc/home.nix;
       };
     };

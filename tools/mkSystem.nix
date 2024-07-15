@@ -1,8 +1,8 @@
+{ system }:
 { inputs, mySpecialArgs }:
 confFile:
 let
   tools = import ./tools.nix;
-  system = tools.systems.x86_64-linux;
   outputs = inputs.self.outputs;
 in
 inputs.nixpkgs.lib.nixosSystem {
