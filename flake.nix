@@ -10,8 +10,29 @@
     inputs:
     let
       tools = import ./tools/tools.nix;
-      mkSystem = tools.mkSystem { inherit inputs; };
-      mkHome = tools.mkHome { inherit inputs; };
+      pkgs = import inputs.nixpkgs {
+        system = tools.systems.x86_64-linux;
+        config = {
+          allowUnfree = true;
+        };
+      };
+      pointerTheme = {
+        name = "Bibata-Modern-Ice";
+        package = pkgs.bibata-cursors;
+        size = 24;
+      };
+      mkSystem = tools.mkSystem {
+        inherit inputs;
+        mySpecialArgs = {
+          inherit pointerTheme;
+        };
+      };
+      mkHome = tools.mkHome {
+        inherit inputs pkgs;
+        mySpecialArgs = {
+          inherit pointerTheme;
+        };
+      };
     in
     {
       nixosModules.default = ./nixos-modules;

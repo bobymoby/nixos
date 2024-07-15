@@ -1,15 +1,22 @@
-{ inputs }:
+{ inputs, mySpecialArgs }:
 confFile:
 let
   tools = import ./tools.nix;
-  systems = tools.systems;
+  system = tools.systems.x86_64-linux;
   outputs = inputs.self.outputs;
 in
 inputs.nixpkgs.lib.nixosSystem {
+  inherit system;
+
   specialArgs = {
-    inherit inputs tools outputs;
+    inherit
+      inputs
+      tools
+      outputs
+      mySpecialArgs
+      ;
   };
-  system = systems.x86_64-linux;
+
   modules = [
     confFile
     outputs.nixosModules.default

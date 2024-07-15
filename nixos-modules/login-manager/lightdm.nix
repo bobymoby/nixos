@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  mySpecialArgs,
   ...
 }:
 
@@ -18,11 +19,7 @@
           background = ../../shared/background.png;
 
           greeters.gtk = {
-            cursorTheme = {
-              name = "Bibata-Modern-Ice";
-              package = pkgs.bibata-cursors;
-              size = 24;
-            };
+            cursorTheme = mySpecialArgs.pointerTheme;
 
             indicators = [
               "~session"

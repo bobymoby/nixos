@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, mySpecialArgs, ... }:
 
 {
   gtk = {
@@ -31,9 +31,7 @@
 
   home.pointerCursor = {
     gtk.enable = true;
-    name = "Bibata-Modern-Ice";
-    package = pkgs.bibata-cursors;
-    size = 24;
+    inherit (mySpecialArgs.pointerTheme) name package size;
   };
 
   home.file.".background-image.png".source = ../../../shared/background.png;
