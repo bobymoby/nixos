@@ -6,7 +6,10 @@
   networking.hostName = "BobiNixOS";
 
   bobymoby = {
-    windowManager.hyprland.enable = true;
+    windowManager.hyprland = {
+      enable = true;
+      autoStart = true;
+    };
     shell.zsh.enable = true;
     virtualization.enable = true;
     debug.enable = true;

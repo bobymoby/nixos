@@ -77,7 +77,9 @@ nix:
         loginManager
             gdm.enable
             lightdm.enable
-            sddm.enable
+            sddm
+                enable
+                wayland.enable
         shell
             fish.enable
             zsh.enable
