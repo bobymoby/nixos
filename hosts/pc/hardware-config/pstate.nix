@@ -11,6 +11,8 @@ in
     (lib.mkIf ((lib.versionAtLeast kver "6.1") && (lib.versionOlder kver "6.3")) {
       kernelParams = [ "amd_pstate=passive" ];
     })
-    (lib.mkIf (lib.versionAtLeast kver "6.3") { kernelParams = [ "amd_pstate=active" ]; })
+    (lib.mkIf (lib.versionAtLeast kver "6.3") {
+      kernelParams = [ "amd_pstate=active" ];
+    })
   ];
 }

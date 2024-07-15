@@ -31,7 +31,9 @@
           dbeaver-bin
         ]
       )
-      ++ lib.optionals config.bobymoby.dev.integrated.enable (with pkgs; [ arduino-ide ])
+      ++ lib.optionals config.bobymoby.dev.integrated.enable (
+        with pkgs; [ arduino-ide ]
+      )
       ++ lib.optionals config.bobymoby.dev.jetbrainsTools.enable (
         with pkgs;
         [
