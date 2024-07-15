@@ -2,6 +2,7 @@
 
 {
   options.bobymoby.steam.enable = lib.mkEnableOption "Enable Steam";
+
   config = lib.mkIf config.bobymoby.steam.enable {
     programs.steam = {
       enable = true;

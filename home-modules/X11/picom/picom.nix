@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   # xprop to read window properties
@@ -8,6 +13,10 @@
   options.bobymoby.X11.picom.enable = lib.mkEnableOption "Enable picom compositor";
 
   config = lib.mkIf config.bobymoby.X11.picom.enable {
-    home.file.".config/picom/picom.conf".source = ./picom.conf;
+    home = {
+      packages = with pkgs; [ picom ];
+
+      file.".config/picom/picom.conf".source = ./picom.conf;
+    };
   };
 }

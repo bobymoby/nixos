@@ -7,6 +7,7 @@
 
 {
   options.bobymoby.alacritty.enableDebugInfo = lib.mkEnableOption "Enable debugging";
+
   config = {
     programs.alacritty = {
       enable = true;

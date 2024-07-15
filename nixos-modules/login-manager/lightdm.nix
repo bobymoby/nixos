@@ -1,12 +1,11 @@
 {
-  pkgs,
   lib,
   config,
+  pkgs,
   ...
 }:
 
 {
-  #WIP move config to home manager
   options.bobymoby.loginManager.lightdm.enable = lib.mkEnableOption "Enable LightDM";
 
   config = lib.mkIf config.bobymoby.loginManager.lightdm.enable {

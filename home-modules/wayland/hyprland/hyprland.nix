@@ -24,30 +24,31 @@ in
   };
 
   config = lib.mkIf config.bobymoby.wayland.hyprland.enable {
-    home.file = {
-      ".config/hypr/common" = {
-        source = ./common;
-        recursive = true;
+    home = {
+      file = {
+        ".config/hypr/common" = {
+          source = ./common;
+          recursive = true;
+        };
+        ".config/hypr/scripts" = {
+          source = ./scripts;
+          recursive = true;
+        };
+        ".config/hypr/nvidia.conf".source = ./specific/nvidia.conf;
+        "./.config/hypr/hyprland.conf".source = configPath; # ./ is required
+        ".config/hypr/hypridle.conf".source = ./extras/hypridle.conf;
+        ".config/hypr/hyprlock.conf".source = ./extras/hyprlock.conf;
+        ".config/hypr/hyprpaper.conf".source = ./extras/hyprpaper.conf;
       };
-      ".config/hypr/scripts" = {
-        source = ./scripts;
-        recursive = true;
-      };
-      ".config/hypr/nvidia.conf".source = ./specific/nvidia.conf;
-      "./.config/hypr/hyprland.conf".source = configPath; # ./ is required
-      ".config/hypr/hypridle.conf".source = ./extras/hypridle.conf;
-      ".config/hypr/hyprlock.conf".source = ./extras/hyprlock.conf;
-      ".config/hypr/hyprpaper.conf".source = ./extras/hyprpaper.conf;
+
+      packages = with pkgs; [
+        hyprshot
+        hypridle
+        hyprlock
+        hyprpaper
+        nwg-bar
+      ];
     };
-
-    home.packages = with pkgs; [
-      hyprshot
-      hypridle
-      hyprlock
-      hyprpaper
-      nwg-bar
-    ];
-
     # wayland.windowManager.hyprland = {
     #   enable = true;
     #   # plugins = with pkgs.hyprlandPlugins; [

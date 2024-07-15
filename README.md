@@ -127,6 +127,4 @@ home-manager:
 
 -   home-modules/wayland(enables rofi and waybar)
 -   home-modules/X11(enables i3, polybar, rofi, picom)
--   home-modules/common
--   nixos-modules/common
 -   hosts/\*\*/hardware-config(host specific hardware settings)

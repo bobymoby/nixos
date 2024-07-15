@@ -42,7 +42,6 @@ in
         # polybarFull
         # xclip
         # maim
-        # picom
         # dex
         # xss-lock
         glib
@@ -67,7 +66,6 @@ in
         #
         vscode
         vscode.fhs
-        # zed-editor
         # nixd
 
         #
@@ -93,7 +91,6 @@ in
 
         tmux
         libGL
-        # curlWithGnutls
       ])
       ++ (with pkgs.gnome; [
         gnome-system-monitor

@@ -1,14 +1,6 @@
 { pkgs, ... }:
 
 {
-  # bobymoby.X11 = {
-  #   i3.enable = true;
-  #   picom.enable = true;
-  #   polybar.enable = true;
-  #   rofi.enable = true;
-  #   libinput-gestures.enable = true;
-  # };
-
   bobymoby = {
     wayland = {
       enable = true;
@@ -32,9 +24,4 @@
     openrazer-daemon # razer mouse control
     polychromatic # razer gui
   ];
-
-  # bobymoby.X11 = {
-  #   enable = true;
-  #   libinput-gestures.enable = true;
-  # };
 }

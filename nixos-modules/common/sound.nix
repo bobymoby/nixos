@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   # sound.enable = true;
@@ -16,6 +16,6 @@
 
   hardware.pulseaudio = {
     enable = false;
-    package = pkgs.pulseaudioFull;
+    # package = pkgs.pulseaudioFull;
   };
 }

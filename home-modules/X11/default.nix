@@ -8,10 +8,17 @@
     ./rofi/rofi.nix
   ];
 
-  options.bobymoby.X11.enable = lib.mkEnableOption "Enable X11 configuration";
+  options.bobymoby.X11 = {
+    enable = lib.mkEnableOption "Enable X11 configuration";
+    withi3 = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Enable i3 window manager";
+    };
+  };
 
   config = lib.mkIf config.bobymoby.X11.enable {
-    bobymoby.X11 = {
+    bobymoby.X11 = lib.mkIf config.bobymoby.X11.withi3 {
       i3.enable = true;
       picom.enable = true;
       polybar.enable = true;

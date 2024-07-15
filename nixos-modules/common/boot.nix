@@ -39,5 +39,6 @@
     initrd.systemd.enable = true;
     loader.efi.canTouchEfiVariables = true;
   };
-  time.hardwareClockInLocalTime = true;
+
+  time.hardwareClockInLocalTime = true; # needed for dual booting with windows
 }

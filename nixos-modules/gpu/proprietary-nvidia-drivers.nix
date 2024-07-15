@@ -1,14 +1,12 @@
-{ config, lib, ... }:
+{ lib, config, ... }:
 
 {
 
-  options = {
-    bobymoby.proprietary-nvidia-drivers = {
-      enable = lib.mkEnableOption "enable proprietary nvidia drivers";
-      prime.enable = lib.mkEnableOption "enable prime";
-      useBeta = lib.mkEnableOption "use beta packages";
-      forceFullCompositionPipeline = lib.mkEnableOption "forceFullCompositionPipeline";
-    };
+  options.bobymoby.proprietary-nvidia-drivers = {
+    enable = lib.mkEnableOption "enable proprietary nvidia drivers";
+    prime.enable = lib.mkEnableOption "enable prime";
+    useBeta = lib.mkEnableOption "use beta packages";
+    forceFullCompositionPipeline = lib.mkEnableOption "forceFullCompositionPipeline";
   };
   # boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
   # boot.initrd.kernelModules = [ "nvidia" ];

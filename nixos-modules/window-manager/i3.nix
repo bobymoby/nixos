@@ -1,7 +1,7 @@
 {
-  pkgs,
-  config,
   lib,
+  config,
+  pkgs,
   ...
 }:
 
@@ -9,7 +9,6 @@
   options.bobymoby.windowManager.i3.enable = lib.mkEnableOption "Enable i3";
 
   config = lib.mkIf config.bobymoby.windowManager.i3.enable {
-    # x+i3 setup
     environment.pathsToLink = [
       "/libexec"
       # "/share/zsh"

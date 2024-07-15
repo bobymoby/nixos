@@ -2,17 +2,16 @@
 
 {
   imports = [
-    ./gpu
-    ./window-manager
-    ./login-manager
-    ./shell
-    ./systemd-services # has common services
-    ./steam/steam.nix
-    ./bluetooth/bluetooth.nix
-    ./netdata/netdata.nix
-    ./virtualization/virtualization.nix
-    ./debug/debug.nix
-
     ./common
+
+    ./bluetooth/bluetooth.nix
+    ./debug/debug.nix
+    ./gpu
+    ./login-manager
+    ./netdata/netdata.nix
+    ./shell
+    ./steam/steam.nix
+    ./virtualization/virtualization.nix
+    ./window-manager
   ];
 }

@@ -1,7 +1,7 @@
 {
-  pkgs,
   lib,
   config,
+  pkgs,
   ...
 }:
 
@@ -13,6 +13,7 @@
       source = ./zsh;
       recursive = true;
     };
+
     programs.zsh = {
       enable = true;
       # enableCompletion = true;

@@ -13,20 +13,31 @@
     jetbrainsTools.enable = lib.mkEnableOption "Enable JetBrains tools";
   };
 
-  config.home.packages =
-    [ ]
-    ++ (lib.optionals config.bobymoby.dev.nix.enable [
-      pkgs.nixpkgs-fmt
-      pkgs.nixfmt-rfc-style
-      pkgs.nil # nix linter
-    ])
-    ++ (lib.optionals config.bobymoby.dev.web.enable [
-      pkgs.postman
-      pkgs.dbeaver-bin
-    ])
-    ++ (lib.optionals config.bobymoby.dev.integrated.enable [ pkgs.arduino-ide ])
-    ++ (lib.optionals config.bobymoby.dev.jetbrainsTools.enable [
-      pkgs.rider
-      pkgs.idea-ultimate
-    ]);
+  config = {
+    home.packages =
+      [ ]
+      ++ lib.optionals config.bobymoby.dev.nix.enable (
+        with pkgs;
+        [
+          nixpkgs-fmt
+          nixfmt-rfc-style
+          nil # nix linter
+        ]
+      )
+      ++ lib.optionals config.bobymoby.dev.web.enable (
+        with pkgs;
+        [
+          postman
+          dbeaver-bin
+        ]
+      )
+      ++ lib.optionals config.bobymoby.dev.integrated.enable (with pkgs; [ arduino-ide ])
+      ++ lib.optionals config.bobymoby.dev.jetbrainsTools.enable (
+        with pkgs;
+        [
+          rider
+          idea-ultimate
+        ]
+      );
+  };
 }
