@@ -10,9 +10,9 @@ let
   shouldUseLaptopConfig = config.bobymoby.wayland.hyprland.useLaptopConfig;
   configPath =
     if shouldUsePcConfig then
-      ./specific/pc.conf
+      ./specific/pc
     else if shouldUseLaptopConfig then
-      ./specific/laptop.conf
+      ./specific/laptop
     else
       null;
 in
@@ -32,6 +32,10 @@ in
     ];
     home = {
       file = {
+        ".config/hypr" = {
+          source = configPath;
+          recursive = true;
+        };
         ".config/hypr/common" = {
           source = ./common;
           recursive = true;
@@ -40,10 +44,6 @@ in
           source = ./scripts;
           recursive = true;
         };
-        ".config/hypr/nvidia.conf".source = ./specific/nvidia.conf;
-        "./.config/hypr/hyprland.conf".source = configPath; # ./ is required
-        ".config/hypr/hypridle.conf".source = ./extras/hypridle.conf;
-        ".config/hypr/hyprlock.conf".source = ./extras/hyprlock.conf;
         ".config/hypr/hyprpaper.conf".source = ./extras/hyprpaper.conf;
       };
 
@@ -52,7 +52,6 @@ in
         hypridle
         hyprlock
         hyprpaper
-        nwg-bar
       ];
     };
     # wayland.windowManager.hyprland = {
