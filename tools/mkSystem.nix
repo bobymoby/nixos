@@ -20,5 +20,6 @@ inputs.nixpkgs.lib.nixosSystem {
   modules = [
     confFile
     outputs.nixosModules.default
+    outputs.nixosSettings.default
   ];
 }

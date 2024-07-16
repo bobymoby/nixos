@@ -33,12 +33,14 @@
     in
     {
       nixosModules.default = ./nixos-modules;
+      nixosSettings.default = ./nixos-settings;
       nixosConfigurations = {
         BobiLaptopNixOS = mkSystem ./hosts/laptop/configuration.nix;
         BobiNixOS = mkSystem ./hosts/pc/configuration.nix;
       };
 
       homeModules.default = ./home-modules;
+      homeSettings.default = ./home-settings;
       homeConfigurations = {
         "bobymoby@BobiLaptopNixOS" = mkHome ./hosts/laptop/home.nix;
         "bobymoby@BobiNixOS" = mkHome ./hosts/pc/home.nix;

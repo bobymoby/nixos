@@ -1,7 +1,5 @@
 {
   imports = [
-    ./common
-
     ./bluetooth/bluetooth.nix
     ./debug/debug.nix
     ./gpu

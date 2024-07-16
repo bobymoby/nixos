@@ -22,5 +22,6 @@ inputs.home-manager.lib.homeManagerConfiguration {
   modules = [
     confFile
     outputs.homeModules.default
+    outputs.homeSettings.default
   ];
 }

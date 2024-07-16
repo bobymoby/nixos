@@ -1,7 +1,5 @@
 {
   imports = [
-    ./common
-
     ./dev/dev.nix
     ./easyeffects/easyeffects.nix
     ./gaming/gaming.nix
