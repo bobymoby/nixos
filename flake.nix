@@ -10,7 +10,7 @@
   outputs =
     inputs:
     let
-      tools = import ./tools/tools.nix;
+      tools = import ./tools;
       overlays = import ./overlays;
       pkgs = tools.mkPkgs { inherit inputs overlays; };
       pointerTheme = {

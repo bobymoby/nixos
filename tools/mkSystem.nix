@@ -2,7 +2,7 @@
 { inputs, mySpecialArgs }:
 confFile:
 let
-  tools = import ./tools.nix;
+  tools = import ./.;
   outputs = inputs.self.outputs;
 in
 inputs.nixpkgs.lib.nixosSystem {

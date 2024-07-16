@@ -1,6 +1,6 @@
 attrSet:
 let
-  tools = import ./tools.nix;
+  tools = import ./.;
   isSet = tools.isSet;
   hasEnableOption = tools.hasEnableOption;
 in

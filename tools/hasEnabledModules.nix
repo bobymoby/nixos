@@ -1,6 +1,6 @@
 attrSet:
 let
-  tools = import ./tools.nix;
+  tools = import ./.;
   isZero = tools.isZero;
   enabledSubmoduleCount = tools.enabledSubmoduleCount;
 in
