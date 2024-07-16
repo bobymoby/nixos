@@ -32,11 +32,6 @@ in
       # libraries = with pkgs; [ ];
     };
 
-    # programs.fzf = {
-    #   keybindings = true;
-    #   fuzzyCompletion = true;
-    # };
-
     services.xserver.excludePackages = with pkgs; [ xterm ];
     environment.systemPackages =
       (with pkgs; [

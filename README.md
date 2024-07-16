@@ -29,7 +29,7 @@ Run:
       find /etc/nixos -type f -name "\*.sh" -exec chmod +x {} \;
     ```
 
-Fix `/hosts/**/hardware-configuration.nix`
+Fix `/hosts/**/hardware-config/hardware-configuration.nix`
 
 Run
 
@@ -50,13 +50,20 @@ Run
 
 # Known issues
 
--   command-not-found might not work even after running setup-scripts. https://github.com/NixOS/nixpkgs/issues/171054
--   X sometimes hangs after suspend and closes all windows. https://github.com/NVIDIA/open-gpu-kernel-modules/issues/472
--   Chromium-based/Electron apps have problems with resizing. https://github.com/hyprwm/Hyprland/issues/6552 https://github.com/hyprwm/Hyprland/issues/1462
+-   command-not-found is not supported for flakes. As a workaround, channels are used for the first build. https://github.com/NixOS/nixpkgs/issues/171054
+-   Session sometimes hangs after suspend. https://github.com/NVIDIA/open-gpu-kernel-modules/issues/472
+-   Electron-based apps have problems with resizing. https://github.com/hyprwm/Hyprland/issues/6552 https://github.com/hyprwm/Hyprland/issues/1462
 -   Gruvbox theme nixpkgs package does not provide some of the themes. https://github.com/NixOS/nixpkgs/issues/323833
--   Wifi sometimes does not work after using windows due to a windows issue.
+-   Wifi sometimes does not work after using windows due to a windows issue/optimization.
 -   easyeffects sometimes hangs
 -   btop hangs on suspend
+
+# Useful commands
+
+-   `nh os switch`
+-   `nh home switch`
+-   `nh ... -u`
+-   `nix flake lock --update-input nixpkgs --update-input home-manager`
 
 # Options
 
