@@ -11,7 +11,8 @@
     inputs:
     let
       tools = import ./tools/tools.nix;
-      pkgs = tools.mkPkgs { inherit inputs; };
+      overlays = import ./overlays;
+      pkgs = tools.mkPkgs { inherit inputs overlays; };
       pointerTheme = {
         name = "Bibata-Modern-Ice";
         package = pkgs.bibata-cursors;
@@ -20,13 +21,13 @@
       mkSystem = tools.mkSystem {
         inherit inputs;
         mySpecialArgs = {
-          inherit pointerTheme;
+          inherit pointerTheme overlays;
         };
       };
       mkHome = tools.mkHome {
         inherit inputs;
         mySpecialArgs = {
-          inherit pointerTheme;
+          inherit pointerTheme overlays;
         };
       };
     in

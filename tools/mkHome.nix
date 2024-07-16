@@ -4,7 +4,8 @@ confFile:
 let
   tools = import ./tools.nix;
   outputs = inputs.self.outputs;
-  pkgs = import ./mkPkgs.nix { inherit system; } { inherit inputs; };
+  overlays = mySpecialArgs.overlays;
+  pkgs = import ./mkPkgs.nix { inherit system; } { inherit inputs overlays; };
 in
 inputs.home-manager.lib.homeManagerConfiguration {
   inherit pkgs;
