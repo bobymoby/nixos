@@ -26,7 +26,7 @@ Run:
 -   clone this repo
 -   ```bash
       sudo chown -R bobymoby /etc/nixos
-      find /etc/nixos -type f -name "\*.sh" -exec chmod +x {} \;
+      chmod +x /etc/nixos/**/*.sh
     ```
 
 Fix `/hosts/**/hardware-config/hardware-configuration.nix`
