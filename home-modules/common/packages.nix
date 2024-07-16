@@ -11,6 +11,7 @@
       obsidian
       google-chrome
       bat
+      gimp
       # firefox
     ])
     ++ (with pkgs.gnome; [ gnome-calculator ])
