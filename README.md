@@ -44,13 +44,6 @@ Run
     ```
 -   load easyeffects preset(should not be necessary after latest commits)
 
-# Current fs setup
-
--   boot - `1GiB FAT32` flagged with `boot` and mounted on `/boot` shared with Windows
--   swap - `35044MiB linuxswap` flagged with `swap`
--   root - flagged with `root` and mounted on `/`
--   windowsC - ntfs volume mounted on `/windowsC`
-
 # Windows setup
 
 -   Do the steps from this answer and it's comments: https://askubuntu.com/a/1251469 https://forums.linuxmint.com/viewtopic.php?t=344835.
@@ -62,6 +55,8 @@ Run
 -   Chromium-based/Electron apps have problems with resizing. https://github.com/hyprwm/Hyprland/issues/6552 https://github.com/hyprwm/Hyprland/issues/1462
 -   Gruvbox theme nixpkgs package does not provide some of the themes. https://github.com/NixOS/nixpkgs/issues/323833
 -   Wifi sometimes does not work after using windows due to a windows issue.
+-   easyeffects sometimes hangs
+-   btop hangs on suspend
 
 # Options
 
@@ -129,9 +124,3 @@ home-manager:
             rofi.enable
             picom.enable
 ```
-
-# default.nix with code
-
--   home-modules/wayland(enables rofi and waybar)
--   home-modules/X11(enables i3, polybar, rofi, picom)
--   hosts/\*\*/hardware-config(host specific hardware settings)

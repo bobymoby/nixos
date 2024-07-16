@@ -16,7 +16,7 @@
         startx.enable = true;
         lightdm = {
           enable = true;
-          background = ../../shared/background.png;
+          background = ../../assets/background.png;
 
           greeters.gtk = {
             cursorTheme = mySpecialArgs.pointerTheme;

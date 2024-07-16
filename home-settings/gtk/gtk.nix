@@ -34,6 +34,6 @@
     inherit (mySpecialArgs.pointerTheme) name package size;
   };
 
-  home.file.".background-image.png".source = ../../shared/background.png;
-  home.file.".background-image".source = ../../shared/background.png;
+  home.file.".background-image.png".source = ../../assets/background.png;
+  home.file.".background-image".source = ../../assets/background.png;
 }
