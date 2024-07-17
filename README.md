@@ -100,7 +100,9 @@ home-manager:
         alacritty.debugInfo.enable
         dev
             nix.enable
-            web.enable
+            web
+                enable
+                desktopEntries.dbeaver-xwayland.enable(true by default when web is enabled)
             integrated.enable
             jetbrains-tools.enable
         shell
