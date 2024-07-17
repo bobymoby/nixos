@@ -49,6 +49,6 @@
   bobymoby.gpu.proprietary-nvidia-drivers = {
     enable = true;
     forceFullCompositionPipeline = false;
-    useBeta = false;
+    use-beta = false;
   };
 }

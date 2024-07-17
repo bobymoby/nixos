@@ -6,20 +6,20 @@
   ...
 }:
 let
-  hasEnabledLoginManager = tools.hasEnabledModules config.bobymoby.loginManager;
+  hasEnabledLoginManager = tools.hasEnabledModules config.bobymoby.login-manager;
 in
 {
-  options.bobymoby.windowManager.hyprland = {
+  options.bobymoby.window-manager.hyprland = {
     enable = lib.mkEnableOption "Enable Hyprland";
     autoStart = lib.mkEnableOption "Auto-start Hyprland";
   };
 
-  config = lib.mkIf config.bobymoby.windowManager.hyprland.enable {
+  config = lib.mkIf config.bobymoby.window-manager.hyprland.enable {
 
     assertions = [
       {
         assertion =
-          !(hasEnabledLoginManager && config.bobymoby.windowManager.hyprland.autoStart);
+          !(hasEnabledLoginManager && config.bobymoby.window-manager.hyprland.autoStart);
         message = "Hyprland auto start requires no login managers to be installed";
       }
     ];
@@ -28,7 +28,7 @@ in
 
     xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
 
-    services.greetd = lib.mkIf config.bobymoby.windowManager.hyprland.autoStart {
+    services.greetd = lib.mkIf config.bobymoby.window-manager.hyprland.autoStart {
       enable = true;
       settings = rec {
         default_session = {

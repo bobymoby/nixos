@@ -76,7 +76,7 @@ nix:
         netdata.enable
         virtualization.enable
         debug.enable
-        loginManager
+        login-manager
             gdm.enable
             lightdm.enable
             sddm
@@ -85,24 +85,24 @@ nix:
         shell
             fish.enable
             zsh.enable
-        windowManager
+        window-manager
             i3.enable
             hyprland.enable
         gpu.proprietary-nvidia-drivers
             enable
             prime.enable
-            useBeta
+            use-beta
             forceFullCompositionPipeline
 
 home-manager:
     bobymoby
         libinput-gestures.enable
-        alacritty.enableDebugInfo
+        alacritty.debugInfo.enable
         dev
             nix.enable
             web.enable
             integrated.enable
-            jetbrainsTools.enable
+            jetbrains-tools.enable
         shell
             fish.enable
             zsh.enable

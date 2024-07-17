@@ -1,6 +1,6 @@
 { config, tools, ... }:
 let
-  enabledLoginManagerCount = tools.enabledSubmoduleCount config.bobymoby.loginManager;
+  enabledLoginManagerCount = tools.enabledSubmoduleCount config.bobymoby.login-manager;
 in
 {
   imports = [

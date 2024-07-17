@@ -5,7 +5,7 @@
   options.bobymoby.gpu.proprietary-nvidia-drivers = {
     enable = lib.mkEnableOption "enable proprietary nvidia drivers";
     prime.enable = lib.mkEnableOption "enable prime";
-    useBeta = lib.mkEnableOption "use beta packages";
+    use-beta = lib.mkEnableOption "use beta packages";
     forceFullCompositionPipeline = lib.mkEnableOption "forceFullCompositionPipeline";
   };
   # boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
@@ -32,7 +32,7 @@
           };
         };
 
-        package = lib.mkIf config.bobymoby.gpu.proprietary-nvidia-drivers.useBeta config.boot.kernelPackages.nvidiaPackages.beta;
+        package = lib.mkIf config.bobymoby.gpu.proprietary-nvidia-drivers.use-beta config.boot.kernelPackages.nvidiaPackages.beta;
         forceFullCompositionPipeline =
           config.bobymoby.gpu.proprietary-nvidia-drivers.forceFullCompositionPipeline;
       };

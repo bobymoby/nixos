@@ -12,6 +12,6 @@
 
     FLAKE = "/etc/nixos";
 
-    NIXOS_OZONE_WL = lib.mkIf config.bobymoby.windowManager.hyprland.enable "1";
+    NIXOS_OZONE_WL = lib.mkIf config.bobymoby.window-manager.hyprland.enable "1";
   };
 }

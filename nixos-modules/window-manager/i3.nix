@@ -6,9 +6,9 @@
 }:
 
 {
-  options.bobymoby.windowManager.i3.enable = lib.mkEnableOption "Enable i3";
+  options.bobymoby.window-manager.i3.enable = lib.mkEnableOption "Enable i3";
 
-  config = lib.mkIf config.bobymoby.windowManager.i3.enable {
+  config = lib.mkIf config.bobymoby.window-manager.i3.enable {
     environment.pathsToLink = [
       "/libexec"
       # "/share/zsh"

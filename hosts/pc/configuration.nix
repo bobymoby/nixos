@@ -6,7 +6,7 @@
   networking.hostName = "BobiNixOS";
 
   bobymoby = {
-    windowManager.hyprland = {
+    window-manager.hyprland = {
       enable = true;
       autoStart = true;
     };

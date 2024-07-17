@@ -6,7 +6,7 @@
 }:
 
 {
-  options.bobymoby.alacritty.enableDebugInfo = lib.mkEnableOption "Enable debugging";
+  options.bobymoby.alacritty.debugInfo.enable = lib.mkEnableOption "Enable debugging";
 
   config = {
     programs.alacritty = {
@@ -14,7 +14,7 @@
       settings = {
         font.size = 16;
       };
-      package = lib.mkIf config.bobymoby.alacritty.enableDebugInfo (
+      package = lib.mkIf config.bobymoby.alacritty.debugInfo.enable (
         pkgs.alacritty.overrideAttrs (oldAttrs: {
           separateDebugInfo = true;
         })

@@ -1,6 +1,6 @@
 {
   imports = [
-    ./dev/dev.nix
+    ./dev
     ./easyeffects/easyeffects.nix
     ./gaming/gaming.nix
     ./libinput-gestures/libinput-gestures.nix

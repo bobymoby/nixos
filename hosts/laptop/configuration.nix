@@ -6,8 +6,8 @@
   hardware.openrazer.enable = true; # razer mouse control
 
   bobymoby = {
-    windowManager.hyprland.enable = true;
-    loginManager.gdm.enable = true;
+    window-manager.hyprland.enable = true;
+    login-manager.gdm.enable = true;
     shell.zsh.enable = true;
     virtualization.enable = true;
   };

@@ -71,7 +71,7 @@
       size = 4 * 1024;
     }
   ];
-  
+
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp37s0.useDHCP = lib.mkDefault true;
 

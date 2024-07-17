@@ -11,11 +11,11 @@
     shell.zsh.enable = true;
 
     easyeffects.enable = true;
-    alacritty.enableDebugInfo = true;
+    alacritty.debugInfo.enable = true;
 
     dev = {
       nix.enable = true;
-      # web.enable = true;
+      web.enable = true;
       # integrated.enable = true;
       # jetbrainsTools.enable = true;
     };
