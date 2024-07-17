@@ -49,10 +49,6 @@ in
         # lxappearance
         # xorg.xinit
 
-        #
-        # io
-        #
-        # pulseaudioFull
         pavucontrol
         pamixer
 

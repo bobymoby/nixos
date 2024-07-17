@@ -162,6 +162,19 @@
 			},
 			"split-channels": false
 		},
+		"filter#0": {
+			"balance": 0.0,
+			"bypass": false,
+			"frequency": 80.0,
+			"gain": 0.0,
+			"input-gain": 0.0,
+			"mode": "RLC (BT)",
+			"output-gain": 0.0,
+			"quality": 0.7,
+			"slope": "x2",
+			"type": "High-pass",
+			"width": 4.0
+		},
 		"gate#0": {
 			"attack": 1.0,
 			"bypass": false,
@@ -213,6 +226,7 @@
 		"plugins_order": [
 			"rnnoise#0",
 			"gate#0",
+			"filter#0",
 			"deesser#0",
 			"compressor#0",
 			"equalizer#0",
