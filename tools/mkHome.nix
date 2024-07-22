@@ -1,5 +1,9 @@
 { system }:
-{ inputs, mySpecialArgs }:
+{
+  inputs,
+  mySpecialArgs,
+  extraModules ? [ ],
+}:
 confFile:
 let
   tools = import ./.;
@@ -23,5 +27,5 @@ inputs.home-manager.lib.homeManagerConfiguration {
     confFile
     outputs.homeModules.default
     outputs.homeSettings.default
-  ];
+  ] ++ extraModules;
 }
