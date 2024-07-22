@@ -32,6 +32,8 @@ in
       # libraries = with pkgs; [ ];
     };
 
+    documentation.man.generateCaches = true;
+
     services.xserver.excludePackages = with pkgs; [ xterm ];
     environment.systemPackages =
       (with pkgs; [
@@ -56,7 +58,8 @@ in
         # misc
         #
         unpFull # extract any archive
-
+        man-pages
+        man-pages-posix
         #
         # editors + utils
         #
