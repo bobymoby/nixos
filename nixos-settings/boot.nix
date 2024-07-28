@@ -35,12 +35,13 @@
   boot = {
     kernelParams = [ "quiet" ];
 
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    # kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages = pkgs.linuxPackages_latest;
     initrd.systemd.enable = true;
     loader.efi.canTouchEfiVariables = true;
   };
 
-  chaotic.scx.enable = true;
+  # chaotic.scx.enable = true;
 
   time.hardwareClockInLocalTime = true; # needed for dual booting with windows
 }
