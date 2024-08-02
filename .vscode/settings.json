@@ -1,5 +1,9 @@
 {
 	"editor.tabSize": 2,
 	"editor.insertSpaces": true,
-	"cSpell.words": ["nixos", "nixpkgs"]
+	"cSpell.words": ["nixos", "nixpkgs"],
+	"workbench.editor.customLabels.enabled": true,
+	"workbench.editor.customLabels.patterns": {
+		"**/default.nix": "${dirname} - default.nix"
+	}
 }
