@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./pstate.nix
+    # ./pstate.nix
     ./grub.nix
   ];
 
@@ -29,7 +29,10 @@
   #   tctiEnvironment.enable = true;
   # };
 
-  boot.kernelParams = [ "nvidia-drm.fbdev=1" ];
+  boot.kernelParams = [
+    "nvidia-drm.fbdev=1"
+    "amd_pstate=guided"
+  ];
 
   boot.blacklistedKernelModules =
     ([
@@ -45,6 +48,11 @@
   boot.kernelModules = [ "zenpower" ];
 
   services.fstrim.enable = lib.mkDefault true; # Enable periodic TRIM for SSDs
+
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "schedutil";
+  };
 
   bobymoby.gpu.proprietary-nvidia-drivers = {
     enable = true;
