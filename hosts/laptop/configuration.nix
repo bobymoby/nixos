@@ -1,3 +1,5 @@
+{pkgs, ...}:
+
 {
   imports = [ ./hardware-config ];
 
@@ -11,4 +13,13 @@
     shell.zsh.enable = true;
     virtualization.enable = true;
   };
+
+  networking.firewall = {
+    allowedTCPPorts = [ 7777 ];
+    allowedUDPPorts = [ 7777 ];
+  };
+
+  environment.systemPackages = with pkgs; [
+    icu
+  ];
 }
