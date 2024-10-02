@@ -1,11 +1,21 @@
 { lib, config, ... }:
 
+let
+  nvidiaPackages = config.boot.kernelPackages.nvidiaPackages;
+  driver-version =
+    if config.bobymoby.gpu.proprietary-nvidia-drivers.use-production then
+      nvidiaPackages.production
+    else if config.bobymoby.gpu.proprietary-nvidia-drivers.use-beta then
+      nvidiaPackages.beta
+    else
+      nvidiaPackages.stable;
+in
 {
-
   options.bobymoby.gpu.proprietary-nvidia-drivers = {
     enable = lib.mkEnableOption "enable proprietary nvidia drivers";
     prime.enable = lib.mkEnableOption "enable prime";
     use-beta = lib.mkEnableOption "use beta packages";
+    use-production = lib.mkEnableOption "use production packages";
     forceFullCompositionPipeline = lib.mkEnableOption "forceFullCompositionPipeline";
   };
   # boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
@@ -32,13 +42,13 @@
           };
         };
 
-        package = lib.mkIf config.bobymoby.gpu.proprietary-nvidia-drivers.use-beta config.boot.kernelPackages.nvidiaPackages.beta;
+        package = driver-version;
         forceFullCompositionPipeline =
           config.bobymoby.gpu.proprietary-nvidia-drivers.forceFullCompositionPipeline;
       };
-      opengl = {
+      graphics = {
         enable = true;
-        driSupport32Bit = true;
+        enable32Bit = true;
       };
     };
   };

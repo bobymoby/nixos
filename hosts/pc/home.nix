@@ -11,7 +11,7 @@
     shell.zsh.enable = true;
 
     easyeffects.enable = true;
-    alacritty.debugInfo.enable = true;
+    # alacritty.debugInfo.enable = true;
 
     dev = {
       nix.enable = true;

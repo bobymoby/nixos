@@ -35,66 +35,63 @@ in
     documentation.man.generateCaches = true;
 
     services.xserver.excludePackages = with pkgs; [ xterm ];
-    environment.systemPackages =
-      (with pkgs; [
-        # nvidia-offload
-        #
-        # xorg+i3
-        #
-        # polybarFull
-        # xclip
-        # maim
-        # dex
-        # xss-lock
-        glib
-        xdg-utils
-        # lxappearance
-        # xorg.xinit
+    environment.systemPackages = with pkgs; [
+      # nvidia-offload
+      #
+      # xorg+i3
+      #
+      # polybarFull
+      # xclip
+      # maim
+      # dex
+      # xss-lock
+      glib
+      xdg-utils
+      # lxappearance
+      # xorg.xinit
 
-        pavucontrol
-        pamixer
+      pavucontrol
+      pamixer
 
-        #
-        # misc
-        #
-        unpFull # extract any archive
-        man-pages
-        man-pages-posix
-        #
-        # editors + utils
-        #
-        vscode
-        vscode.fhs
-        # nixd
+      #
+      # misc
+      #
+      unpFull # extract any archive
+      man-pages
+      man-pages-posix
+      #
+      # editors + utils
+      #
+      vscode
+      vscode.fhs
+      # nixd
 
-        #
-        # terminal + minor utils
-        #
-        gitFull
-        libnotify
-        killall
-        eza # ls alternative
-        jq # json parser
-        nh # nix cli helper
-        # kitty
+      #
+      # terminal + minor utils
+      #
+      gitFull
+      libnotify
+      killall
+      eza # ls alternative
+      jq # json parser
+      nh # nix cli helper
+      # kitty
 
-        #
-        # system monitoring
-        #
-        htop
-        btopCuda
-        nvtop
-        neofetch
-        fastfetch
-        lshw # list gpus
+      #
+      # system monitoring
+      #
+      htop
+      btopCuda
+      nvtopPackages.full
+      neofetch
+      fastfetch
+      lshw # list gpus
 
-        libGL
-      ])
-      ++ (with pkgs.gnome; [
-        gnome-system-monitor
-        gnome-software
-        eog # image viewer
-      ]);
+      gnome-system-monitor
+      gnome-software
+      eog # image viewer
+
+      libGL
+    ];
   };
-
 }

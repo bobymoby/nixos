@@ -54,9 +54,12 @@
     cpuFreqGovernor = "schedutil";
   };
 
+  systemd.tpm2.enable = false;
+
   bobymoby.gpu.proprietary-nvidia-drivers = {
     enable = true;
     forceFullCompositionPipeline = false;
     use-beta = false;
+    use-production = true;
   };
 }

@@ -1,5 +1,5 @@
 {
-  services.xserver = {
+  services = {
     libinput = {
       enable = true;
       touchpad = {
@@ -10,7 +10,7 @@
         accelProfile = "flat";
       };
     };
-    xkb = {
+    xserver.xkb = {
       layout = "us,bg";
       variant = "altgr-intl,phonetic";
       options = "grp:alt_shift_toggle";
