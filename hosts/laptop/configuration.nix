@@ -15,8 +15,14 @@
   };
 
   networking.firewall = {
-    allowedTCPPorts = [ 7777 25565 ];
-    allowedUDPPorts = [ 7777 25565 ];
+    allowedTCPPorts = [
+      7777
+      25565
+    ];
+    allowedUDPPorts = [
+      7777
+      25565
+    ];
   };
 
   environment.systemPackages = with pkgs; [

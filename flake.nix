@@ -1,7 +1,8 @@
 {
   inputs = {
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,14 +25,14 @@
         mySpecialArgs = {
           inherit pointerTheme overlays;
         };
-        extraModules = [ inputs.chaotic.nixosModules.default ];
+        # extraModules = [ inputs.chaotic.nixosModules.default ];
       };
       mkHome = tools.mkHome {
         inherit inputs;
         mySpecialArgs = {
           inherit pointerTheme overlays;
         };
-        extraModules = [ inputs.chaotic.homeManagerModules.default ];
+        # extraModules = [ inputs.chaotic.homeManagerModules.default ];
       };
     in
     {
