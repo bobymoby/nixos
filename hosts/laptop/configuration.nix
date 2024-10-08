@@ -15,11 +15,14 @@
   };
 
   networking.firewall = {
-    allowedTCPPorts = [ 7777 ];
-    allowedUDPPorts = [ 7777 ];
+    allowedTCPPorts = [ 7777 25565 ];
+    allowedUDPPorts = [ 7777 25565 ];
   };
 
   environment.systemPackages = with pkgs; [
     icu
   ];
+
+  # services.logmein-hamachi.enable = true;
+  # programs.haguichi.enable = true;
 }
