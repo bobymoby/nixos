@@ -13,7 +13,11 @@ in
 {
   options.bobymoby.gpu.proprietary-nvidia-drivers = {
     enable = lib.mkEnableOption "enable proprietary nvidia drivers";
-    prime.enable = lib.mkEnableOption "enable prime";
+    prime = {
+      enable = lib.mkEnableOption "enable prime";
+      sync = lib.mkEnableOption "enable prime sync";
+      offload = lib.mkEnableOption "enable prime offload";
+    };
     use-beta = lib.mkEnableOption "use beta packages";
     use-production = lib.mkEnableOption "use production packages";
     forceFullCompositionPipeline = lib.mkEnableOption "forceFullCompositionPipeline";
@@ -28,7 +32,7 @@ in
         modesetting.enable = true;
         powerManagement = {
           enable = true;
-          finegrained = config.bobymoby.gpu.proprietary-nvidia-drivers.prime.enable;
+          finegrained = config.bobymoby.gpu.proprietary-nvidia-drivers.prime.offload;
         };
         open = false; # open source kernel module
         nvidiaSettings = true; # nvidia-settings menu
@@ -36,10 +40,12 @@ in
         prime = lib.mkIf config.bobymoby.gpu.proprietary-nvidia-drivers.prime.enable {
           intelBusId = "PCI:0:2:0";
           nvidiaBusId = "PCI:1:0:0";
-          offload = {
+          offload = lib.mkIf config.bobymoby.gpu.proprietary-nvidia-drivers.prime.offload {
             enable = true;
             enableOffloadCmd = true;
           };
+
+          sync.enable = config.bobymoby.gpu.proprietary-nvidia-drivers.prime.sync;
         };
 
         package = driver-version;
