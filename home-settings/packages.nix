@@ -11,7 +11,7 @@
     google-chrome
     bat
     gimp
-    # firefox
+    firefox
     gnome-calculator
     nemo
   ];

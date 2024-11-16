@@ -1,4 +1,4 @@
-{ mySpecialArgs, ... }:
+{ mySpecialArgs, inputs, ... }:
 let
   overlays = mySpecialArgs.overlays;
 in
@@ -8,8 +8,11 @@ in
     config.allowUnfree = true;
   };
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix = {
+    nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+  };
 }

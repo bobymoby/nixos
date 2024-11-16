@@ -40,10 +40,12 @@ in
         prime = lib.mkIf config.bobymoby.gpu.proprietary-nvidia-drivers.prime.enable {
           intelBusId = "PCI:0:2:0";
           nvidiaBusId = "PCI:1:0:0";
-          offload = lib.mkIf config.bobymoby.gpu.proprietary-nvidia-drivers.prime.offload {
-            enable = true;
-            enableOffloadCmd = true;
-          };
+          offload =
+            lib.mkIf config.bobymoby.gpu.proprietary-nvidia-drivers.prime.offload
+              {
+                enable = true;
+                enableOffloadCmd = true;
+              };
 
           sync.enable = config.bobymoby.gpu.proprietary-nvidia-drivers.prime.sync;
         };
