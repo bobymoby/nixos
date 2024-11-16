@@ -37,32 +37,32 @@
       ];
     };
 
-    "/windows/C" = {
-      device = "/dev/disk/by-uuid/2838BF4A38BF15B2";
-      fsType = "ntfs-3g";
-      options = [
-        "rw"
-        "uid=1000"
-      ];
-    };
+#    "/windows/C" = {
+#      device = "/dev/disk/by-uuid/2838BF4A38BF15B2";
+#      fsType = "ntfs-3g";
+#      options = [
+#        "rw"
+#        "uid=1000"
+#      ];
+#    };
 
-    "/windows/D" = {
-      device = "/dev/disk/by-uuid/A62639652639379F";
-      fsType = "ntfs-3g";
-      options = [
-        "rw"
-        "uid=1000"
-      ];
-    };
+#    "/windows/D" = {
+#      device = "/dev/disk/by-uuid/A62639652639379F";
+#      fsType = "ntfs-3g";
+#      options = [
+#        "rw"
+#        "uid=1000"
+#      ];
+#    };
 
-    "/windows/E" = {
-      device = "/dev/disk/by-uuid/B688A03C889FF957";
-      fsType = "ntfs-3g";
-      options = [
-        "rw"
-        "uid=1000"
-      ];
-    };
+#    "/windows/E" = {
+#      device = "/dev/disk/by-uuid/B688A03C889FF957";
+#      fsType = "ntfs-3g";
+#      options = [
+#        "rw"
+#        "uid=1000"
+#      ];
+#    };
   };
 
   swapDevices = [
