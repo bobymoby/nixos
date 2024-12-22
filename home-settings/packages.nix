@@ -14,5 +14,6 @@
     firefox
     gnome-calculator
     nemo
+    stremio
   ];
 }

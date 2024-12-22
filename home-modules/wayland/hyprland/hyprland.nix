@@ -44,14 +44,15 @@ in
           source = ./scripts;
           recursive = true;
         };
-        ".config/hypr/hyprpaper.conf".source = ./extras/hyprpaper.conf;
+        # ".config/hypr/hyprpaper.conf".source = ./extras/hyprpaper.conf;
       };
 
       packages = with pkgs; [
         hyprshot
         hypridle
         hyprlock
-        hyprpaper
+        # hyprpaper
+        swww
       ];
     };
     # wayland.windowManager.hyprland = {

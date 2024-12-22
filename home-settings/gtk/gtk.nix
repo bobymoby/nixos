@@ -36,4 +36,5 @@
 
   home.file.".background-image.png".source = ../../assets/background.png;
   home.file.".background-image".source = ../../assets/background.png;
+  home.file.".background-gif.gif".source = ../../assets/background-gif.gif;
 }
