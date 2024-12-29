@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -15,6 +15,5 @@
     gnome-calculator
     nemo
     stremio
-    inputs.ghostty.packages.x86_64-linux.default
   ];
 }

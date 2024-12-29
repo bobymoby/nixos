@@ -1,7 +1,5 @@
 {
   imports = [
-    # ./alacritty/alacritty.nix
-    ./kitty/kitty.nix
     ./btop/btop.nix
     ./direnv/direnv.nix
     ./dunst/dunst.nix

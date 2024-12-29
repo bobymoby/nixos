@@ -6,10 +6,12 @@
 }:
 
 {
-  options.bobymoby.alacritty.debugInfo.enable =
-    lib.mkEnableOption "Enable debugging";
+  options.bobymoby.terminal.alacritty = {
+    enable = lib.mkEnableOption "Enable Alacritty";
+    debugInfo.enable = lib.mkEnableOption "Enable debugging";
+  };
 
-  config = {
+  config = lib.mkIf config.bobymoby.terminal.alacritty.enable {
     programs.alacritty = {
       enable = true;
       settings = {

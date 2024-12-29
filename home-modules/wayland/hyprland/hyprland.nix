@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 
@@ -15,6 +16,7 @@ let
       ./specific/laptop
     else
       null;
+  enabledTerminal = builtins.elemAt (tools.getEnabledModules config.bobymoby.terminal) 0;
 in
 {
   options.bobymoby.wayland.hyprland = {
@@ -40,6 +42,9 @@ in
           source = ./common;
           recursive = true;
         };
+        ".config/hypr/common/hm.conf".text = ''
+          $terminalClean = ${enabledTerminal};
+        '';
         ".config/hypr/scripts" = {
           source = ./scripts;
           recursive = true;

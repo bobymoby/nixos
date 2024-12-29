@@ -97,7 +97,6 @@ nix:
 home-manager:
     bobymoby
         libinput-gestures.enable
-        alacritty.debugInfo.enable
         dev
             nix.enable
             web
@@ -108,6 +107,12 @@ home-manager:
         shell
             fish.enable
             zsh.enable
+        terminal
+            alacritty
+                enable
+                enableDebugInfo
+            kitty.enable
+            ghostty.enable
         wayland
             enable
             withSway

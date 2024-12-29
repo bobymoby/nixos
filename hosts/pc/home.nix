@@ -9,6 +9,7 @@
       waybar.usePcConfig = true;
     };
     shell.zsh.enable = true;
+    terminal.kitty.enable = true;
 
     easyeffects.enable = true;
     # alacritty.debugInfo.enable = true;

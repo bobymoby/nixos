@@ -13,6 +13,7 @@ let
   hasEnableOption = import ./hasEnableOption.nix;
   enabledSubmoduleCount = import ./enabledSubmoduleCount.nix;
   hasEnabledModules = import ./hasEnabledModules.nix;
+  getEnabledModules = import ./getEnabledModules.nix;
 
   tools = {
     inherit
@@ -25,6 +26,7 @@ let
       hasEnableOption
       enabledSubmoduleCount
       hasEnabledModules
+      getEnabledModules
       ;
   };
 in
