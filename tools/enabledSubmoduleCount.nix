@@ -1,8 +1,7 @@
 attrSet:
 let
-  tools = import ./.;
-  isSet = tools.isSet;
-  hasEnableOption = tools.hasEnableOption;
+  isSet = import ./isSet.nix;
+  hasEnableOption = import ./hasEnableOption.nix;
 in
 builtins.length (
   builtins.filter (item: (isSet item) && (hasEnableOption item) && item.enable) (

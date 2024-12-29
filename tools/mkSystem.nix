@@ -6,7 +6,7 @@
 }:
 confFile:
 let
-  tools = import ./.;
+  tools = import ./. { inherit system; };
   outputs = inputs.self.outputs;
 in
 inputs.nixpkgs.lib.nixosSystem {

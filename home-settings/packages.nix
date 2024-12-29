@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -7,7 +7,7 @@
     webcord-vencord
     spotify
     vlc
-    obsidian
+    # obsidian
     google-chrome
     bat
     gimp
@@ -15,5 +15,6 @@
     gnome-calculator
     nemo
     stremio
+    inputs.ghostty.packages.x86_64-linux.default
   ];
 }

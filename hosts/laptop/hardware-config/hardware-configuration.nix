@@ -3,6 +3,7 @@
   lib,
   modulesPath,
   tools,
+  mySpecialArgs,
   ...
 }:
 
@@ -53,7 +54,7 @@
   # networking.interfaces.enp3s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
-  nixpkgs.hostPlatform = lib.mkDefault tools.systems.x86_64-linux;
+  nixpkgs.hostPlatform = lib.mkDefault mySpecialArgs.system;
   powerManagement.cpuFreqGovernor = lib.mkDefault "ondemand";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

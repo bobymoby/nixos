@@ -6,7 +6,7 @@
 }:
 confFile:
 let
-  tools = import ./.;
+  tools = import ./. { inherit system; };
   outputs = inputs.self.outputs;
   overlays = mySpecialArgs.overlays;
   pkgs = import ./mkPkgs.nix { inherit system; } { inherit inputs overlays; };

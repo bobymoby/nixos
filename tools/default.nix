@@ -1,10 +1,11 @@
+{ system }:
 let
   systems = import ./systems.nix;
 
   # Flake utilities
-  mkHome = import ./mkHome.nix { system = systems.x86_64-linux; };
-  mkSystem = import ./mkSystem.nix { system = systems.x86_64-linux; };
-  mkPkgs = import ./mkPkgs.nix { system = systems.x86_64-linux; };
+  mkHome = import ./mkHome.nix { inherit system; };
+  mkSystem = import ./mkSystem.nix { inherit system; };
+  mkPkgs = import ./mkPkgs.nix { inherit system; };
 
   # Nix lang utilities
   isZero = import ./isZero.nix;

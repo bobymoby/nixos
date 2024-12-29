@@ -4,6 +4,7 @@
   pkgs,
   modulesPath,
   tools,
+  mySpecialArgs,
   ...
 }:
 
@@ -75,6 +76,6 @@
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp37s0.useDHCP = lib.mkDefault true;
 
-  nixpkgs.hostPlatform = lib.mkDefault tools.systems.x86_64-linux;
+  nixpkgs.hostPlatform = lib.mkDefault mySpecialArgs.system;
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

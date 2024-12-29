@@ -6,7 +6,8 @@
 }:
 
 {
-  options.bobymoby.alacritty.debugInfo.enable = lib.mkEnableOption "Enable debugging";
+  options.bobymoby.alacritty.debugInfo.enable =
+    lib.mkEnableOption "Enable debugging";
 
   config = {
     programs.alacritty = {
@@ -21,7 +22,9 @@
       );
     };
 
-    dconf.settings."org/gnome/desktop/default-applications".terminal = "exec alacritty";
-    dconf.settings."org/cinnamon/desktop/default-applications".terminal = "exec alacritty";
+    dconf.settings."org/gnome/desktop/default-applications".terminal =
+      "exec alacritty";
+    dconf.settings."org/cinnamon/desktop/default-applications".terminal =
+      "exec alacritty";
   };
 }

@@ -2,36 +2,37 @@
   inputs = {
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ghostty.url = "github:ghostty-org/ghostty";
   };
 
   outputs =
     inputs:
     let
-      tools = import ./tools;
-      overlays = import ./overlays;
+      systems = import ./tools/systems.nix;
+      system = systems.x86_64-linux;
+      tools = import ./tools { inherit system; };
+      overlays = import ./overlays { inherit inputs system; };
       pkgs = tools.mkPkgs { inherit inputs overlays; };
       pointerTheme = {
         name = "Bibata-Modern-Ice";
         package = pkgs.bibata-cursors;
         size = 24;
       };
+      mySpecialArgs = {
+        inherit pointerTheme overlays system;
+      };
       mkSystem = tools.mkSystem {
-        inherit inputs;
-        mySpecialArgs = {
-          inherit pointerTheme overlays;
-        };
+        inherit inputs mySpecialArgs;
         # extraModules = [ inputs.chaotic.nixosModules.default ];
       };
       mkHome = tools.mkHome {
-        inherit inputs;
-        mySpecialArgs = {
-          inherit pointerTheme overlays;
-        };
+        inherit inputs mySpecialArgs;
         # extraModules = [ inputs.chaotic.homeManagerModules.default ];
       };
     in
