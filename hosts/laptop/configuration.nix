@@ -12,6 +12,7 @@
     login-manager.gdm.enable = true;
     shell.zsh.enable = true;
     virtualization.enable = true;
+    # netdata.enable = true;
   };
 
   networking.firewall = {
