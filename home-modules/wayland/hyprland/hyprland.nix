@@ -43,7 +43,7 @@ in
           recursive = true;
         };
         ".config/hypr/common/hm.conf".text = ''
-          $terminalClean = ${enabledTerminal};
+          $terminalClean = ${enabledTerminal}
         '';
         ".config/hypr/scripts" = {
           source = ./scripts;

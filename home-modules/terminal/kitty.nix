@@ -10,6 +10,10 @@
       name = "DejaVu Sans";
       size = 16;
     };
+    settings = {
+      enable_audio_bell = false;
+    };
+    themeFile = "Dracula";
     shellIntegration.enableZshIntegration = config.bobymoby.shell.zsh.enable;
   };
 }
