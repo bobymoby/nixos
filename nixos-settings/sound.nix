@@ -12,7 +12,7 @@
     # jack.enable = true; #for JACK applications
   };
 
-  hardware.pulseaudio = {
+  services.pulseaudio = {
     enable = false;
     # package = pkgs.pulseaudioFull;
   };

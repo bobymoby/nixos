@@ -13,7 +13,7 @@
     };
 
     libinput-gestures.enable = true;
-  
+
     shell.zsh.enable = true;
     terminal.kitty.enable = true;
 

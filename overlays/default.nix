@@ -8,7 +8,7 @@ let
   };
 
   overlays = [
-    use-stable-electron
+    # use-stable-electron
     # overlay2
   ];
 in
