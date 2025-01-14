@@ -15,5 +15,6 @@
     gnome-calculator
     nemo
     stremio
+    playerctl
   ];
 }
