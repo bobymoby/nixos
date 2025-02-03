@@ -138,3 +138,12 @@ home-manager:
             rofi.enable
             picom.enable
 ```
+# Rescue from live usb
+```bash
+lsblk
+sudo mount (root partition) /mnt
+mkdir -p /mnt/boot
+sudo mount -o umask=077 (boot partition) /mnt/boot
+cd (nixos configuration folder)
+sudo nixos-install --flake .#(output name)
+```

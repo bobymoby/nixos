@@ -36,14 +36,14 @@
       ];
     };
 
-    "/windowsC" = {
-      device = "/dev/disk/by-uuid/8ACE7041CE702799";
-      fsType = "ntfs-3g";
-      options = [
-        "rw"
-        "uid=1000"
-      ];
-    };
+    #"/windowsC" = {
+    #  device = "/dev/disk/by-uuid/8ACE7041CE702799";
+    #  fsType = "ntfs-3g";
+    #  options = [
+    #    "rw"
+    #    "uid=1000"
+    #  ];
+    #};
   };
 
   swapDevices = [
