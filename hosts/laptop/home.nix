@@ -24,7 +24,7 @@
       web.enable = true;
       integrated.enable = true;
       mobile.enable = true;
-      jetbrains-tools.enable = false;
+      jetbrains-tools.enable = true;
     };
   };
 
