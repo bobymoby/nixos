@@ -2,6 +2,7 @@
   inputs = {
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-latest.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11"; # used for overlays
     # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     home-manager = {

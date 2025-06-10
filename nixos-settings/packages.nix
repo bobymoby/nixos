@@ -2,6 +2,9 @@
   lib,
   config,
   pkgs,
+  inputs,
+  system,
+  overlays,
   ...
 }:
 let
@@ -15,6 +18,10 @@ let
     exec -a "$0" "$@"
   '';
   btopCuda = pkgs.btop.override { cudaSupport = true; };
+  pkgs-latest = import inputs.nixpkgs-latest {
+    inherit inputs system overlays;
+    config.allowUnfree = true;
+  };
 in
 {
   options.bobymoby.useDefaultPackages = lib.mkOption {
@@ -35,7 +42,7 @@ in
     documentation.man.generateCaches = true;
 
     services.xserver.excludePackages = with pkgs; [ xterm ];
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = (with pkgs; [
       # nvidia-offload
       #
       # xorg+i3
@@ -62,8 +69,6 @@ in
       #
       # editors + utils
       #
-      vscode
-      vscode.fhs
       # nixd
 
       #
@@ -96,6 +101,9 @@ in
       # cachix
       # (python3.withPackages(ps: [ps.pytorch-bin]))
       # obsidian
-    ];
+    ]) ++ (with pkgs-latest; [
+      vscode
+      vscode.fhs
+    ]);
   };
 }

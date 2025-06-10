@@ -1,14 +1,19 @@
-{ pkgs, ... }:
+{ pkgs, inputs, system, overlays, ... }:
 
+let
+  pkgs-latest = import inputs.nixpkgs-latest {
+    inherit inputs system overlays;
+    config.allowUnfree = true;
+  };
+in
 {
-  home.packages = with pkgs; [
+  home.packages = (with pkgs; [
     qbittorrent
     libreoffice
     webcord-vencord
     spotify
     vlc
     obsidian
-    google-chrome
     bat
     gimp
     firefox
@@ -16,5 +21,7 @@
     nemo
     stremio
     playerctl
-  ];
+  ]) ++ (with pkgs-latest; [
+    google-chrome
+  ]);
 }
