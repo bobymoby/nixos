@@ -5,7 +5,7 @@
 
   networking.hostName = "BobiLaptopNixOS";
 
-  hardware.openrazer.enable = true; # razer mouse control
+  # hardware.openrazer.enable = true; # razer mouse control
 
   bobymoby = {
     window-manager.hyprland.enable = true;
@@ -19,6 +19,8 @@
     allowedTCPPorts = [
       7777
       25565
+      3000
+      5000
     ];
     allowedUDPPorts = [
       7777

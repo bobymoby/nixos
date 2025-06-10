@@ -29,7 +29,7 @@
   };
 
   home.packages = with pkgs; [
-    openrazer-daemon # razer mouse control
+    # openrazer-daemon # razer mouse control
     polychromatic # razer gui
   ];
 }

@@ -7,7 +7,7 @@
     webcord-vencord
     spotify
     vlc
-    # obsidian
+    obsidian
     google-chrome
     bat
     gimp

@@ -11,6 +11,7 @@
     PATH = [ "${XDG_BIN_HOME}" ];
 
     FLAKE = "/etc/nixos";
+    NH_FLAKE = FLAKE;
 
     NIXOS_OZONE_WL = lib.mkIf config.bobymoby.window-manager.hyprland.enable "1";
   };

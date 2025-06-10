@@ -92,6 +92,10 @@ in
       eog # image viewer
 
       libGL
+
+      # cachix
+      # (python3.withPackages(ps: [ps.pytorch-bin]))
+      # obsidian
     ];
   };
 }
