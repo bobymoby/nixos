@@ -42,6 +42,7 @@
         package = pkgs.bibata-cursors;
         size = 24;
       };
+      formatter = tools.mkFormatter { inherit pkgs; };
       mySpecialArgs = {
         inherit
           pointerTheme
@@ -78,22 +79,6 @@
         "bobymoby@BobiNixOS" = mkHome ./hosts/pc/home.nix;
       };
 
-      formatter.${system} = pkgs.treefmt.withConfig {
-        runtimeInputs = [ pkgs.nixfmt-rfc-style ];
-
-        settings = {
-          # Log level for files treefmt won't format
-          on-unmatched = "info";
-
-          # Configure nixfmt for .nix files
-          formatter.nixfmt = {
-            command = "nixfmt";
-            options = [
-              "-w 80"
-            ];
-            includes = [ "*.nix" ];
-          };
-        };
-      };
+      formatter.${system} = formatter;
     };
 }
