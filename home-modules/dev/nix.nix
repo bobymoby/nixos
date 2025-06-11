@@ -13,6 +13,7 @@
       # nixpkgs-fmt
       # nixfmt-rfc-style
       nil # nix linter
+      nixd
       # nixfmt-tree
     ];
   };
