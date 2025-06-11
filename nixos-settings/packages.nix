@@ -3,8 +3,7 @@
   config,
   pkgs,
   inputs,
-  system,
-  overlays,
+  mySpecialArgs,
   ...
 }:
 let
@@ -19,7 +18,8 @@ let
   '';
   btopCuda = pkgs.btop.override { cudaSupport = true; };
   pkgs-latest = import inputs.nixpkgs-latest {
-    inherit inputs system overlays;
+    inherit inputs;
+    inherit (mySpecialArgs) system overlays;
     config.allowUnfree = true;
   };
 in
@@ -70,7 +70,6 @@ in
       # editors + utils
       #
       # nixd
-
       #
       # terminal + minor utils
       #
@@ -101,9 +100,13 @@ in
       # cachix
       # (python3.withPackages(ps: [ps.pytorch-bin]))
       # obsidian
+
+      # inputs.quickshell.packages.${mySpecialArgs.system}.default
     ]) ++ (with pkgs-latest; [
       vscode
       vscode.fhs
+      code-cursor
+      zed-editor
     ]);
   };
 }

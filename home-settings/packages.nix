@@ -1,8 +1,9 @@
-{ pkgs, inputs, system, overlays, ... }:
+{ pkgs, inputs, mySpecialArgs, ... }:
 
 let
   pkgs-latest = import inputs.nixpkgs-latest {
-    inherit inputs system overlays;
+    inherit inputs;
+    inherit (mySpecialArgs) system overlays;
     config.allowUnfree = true;
   };
 in
