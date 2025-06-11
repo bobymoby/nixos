@@ -6,25 +6,36 @@
 // To see the default key bindings run `zed: open default keymap`
 // from the command palette.
 [
-  {
-    "context": "Workspace",
-    "bindings": {
-      // "shift shift": "file_finder::Toggle"
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
-      "ctrl-`": "workspace::ToggleBottomDock"
-    }
-  },
-  {
-    "context": "Terminal",
-    "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
-      "ctrl-`": "workspace::ToggleBottomDock",
-      "ctrl-w": "pane::CloseActiveItem"
-    }
-  }
+	{
+		"bindings": {
+			"ctrl-p": "file_finder::Toggle"
+		}
+	},
+	{
+		"context": "Editor && (showing_code_actions || showing_completions)",
+		"bindings": {
+			"ctrl-p": "file_finder::Toggle"
+		}
+	},
+	{
+		"context": "Workspace",
+		"bindings": {
+			// "shift shift": "file_finder::Toggle"
+		}
+	},
+	{
+		"context": "Editor",
+		"bindings": {
+			// "j k": ["workspace::SendKeystrokes", "escape"]
+			"ctrl-`": "workspace::ToggleBottomDock"
+		}
+	},
+	{
+		"context": "Terminal",
+		"bindings": {
+			// "j k": ["workspace::SendKeystrokes", "escape"]
+			"ctrl-`": "workspace::ToggleBottomDock",
+			"ctrl-w": "pane::CloseActiveItem"
+		}
+	}
 ]
