@@ -10,10 +10,10 @@
 
   config = lib.mkIf config.bobymoby.dev.nix.enable {
     home.packages = with pkgs; [
-      nixpkgs-fmt
-      nixfmt-rfc-style
+      # nixpkgs-fmt
+      # nixfmt-rfc-style
       nil # nix linter
-      nixfmt-tree
+      # nixfmt-tree
     ];
   };
 }

@@ -22,7 +22,7 @@
 	"buffer_font_family": "Fira Code",
 	"buffer_line_height": "standard",
 	"ui_font_size": 16,
-	"current_line_highlight": "gutter",
+	"current_line_highlight": "none",
 	"tab_bar": {
 		"show_nav_history_buttons": false,
 		"show_tab_bar_buttons": false

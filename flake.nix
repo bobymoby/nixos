@@ -25,14 +25,31 @@
       system = systems.x86_64-linux;
       tools = import ./tools { inherit system; };
       overlays = import ./overlays { inherit inputs system; };
-      pkgs = tools.mkPkgs { inherit inputs overlays; };
+      pkgs = tools.mkPkgs {
+        inherit inputs overlays;
+        pkgs = inputs.nixpkgs;
+      };
+      pkgsStable = tools.mkPkgs {
+        inherit inputs overlays;
+        pkgs = inputs.nixpkgs-stable;
+      };
+      pkgsLatest = tools.mkPkgs {
+        inherit inputs overlays;
+        pkgs = inputs.nixpkgs-latest;
+      };
       pointerTheme = {
         name = "Bibata-Modern-Ice";
         package = pkgs.bibata-cursors;
         size = 24;
       };
       mySpecialArgs = {
-        inherit pointerTheme overlays system;
+        inherit
+          pointerTheme
+          overlays
+          system
+          pkgsStable
+          pkgsLatest
+          ;
       };
       mkSystem = tools.mkSystem {
         inherit inputs mySpecialArgs;
@@ -42,7 +59,7 @@
         ];
       };
       mkHome = tools.mkHome {
-        inherit inputs mySpecialArgs;
+        inherit inputs mySpecialArgs pkgs;
         # extraModules = [ inputs.chaotic.homeManagerModules.default ];
       };
     in
@@ -59,6 +76,24 @@
       homeConfigurations = {
         "bobymoby@BobiLaptopNixOS" = mkHome ./hosts/laptop/home.nix;
         "bobymoby@BobiNixOS" = mkHome ./hosts/pc/home.nix;
+      };
+
+      formatter.${system} = pkgs.treefmt.withConfig {
+        runtimeInputs = [ pkgs.nixfmt-rfc-style ];
+
+        settings = {
+          # Log level for files treefmt won't format
+          on-unmatched = "info";
+
+          # Configure nixfmt for .nix files
+          formatter.nixfmt = {
+            command = "nixfmt";
+            options = [
+              "-w 80"
+            ];
+            includes = [ "*.nix" ];
+          };
+        };
       };
     };
 }
