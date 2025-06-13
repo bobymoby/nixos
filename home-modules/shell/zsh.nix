@@ -22,6 +22,8 @@
         la = "ls -la";
         eza = "eza --icons --hyperlink";
         cat = "bat";
+        c = "clear";
+        ls = "eza --icons --hyperlink";
       };
       oh-my-zsh = {
         enable = true;
