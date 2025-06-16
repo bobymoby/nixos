@@ -8,14 +8,14 @@
 }:
 let
   unpFull = pkgs.unp.override { extraBackends = with pkgs; [ unrar ]; };
-  Xvlc = pkgs.vlc.override { waylandSupport = false; };
-  nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
-    export __NV_PRIME_RENDER_OFFLOAD=1
-    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
-    export __GLX_VENDOR_LIBRARY_NAME=nvidia
-    export __VK_LAYER_NV_optimus=NVIDIA_only
-    exec -a "$0" "$@"
-  '';
+  # Xvlc = pkgs.vlc.override { waylandSupport = false; };
+  # nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
+  #   export __NV_PRIME_RENDER_OFFLOAD=1
+  #   export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
+  #   export __GLX_VENDOR_LIBRARY_NAME=nvidia
+  #   export __VK_LAYER_NV_optimus=NVIDIA_only
+  #   exec -a "$0" "$@"
+  # '';
   btopCuda = pkgs.btop.override { cudaSupport = true; };
   pkgs-latest = import inputs.nixpkgs-latest {
     inherit inputs;
@@ -107,6 +107,7 @@ in
       vscode.fhs
       code-cursor
       zed-editor
+      neovim
     ]);
   };
 }

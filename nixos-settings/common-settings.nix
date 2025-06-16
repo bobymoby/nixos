@@ -10,6 +10,8 @@
 
   networking.networkmanager.enable = true;
 
+  hardware.enableAllFirmware = true;
+
   # DO NOT CHANGE. USED FOR COMPATIBILITY.
   # maybe change on reinstall
   system.stateVersion = "23.05";
