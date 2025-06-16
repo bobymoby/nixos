@@ -25,6 +25,7 @@
       integrated.enable = true;
       mobile.enable = true;
       jetbrains-tools.enable = true;
+      zed.enable = true;
     };
   };
 

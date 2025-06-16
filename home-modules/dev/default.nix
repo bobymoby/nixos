@@ -5,5 +5,6 @@
     ./nix.nix
     ./web.nix
     ./mobile.nix
+    ./zed/zed.nix
   ];
 }

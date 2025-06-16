@@ -25,14 +25,32 @@
       system = systems.x86_64-linux;
       tools = import ./tools { inherit system; };
       overlays = import ./overlays { inherit inputs system; };
-      pkgs = tools.mkPkgs { inherit inputs overlays; };
+      pkgs = tools.mkPkgs {
+        inherit inputs overlays;
+        pkgs = inputs.nixpkgs;
+      };
+      pkgsStable = tools.mkPkgs {
+        inherit inputs overlays;
+        pkgs = inputs.nixpkgs-stable;
+      };
+      pkgsLatest = tools.mkPkgs {
+        inherit inputs overlays;
+        pkgs = inputs.nixpkgs-latest;
+      };
       pointerTheme = {
         name = "Bibata-Modern-Ice";
         package = pkgs.bibata-cursors;
         size = 24;
       };
+      formatter = tools.mkFormatter { inherit pkgs; };
       mySpecialArgs = {
-        inherit pointerTheme overlays system;
+        inherit
+          pointerTheme
+          overlays
+          system
+          pkgsStable
+          pkgsLatest
+          ;
       };
       mkSystem = tools.mkSystem {
         inherit inputs mySpecialArgs;
@@ -42,7 +60,7 @@
         ];
       };
       mkHome = tools.mkHome {
-        inherit inputs mySpecialArgs;
+        inherit inputs mySpecialArgs pkgs;
         # extraModules = [ inputs.chaotic.homeManagerModules.default ];
       };
     in
@@ -60,5 +78,7 @@
         "bobymoby@BobiLaptopNixOS" = mkHome ./hosts/laptop/home.nix;
         "bobymoby@BobiNixOS" = mkHome ./hosts/pc/home.nix;
       };
+
+      formatter.${system} = formatter;
     };
 }

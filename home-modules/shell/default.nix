@@ -5,7 +5,7 @@ in
 {
   imports = [
     ./fish.nix
-    ./zsh.nix
+    ./zsh/zsh.nix
   ];
 
   config = {

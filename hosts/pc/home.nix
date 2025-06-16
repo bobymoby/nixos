@@ -17,6 +17,7 @@
     dev = {
       nix.enable = true;
       web.enable = true;
+      zed.enable = true;
       # mobile.enable = true;
       # integrated.enable = true;
       # jetbrainsTools.enable = true;

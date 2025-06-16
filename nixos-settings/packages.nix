@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  inputs,
   mySpecialArgs,
   ...
 }:
@@ -17,11 +16,6 @@ let
   #   exec -a "$0" "$@"
   # '';
   btopCuda = pkgs.btop.override { cudaSupport = true; };
-  pkgs-latest = import inputs.nixpkgs-latest {
-    inherit inputs;
-    inherit (mySpecialArgs) system overlays;
-    config.allowUnfree = true;
-  };
 in
 {
   options.bobymoby.useDefaultPackages = lib.mkOption {
@@ -42,72 +36,73 @@ in
     documentation.man.generateCaches = true;
 
     services.xserver.excludePackages = with pkgs; [ xterm ];
-    environment.systemPackages = (with pkgs; [
-      # nvidia-offload
-      #
-      # xorg+i3
-      #
-      # polybarFull
-      # xclip
-      # maim
-      # dex
-      # xss-lock
-      glib
-      xdg-utils
-      # lxappearance
-      # xorg.xinit
+    environment.systemPackages =
+      (with pkgs; [
+        # nvidia-offload
+        #
+        # xorg+i3
+        #
+        # polybarFull
+        # xclip
+        # maim
+        # dex
+        # xss-lock
+        glib
+        xdg-utils
+        # lxappearance
+        # xorg.xinit
 
-      pavucontrol
-      pamixer
+        pavucontrol
+        pamixer
 
-      #
-      # misc
-      #
-      unpFull # extract any archive
-      man-pages
-      man-pages-posix
-      #
-      # editors + utils
-      #
-      # nixd
-      #
-      # terminal + minor utils
-      #
-      gitFull
-      libnotify
-      killall
-      eza # ls alternative
-      jq # json parser
-      nh # nix cli helper
-      # kitty
+        #
+        # misc
+        #
+        unpFull # extract any archive
+        man-pages
+        man-pages-posix
+        #
+        # editors + utils
+        #
+        # nixd
+        #
+        # terminal + minor utils
+        #
+        gitFull
+        libnotify
+        killall
+        eza # ls alternative
+        jq # json parser
+        nh # nix cli helper
+        # kitty
 
-      #
-      # system monitoring
-      #
-      htop
-      btopCuda
-      nvtopPackages.full
-      neofetch
-      fastfetch
-      lshw # list gpus
+        #
+        # system monitoring
+        #
+        htop
+        btopCuda
+        nvtopPackages.full
+        neofetch
+        fastfetch
+        lshw # list gpus
 
-      gnome-system-monitor
-      gnome-software
-      eog # image viewer
+        gnome-system-monitor
+        gnome-software
+        eog # image viewer
 
-      libGL
+        libGL
 
-      # cachix
-      # (python3.withPackages(ps: [ps.pytorch-bin]))
-      # obsidian
+        # cachix
+        # (python3.withPackages(ps: [ps.pytorch-bin]))
+        # obsidian
 
-      # inputs.quickshell.packages.${mySpecialArgs.system}.default
-    ]) ++ (with pkgs-latest; [
-      vscode
-      vscode.fhs
-      code-cursor
-      zed-editor
-      neovim
-    ]);
+        # inputs.quickshell.packages.${mySpecialArgs.system}.default
+      ])
+      ++ (with mySpecialArgs.pkgsLatest; [
+        vscode
+        vscode.fhs
+        code-cursor
+        neovim
+      ]);
   };
 }

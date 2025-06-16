@@ -6,6 +6,7 @@ let
   mkHome = import ./mkHome.nix { inherit system; };
   mkSystem = import ./mkSystem.nix { inherit system; };
   mkPkgs = import ./mkPkgs.nix { inherit system; };
+  mkFormatter = import ./mkFormatter.nix;
 
   # Nix lang utilities
   isZero = import ./isZero.nix;
@@ -21,6 +22,7 @@ let
       mkHome
       mkSystem
       mkPkgs
+      mkFormatter
       isZero
       isSet
       hasEnableOption

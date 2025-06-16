@@ -5,6 +5,7 @@
     ./dunst/dunst.nix
     ./fastfetch/fastfetch.nix
     ./fzf/fzf.nix
+    ./zoxide/zoxide.nix
     ./gtk/gtk.nix
     ./networkmanager/networkmanager.nix
     ./tmux/tmux.nix
