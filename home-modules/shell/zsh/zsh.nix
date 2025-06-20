@@ -4,8 +4,8 @@
   pkgs,
   ...
 }:
-let 
-zsh-nix-shell = import ./plugins/zsh-nix-shell.nix { inherit pkgs; };
+let
+  zsh-nix-shell = import ./plugins/zsh-nix-shell.nix { inherit pkgs; };
 in
 {
   options.bobymoby.shell.zsh.enable = lib.mkEnableOption "Enable zsh";
@@ -26,6 +26,8 @@ in
         cat = "bat";
         c = "clear";
         ls = "eza --icons --hyperlink";
+        # vi = lib.mkIf config.bobymoby.dev.neovim.enable "nvim";
+        # vim = lib.mkIf config.bobymoby.dev.neovim.enable "nvim";
       };
       oh-my-zsh = {
         enable = true;

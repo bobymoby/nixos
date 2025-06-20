@@ -38,6 +38,7 @@ in
         initial_session = default_session;
       };
     };
-    security.pam.services.greetd.enableGnomeKeyring = lib.mkIf config.bobymoby.window-manager.hyprland.autoStart true;
+    security.pam.services.greetd.enableGnomeKeyring =
+      lib.mkIf config.bobymoby.window-manager.hyprland.autoStart true;
   };
 }

@@ -6,5 +6,6 @@
     ./web.nix
     ./mobile.nix
     ./zed/zed.nix
+    ./neovim/neovim.nix
   ];
 }
