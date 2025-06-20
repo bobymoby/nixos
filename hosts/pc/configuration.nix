@@ -17,8 +17,11 @@
   };
 
   services.ratbagd.enable = true; # needed for piper
+  services.hardware.openrgb.enable = true;
 
   environment.systemPackages = with pkgs; [
     piper # GUI for configuring gaming mice
+    openrgb-with-all-plugins
   ];
+
 }

@@ -103,6 +103,7 @@ in
         vscode.fhs
         code-cursor
         neovim
+        emacs
       ]);
   };
 }
