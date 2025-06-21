@@ -8,7 +8,8 @@
 [
 	{
 		"bindings": {
-			"ctrl-p": "file_finder::Toggle"
+			"ctrl-p": "file_finder::Toggle",
+			"ctrl-r": "projects::OpenRecent"
 		}
 	},
 	{
