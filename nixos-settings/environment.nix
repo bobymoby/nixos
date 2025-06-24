@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, config,pkgs, ... }:
 
 {
   config.environment.sessionVariables = rec {
@@ -12,6 +12,8 @@
 
     FLAKE = "/etc/nixos";
     NH_FLAKE = FLAKE;
+
+    GSETTINGS_SCHEMA_DIR = "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";
 
     NIXOS_OZONE_WL = lib.mkIf config.bobymoby.window-manager.hyprland.enable "1";
   };

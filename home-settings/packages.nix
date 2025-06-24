@@ -14,6 +14,8 @@
       firefox
       gnome-calculator
       nemo
+      nautilus
+      kdePackages.dolphin
       stremio
       playerctl
     ])
