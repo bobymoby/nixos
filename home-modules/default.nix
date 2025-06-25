@@ -8,5 +8,6 @@
     ./terminal
     ./wayland
     ./X11
+    ./notifications
   ];
 }

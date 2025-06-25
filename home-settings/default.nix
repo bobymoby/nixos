@@ -2,7 +2,6 @@
   imports = [
     ./btop/btop.nix
     ./direnv/direnv.nix
-    ./dunst/dunst.nix
     ./fastfetch/fastfetch.nix
     ./fzf/fzf.nix
     ./zoxide/zoxide.nix

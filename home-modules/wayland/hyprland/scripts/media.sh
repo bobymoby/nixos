@@ -1,4 +1,4 @@
-iDIR="$HOME/.config/dunst/icons"
+iDIR="$HOME/.config/hypr/assets"
 
 # Get Volume
 get_volume() {

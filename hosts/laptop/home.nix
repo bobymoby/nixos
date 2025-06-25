@@ -12,6 +12,8 @@
       waybar.useLaptopConfig = true;
     };
 
+    notifications.dunst.enable = true;
+
     libinput-gestures.enable = true;
 
     shell.zsh.enable = true;

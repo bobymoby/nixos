@@ -49,6 +49,10 @@ in
           source = ./scripts;
           recursive = true;
         };
+        ".config/hypr/assets" = {
+          source = ./assets;
+          recursive = true;
+        };
         # ".config/hypr/hyprpaper.conf".source = ./extras/hyprpaper.conf;
       };
 
