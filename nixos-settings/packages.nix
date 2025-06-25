@@ -91,6 +91,7 @@ in
         eog # image viewer
 
         libGL
+        ripgrep
 
         # cachix
         # (python3.withPackages(ps: [ps.pytorch-bin]))

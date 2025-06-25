@@ -12,6 +12,8 @@
       waybar.useLaptopConfig = true;
     };
 
+    notifications.dunst.enable = true;
+
     libinput-gestures.enable = true;
 
     shell.zsh.enable = true;
@@ -22,6 +24,7 @@
     dev = {
       nix.enable = true;
       web.enable = true;
+      neovim.enable = true;
       integrated.enable = true;
       mobile.enable = true;
       jetbrains-tools.enable = true;
