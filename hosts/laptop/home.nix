@@ -22,6 +22,7 @@
     dev = {
       nix.enable = true;
       web.enable = true;
+      neovim.enable = true;
       integrated.enable = true;
       mobile.enable = true;
       jetbrains-tools.enable = true;
