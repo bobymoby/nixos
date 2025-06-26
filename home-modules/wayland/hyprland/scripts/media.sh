@@ -22,7 +22,13 @@ get_icon() {
 
 # Notify
 notify_user() {
-	notify-send -h string:x-canonical-private-synchronous:sys-notify -u low -i "$(get_icon)" "Volume : $(get_volume) %"
+	notify-send \
+        -h string:x-canonical-private-synchronous:sys-notify \
+        -h int:value:$(get_volume) \
+        -u low \
+        -i \
+        "$(get_icon)" \
+        "Volume"
 }
 
 # Increase Volume

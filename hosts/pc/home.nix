@@ -8,6 +8,8 @@
       };
       waybar.usePcConfig = true;
     };
+    notifications.dunst.enable = true;
+
     shell.zsh.enable = true;
     terminal.kitty.enable = true;
 

@@ -1,9 +1,13 @@
 {
-	"editor.tabSize": 2,
+	"editor.tabSize": 4,
 	"editor.insertSpaces": true,
 	"cSpell.words": ["nixos", "nixpkgs"],
 	"workbench.editor.customLabels.enabled": true,
 	"workbench.editor.customLabels.patterns": {
-		"**/default.nix": "${dirname} - default.nix"
+		"**/default.nix": "${dirname} - default.nix",
+		"**/configuration.nix": "${dirname} - configuration.nix",
+		"**/home.nix": "${dirname} - home.nix",
+		"*/home-settings/packages.nix": "home - packages.nix",
+		"*/nixos-settings/packages.nix": "nixos - packages.nix"
 	}
 }
