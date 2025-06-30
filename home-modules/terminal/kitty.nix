@@ -13,7 +13,15 @@
     settings = {
       enable_audio_bell = false;
     };
+
     themeFile = "Dracula";
     shellIntegration.enableZshIntegration = config.bobymoby.shell.zsh.enable;
+    shellIntegration.enableFishIntegration = config.bobymoby.shell.fish.enable;
+
+    enableGitIntegration = true;
+
+    keybindings = {
+        "ctrl+backspace" = "send_text all \\x17";
+    };
   };
 }
