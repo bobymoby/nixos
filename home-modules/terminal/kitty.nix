@@ -21,7 +21,7 @@
     enableGitIntegration = true;
 
     keybindings = {
-        "ctrl+backspace" = "send_text all \\x17";
+      "ctrl+backspace" = "send_text all \\x17";
     };
   };
 }

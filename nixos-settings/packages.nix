@@ -59,8 +59,6 @@ in
         # misc
         #
         unpFull # extract any archive
-        man-pages
-        man-pages-posix
         #
         # editors + utils
         #

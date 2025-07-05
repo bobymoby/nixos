@@ -75,7 +75,9 @@ nix:
         bluetooth.enable
         netdata.enable
         virtualization.enable
-        debug.enable
+        debug
+            enabl
+            man-pages
         login-manager
             gdm.enable
             lightdm.enable
@@ -138,7 +140,9 @@ home-manager:
             rofi.enable
             picom.enable
 ```
+
 # Rescue from live usb
+
 ```bash
 lsblk
 sudo mount (root partition) /mnt

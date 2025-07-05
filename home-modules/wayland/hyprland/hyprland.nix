@@ -34,17 +34,17 @@ in
     ];
     home = {
       file = {
-        ".config/hypr" = {
-          source = configPath;
-          recursive = true;
-        };
-        ".config/hypr/common" = {
-          source = ./common;
-          recursive = true;
-        };
-        ".config/hypr/common/hm.conf".text = ''
-          $terminalClean = ${enabledTerminal}
-        '';
+        #     ".config/hypr" = {
+        #       source = configPath;
+        #       recursive = true;
+        #     };
+        #     ".config/hypr/common" = {
+        #       source = ./common;
+        #       recursive = true;
+        #     };
+        #     ".config/hypr/common/hm.conf".text = ''
+        #       $terminalClean = ${enabledTerminal}
+        #     '';
         ".config/hypr/scripts" = {
           source = ./scripts;
           recursive = true;
@@ -53,6 +53,9 @@ in
           source = ./assets;
           recursive = true;
         };
+        ".config/hypr/hyprlock.conf".source = configPath + "/hyprlock.conf";
+        ".config/hypr/hypridle.conf".source = configPath + "/hypridle.conf";
+        ".config/hypr/mocha.conf".source = ./common/mocha.conf;
         # ".config/hypr/hyprpaper.conf".source = ./extras/hyprpaper.conf;
       };
 
@@ -63,6 +66,38 @@ in
         # hyprpaper
         swww
       ];
+    };
+    wayland.windowManager.hyprland = {
+      enable = true;
+      plugins = with pkgs.hyprlandPlugins; [
+        hyprexpo
+      ];
+
+      extraConfig =
+        ''
+            source = ~/.config/hypr/mocha.conf
+          $terminalClean = ${enabledTerminal}
+          ${builtins.readFile ./common/hyprexpo.conf}
+          ${builtins.readFile ./common/scripts.conf}
+
+          ${builtins.readFile ./common/binds.conf}
+          ${builtins.readFile ./common/input.conf}
+          ${builtins.readFile ./common/settings.conf}
+          ${builtins.readFile ./common/startup.conf}
+        ''
+        + (
+          if shouldUsePcConfig then
+            ''
+              ${builtins.readFile ./specific/pc/hyprland.conf}
+              ${builtins.readFile ./specific/pc/nvidia.conf}
+            ''
+          else if shouldUseLaptopConfig then
+            ''
+              ${builtins.readFile ./specific/laptop/hyprland.conf}
+            ''
+          else
+            ""
+        );
     };
     # wayland.windowManager.hyprland = {
     #   enable = true;
