@@ -15,7 +15,8 @@
     environment = {
       enableDebugInfo = true;
       systemPackages =
-        (with pkgs; [ gdb ])
+        with pkgs;
+        [ gdb ]
         ++ (lib.optionals config.bobymoby.debug.enable [
           pkgs.man-pages
           pkgs.man-pages-posix
