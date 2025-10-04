@@ -25,5 +25,6 @@ inputs.nixpkgs.lib.nixosSystem {
     confFile
     outputs.nixosModules.default
     outputs.nixosSettings.default
-  ] ++ extraModules;
+  ]
+  ++ extraModules;
 }

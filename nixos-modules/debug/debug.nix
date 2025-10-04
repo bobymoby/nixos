@@ -17,7 +17,7 @@
       systemPackages =
         with pkgs;
         [ gdb ]
-        ++ (lib.optionals config.bobymoby.debug.enable [
+        ++ (lib.optionals config.bobymoby.man-pages.enable [
           pkgs.man-pages
           pkgs.man-pages-posix
         ]);

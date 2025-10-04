@@ -15,12 +15,11 @@ in
     home = {
       packages = with pkgs; [ dunst ];
       file = {
-        ".config/dunst/dunstrc".text =
-          ''
-            [global]
-            icon_path = ${iconPath}
-          ''
-          + builtins.readFile ./dunst.conf;
+        ".config/dunst/dunstrc".text = ''
+          [global]
+          icon_path = ${iconPath}
+        ''
+        + builtins.readFile ./dunst.conf;
       };
     };
   };

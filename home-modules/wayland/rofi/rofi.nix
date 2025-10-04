@@ -11,7 +11,7 @@
   config = lib.mkIf config.bobymoby.wayland.rofi.enable {
     programs.rofi = {
       enable = true;
-      package = pkgs.rofi-wayland;
+      #   package = pkgs.rofi-wayland;
       # theme = ./spotlight-dark.rasi;
       # terminal = "${pkgs.alacritty}/bin/alacritty";
       terminal = "${pkgs.kitty}/bin/kitty";

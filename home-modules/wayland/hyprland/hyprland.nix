@@ -73,31 +73,30 @@ in
         hyprexpo
       ];
 
-      extraConfig =
-        ''
-            source = ~/.config/hypr/mocha.conf
-          $terminalClean = ${enabledTerminal}
-          ${builtins.readFile ./common/hyprexpo.conf}
-          ${builtins.readFile ./common/scripts.conf}
+      extraConfig = ''
+          source = ~/.config/hypr/mocha.conf
+        $terminalClean = ${enabledTerminal}
+        ${builtins.readFile ./common/hyprexpo.conf}
+        ${builtins.readFile ./common/scripts.conf}
 
-          ${builtins.readFile ./common/binds.conf}
-          ${builtins.readFile ./common/input.conf}
-          ${builtins.readFile ./common/settings.conf}
-          ${builtins.readFile ./common/startup.conf}
-        ''
-        + (
-          if shouldUsePcConfig then
-            ''
-              ${builtins.readFile ./specific/pc/hyprland.conf}
-              ${builtins.readFile ./specific/pc/nvidia.conf}
-            ''
-          else if shouldUseLaptopConfig then
-            ''
-              ${builtins.readFile ./specific/laptop/hyprland.conf}
-            ''
-          else
-            ""
-        );
+        ${builtins.readFile ./common/binds.conf}
+        ${builtins.readFile ./common/input.conf}
+        ${builtins.readFile ./common/settings.conf}
+        ${builtins.readFile ./common/startup.conf}
+      ''
+      + (
+        if shouldUsePcConfig then
+          ''
+            ${builtins.readFile ./specific/pc/hyprland.conf}
+            ${builtins.readFile ./specific/pc/nvidia.conf}
+          ''
+        else if shouldUseLaptopConfig then
+          ''
+            ${builtins.readFile ./specific/laptop/hyprland.conf}
+          ''
+        else
+          ""
+      );
     };
     # wayland.windowManager.hyprland = {
     #   enable = true;

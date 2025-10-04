@@ -12,7 +12,7 @@
     };
     shell.zsh.enable = true;
     virtualization.enable = true;
-    debug.enable = true;
+    debug.enable = false;
     # netdata.enable = true;
   };
 

@@ -26,16 +26,15 @@
           #   modules-center = [ "sway/window" ];
           modules-left = [ "hyprland/workspaces" ];
           # modules-center = [ "hyprland/window" ];
-          modules-right =
-            [
-              "tray"
-              "pulseaudio"
-              "network"
-              "temperature"
-              "custom/nixpkgs-behind"
-            ]
-            ++ (lib.optionals config.bobymoby.wayland.waybar.useLaptopConfig [ "battery" ])
-            ++ [ "clock" ];
+          modules-right = [
+            "tray"
+            "pulseaudio"
+            "network"
+            "temperature"
+            "custom/nixpkgs-behind"
+          ]
+          ++ (lib.optionals config.bobymoby.wayland.waybar.useLaptopConfig [ "battery" ])
+          ++ [ "clock" ];
 
           # "hyprland/workspaces" = {
           # format = "{windows}";

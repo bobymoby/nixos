@@ -8,10 +8,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    lix-module = {
-      url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # lix-module = {
+    #   url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     # quickshell = {
     #   url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -54,10 +54,10 @@
       };
       mkSystem = tools.mkSystem {
         inherit inputs mySpecialArgs;
-        extraModules = [
-          #inputs.chaotic.nixosModules.default
-          inputs.lix-module.nixosModules.default
-        ];
+        # extraModules = [
+        #inputs.chaotic.nixosModules.default
+        #   inputs.lix-module.nixosModules.default
+        # ];
       };
       mkHome = tools.mkHome {
         inherit inputs mySpecialArgs pkgs;

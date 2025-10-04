@@ -16,7 +16,7 @@
       nemo
       nautilus
       kdePackages.dolphin
-      stremio
+      #   stremio
       playerctl
     ])
     ++ (with mySpecialArgs.pkgsLatest; [

@@ -34,15 +34,14 @@
     "amd_pstate=guided"
   ];
 
-  boot.blacklistedKernelModules =
-    ([
-      "nouveau"
-      "i2c_nvidia_gpu"
-      "tpm"
-      "tpm_crb"
-      "k10temp"
-    ])
-    ++ (lib.optionals (!config.hardware.enableRedistributableFirmware) [ "ath3k" ]);
+  boot.blacklistedKernelModules = ([
+    "nouveau"
+    "i2c_nvidia_gpu"
+    "tpm"
+    "tpm_crb"
+    "k10temp"
+  ])
+  ++ (lib.optionals (!config.hardware.enableRedistributableFirmware) [ "ath3k" ]);
 
   boot.extraModulePackages = [ config.boot.kernelPackages.zenpower ];
   boot.kernelModules = [ "zenpower" ];

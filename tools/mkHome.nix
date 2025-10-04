@@ -28,5 +28,6 @@ inputs.home-manager.lib.homeManagerConfiguration {
     confFile
     outputs.homeModules.default
     outputs.homeSettings.default
-  ] ++ extraModules;
+  ]
+  ++ extraModules;
 }
