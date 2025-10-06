@@ -1,14 +1,16 @@
 {
   bobymoby = {
-    wayland = {
-      enable = true;
-      hyprland = {
-        enable = true;
-        usePcConfig = true;
-      };
-      waybar.usePcConfig = true;
-    };
-    notifications.dunst.enable = true;
+    # wayland = {
+    #   enable = true;
+    #   hyprland = {
+    #     enable = true;
+    #     usePcConfig = true;
+    #   };
+    #   waybar.usePcConfig = true;
+    # };
+    # notifications.dunst.enable = true;
+
+    wayland.plasma.enable = true;
 
     shell.zsh.enable = true;
     terminal.kitty.enable = true;
