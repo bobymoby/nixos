@@ -5,7 +5,6 @@
     (with pkgs; [
       qbittorrent
       libreoffice
-      webcord-vencord
       spotify
       vlc
       obsidian
@@ -18,8 +17,10 @@
       kdePackages.dolphin
       #   stremio
       playerctl
+      mpv
     ])
     ++ (with mySpecialArgs.pkgsLatest; [
       google-chrome
+      webcord-vencord
     ]);
 }

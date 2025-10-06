@@ -17,11 +17,11 @@
       settings = {
         font.size = 16;
       };
-      #   package = lib.mkIf config.bobymoby.alacritty.debugInfo.enable (
-      #     pkgs.alacritty.overrideAttrs (oldAttrs: {
-      #       separateDebugInfo = true;
-      #     })
-      #   );
+    #   package = lib.mkIf config.bobymoby.alacritty.debugInfo.enable (
+    #     pkgs.alacritty.overrideAttrs (oldAttrs: {
+    #     #   separateDebugInfo = true;
+    #     })
+    #   );
     };
 
     dconf.settings."org/gnome/desktop/default-applications".terminal =
