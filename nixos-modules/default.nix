@@ -8,6 +8,6 @@
     ./shell
     ./steam/steam.nix
     ./virtualization/virtualization.nix
-    ./window-manager
+    ./desktop-environment
   ];
 }

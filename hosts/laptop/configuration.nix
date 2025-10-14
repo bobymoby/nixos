@@ -8,10 +8,12 @@
   # hardware.openrazer.enable = true; # razer mouse control
 
   bobymoby = {
-    window-manager.hyprland = {
-      enable = true;
-      autoStart = true;
-    };
+    # desktop-environment.hyprland = {
+    #   enable = true;
+    #   autoStart = true;
+    # };
+    desktop-environment.gnome.enable = true;
+    login-manager.gdm.enable = true;
     # login-manager.gdm.enable = true;
     shell.zsh.enable = true;
     virtualization.enable = true;
@@ -35,8 +37,8 @@
     icu
   ];
 
-  services.logmein-hamachi.enable = true;
-  programs.haguichi.enable = true;
+  #   services.logmein-hamachi.enable = true;
+  #   programs.haguichi.enable = true;
 
   xdg.portal.config.common.default = "*";
 }

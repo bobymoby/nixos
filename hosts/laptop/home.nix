@@ -2,19 +2,23 @@
 
 {
   bobymoby = {
-    wayland = {
-      enable = true;
-      hyprland = {
-        enable = true;
-        useLaptopConfig = true;
-      };
+    # wayland = {
+    #   enable = true;
+    #   waybar.enable = true;
+    #   rofi.enable = true;
+    #   hyprland = {
+    #     enable = true;
+    #     useLaptopConfig = true;
+    #   };
 
-      waybar.useLaptopConfig = true;
-    };
+    #   waybar.useLaptopConfig = true;
+    # };
 
-    notifications.dunst.enable = true;
+    # notifications.dunst.enable = true;
 
-    libinput-gestures.enable = true;
+    gnome.enable = true;
+
+    # libinput-gestures.enable = true;
 
     shell.zsh.enable = true;
     terminal.kitty.enable = true;

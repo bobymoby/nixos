@@ -79,7 +79,7 @@ in
         #
         htop
         btopCuda
-        nvtopPackages.full
+        # nvtopPackages.full
         neofetch
         fastfetch
         lshw # list gpus

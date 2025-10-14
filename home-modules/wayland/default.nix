@@ -10,12 +10,12 @@
     ./plasma/plasma.nix
   ];
 
-#   options.bobymoby.wayland.enable = lib.mkEnableOption "Enable Wayland support";
+  #   options.bobymoby.wayland.enable = lib.mkEnableOption "Enable Wayland support";
 
-#   config = lib.mkIf config.bobymoby.wayland.enable {
-#     bobymoby.wayland = {
-#       waybar.enable = true;
-#       rofi.enable = true;
-#     };
-#   };
+  #   config = lib.mkIf config.bobymoby.wayland.enable {
+  #     bobymoby.wayland = {
+  #       waybar.enable = true;
+  #       rofi.enable = true;
+  #     };
+  #   };
 }

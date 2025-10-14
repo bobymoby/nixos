@@ -87,7 +87,7 @@ nix:
         shell
             fish.enable
             zsh.enable
-        window-manager
+        desktop-environment
             i3.enable
             hyprland.enable
         gpu.proprietary-nvidia-drivers

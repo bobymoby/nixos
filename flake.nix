@@ -8,6 +8,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
     # lix-module = {
     #   url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -56,14 +61,14 @@
         inherit inputs mySpecialArgs;
         extraModules = [
           #inputs.chaotic.nixosModules.default
-        #   inputs.lix-module.nixosModules.default
+          #   inputs.lix-module.nixosModules.default
         ];
       };
       mkHome = tools.mkHome {
         inherit inputs mySpecialArgs pkgs;
         extraModules = [
-            # inputs.chaotic.homeManagerModules.default
-            inputs.plasma-manager.homeModules.plasma-manager
+          # inputs.chaotic.homeManagerModules.default
+          inputs.plasma-manager.homeModules.plasma-manager
         ];
       };
     in

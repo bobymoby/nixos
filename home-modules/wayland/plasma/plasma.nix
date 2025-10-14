@@ -13,7 +13,7 @@
 
   config = lib.mkIf config.bobymoby.wayland.plasma.enable {
     programs.plasma = {
-        enable = true;
+      enable = true;
     };
   };
 }
