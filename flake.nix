@@ -1,18 +1,31 @@
 {
   inputs = {
+    # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-latest.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
-    # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     plasma-manager = {
       url = "github:nix-community/plasma-manager";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dankMaterialShell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # lix-module = {
     #   url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -62,6 +75,7 @@
         extraModules = [
           #inputs.chaotic.nixosModules.default
           #   inputs.lix-module.nixosModules.default
+          inputs.niri.nixosModules.niri
         ];
       };
       mkHome = tools.mkHome {
@@ -69,6 +83,10 @@
         extraModules = [
           # inputs.chaotic.homeManagerModules.default
           inputs.plasma-manager.homeModules.plasma-manager
+
+          inputs.niri.homeModules.niri
+          inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+          inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
         ];
       };
     in

@@ -10,5 +10,6 @@
     ./X11
     ./notifications
     ./gnome
+    ./niri/niri.nix
   ];
 }

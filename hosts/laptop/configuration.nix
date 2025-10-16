@@ -20,6 +20,8 @@
     # netdata.enable = true;
   };
 
+  #programs.niri.enable = true;
+
   networking.firewall = {
     allowedTCPPorts = [
       7777
