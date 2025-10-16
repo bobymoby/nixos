@@ -10,7 +10,11 @@
     # };
     # notifications.dunst.enable = true;
 
-    wayland.plasma.enable = true;
+    # wayland.plasma.enable = true;
+    gnome = {
+      enable = true;
+      use-pc-config = true;
+    };
 
     shell.zsh.enable = true;
     terminal.kitty.enable = true;

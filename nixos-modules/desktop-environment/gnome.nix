@@ -1,4 +1,9 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 {
   options.bobymoby.desktop-environment.gnome.enable =
     lib.mkEnableOption "Enable GNOME";
@@ -9,7 +14,7 @@
       desktopManager.gnome.enable = true;
       gnome.games.enable = false;
     };
-    environment.systemPackages = [ pkgs.gnomeExtensions.appindicator  ];
+    # environment.systemPackages = [ pkgs.gnomeExtensions.appindicator  ];
     services.udev.packages = [ pkgs.gnome-settings-daemon ];
   };
 }
