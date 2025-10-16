@@ -9,6 +9,6 @@
     ./wayland
     ./X11
     ./notifications
-    ./gnome/gnome.nix
+    ./gnome
   ];
 }

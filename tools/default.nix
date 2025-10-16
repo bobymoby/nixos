@@ -15,6 +15,7 @@ let
   enabledSubmoduleCount = import ./enabledSubmoduleCount.nix;
   hasEnabledModules = import ./hasEnabledModules.nix;
   getEnabledModules = import ./getEnabledModules.nix;
+  mergeAttrSets = import ./mergeAttrSets.nix;
 
   tools = {
     inherit
@@ -29,6 +30,7 @@ let
       enabledSubmoduleCount
       hasEnabledModules
       getEnabledModules
+      mergeAttrSets
       ;
   };
 in
