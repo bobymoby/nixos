@@ -44,5 +44,16 @@ in
         };
     security.pam.services.greetd.enableGnomeKeyring =
       lib.mkIf config.bobymoby.desktop-environment.hyprland.autoStart true;
+
+    services.xserver.displayManager.session = [
+      {
+        manage = "desktop";
+        name = "Hyprland";
+        start = ''
+          ${lib.getExe config.programs.hyprland.package} &
+          waitPid=$!
+        '';
+      }
+    ];
   };
 }
