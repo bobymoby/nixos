@@ -16,7 +16,7 @@ let
 
   common = import ./common.nix {
     gnome-extensions = extensions;
-    inherit lib;
+    inherit lib tools;
   };
   pc-only = import ./pc-only.nix { inherit lib config; };
   laptop-only = import ./laptop-only.nix { inherit lib config; };
