@@ -15,11 +15,10 @@
     };
     programs.niri = {
       enable = true;
-      settings = {
-        binds = {
-            "Mod+Return".action.spawn = "kitty";
-        };
+            #settings = {
+            #binds = {
+            #"Mod+Return".action.spawn = "kitty";
+            #};
       };
-    };
   };
 }

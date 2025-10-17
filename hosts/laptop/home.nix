@@ -16,8 +16,8 @@
 
     # notifications.dunst.enable = true;
 
-    gnome.enable = true;
-    # niri.enable = true;
+    # gnome.enable = true;
+    niri.enable = true;
 
     # libinput-gestures.enable = true;
 
