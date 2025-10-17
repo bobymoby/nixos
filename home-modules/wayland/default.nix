@@ -1,5 +1,3 @@
-{ lib, config, ... }:
-
 {
   imports = [
     ./hyprland/hyprland.nix
@@ -8,14 +6,6 @@
     ./waybar/waybar.nix
     ./wofi/wofi.nix
     ./plasma/plasma.nix
+    ./niri/niri.nix
   ];
-
-  #   options.bobymoby.wayland.enable = lib.mkEnableOption "Enable Wayland support";
-
-  #   config = lib.mkIf config.bobymoby.wayland.enable {
-  #     bobymoby.wayland = {
-  #       waybar.enable = true;
-  #       rofi.enable = true;
-  #     };
-  #   };
 }

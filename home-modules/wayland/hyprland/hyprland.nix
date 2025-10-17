@@ -74,7 +74,7 @@ in
       ];
 
       extraConfig = ''
-          source = ~/.config/hypr/mocha.conf
+        source = ~/.config/hypr/mocha.conf
         $terminalClean = ${enabledTerminal}
         ${builtins.readFile ./common/hyprexpo.conf}
         ${builtins.readFile ./common/scripts.conf}
@@ -104,5 +104,17 @@ in
     #   #   hy3
     #   # ];
     # };
+
+    bobymoby = {
+      wayland = {
+        waybar = {
+          enable = true;
+          inherit (config.bobymoby.wayland.hyprland) useLaptopConfig usePcConfig;
+        };
+        rofi.enable = true;
+      };
+      notifications.dunst.enable = true;
+    };
+
   };
 }

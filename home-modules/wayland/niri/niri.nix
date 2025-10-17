@@ -15,10 +15,11 @@
     };
     programs.niri = {
       enable = true;
-            #settings = {
-            #binds = {
-            #"Mod+Return".action.spawn = "kitty";
-            #};
-      };
+      config = ./config.kdl;
+      #settings = {
+      #binds = {
+      #"Mod+Return".action.spawn = "kitty";
+      #};
+    };
   };
 }
