@@ -50,7 +50,7 @@ in
         manage = "desktop";
         name = "Hyprland";
         start = ''
-          ${lib.getExe config.programs.hyprland.package} &
+          ${config.programs.hyprland.package}/bin/Hyprland &
           waitPid=$!
         '';
       }
