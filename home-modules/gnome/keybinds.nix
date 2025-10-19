@@ -1,5 +1,7 @@
 { lib, tools, ... }:
 let
+  inherit (lib.hm.gvariant) mkEmptyArray type;
+  emptyStringArray = mkEmptyArray type.string;
   keybinds-list = [
     {
       name = "Terminal";
@@ -23,10 +25,19 @@ tools.mergeAttrSets [
     "org/gnome/settings-daemon/plugins/media-keys" = {
       inherit custom-keybindings;
     };
-    "org/gnome/desktop/wm/keybindings".close = [ "<Shift><Super>q" ];
+    "org/gnome/desktop/wm/keybindings" = {
+      close = [ "<Shift><Super>q" ];
+      show-desktop = [ "<Super>d" ];
+    };
     "org/gnome/shell/keybindings" = {
-      screenshot = [ ];
+      screenshot = emptyStringArray;
       show-screenshot-ui = [ "<Shift><Super>s" ];
+    };
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      screenreader = emptyStringArray;
+      magnifier = emptyStringArray;
+      magnifier-zoom-in = emptyStringArray;
+      magnifier-zoom-out = emptyStringArray;
     };
   }
   keybinds

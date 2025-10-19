@@ -33,4 +33,5 @@ in
 {
   "org/gnome/Weather".locations = weather-locations;
   "org/gnome/shell/weather".locations = weather-locations;
+  "org/gnome/GWeather4".temperature-unit = "centigrade";
 }

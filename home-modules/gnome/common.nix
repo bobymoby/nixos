@@ -19,9 +19,9 @@ in
 tools.mergeAttrSets [
   {
     "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-        enable-hot-corners = false;
-        accent-color = "purple";
+      color-scheme = "prefer-dark";
+      enable-hot-corners = false;
+      accent-color = "purple";
     };
     "org/gnome/mutter".workspaces-only-on-primary = false;
     "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";

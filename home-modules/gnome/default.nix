@@ -5,7 +5,7 @@
   tools,
   ...
 }:
-
+# https://github.com/nix-community/home-manager/blob/master/modules/lib/gvariant.nix
 let
   extensions = with pkgs.gnomeExtensions; [
     appindicator
