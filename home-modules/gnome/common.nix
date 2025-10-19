@@ -18,10 +18,13 @@ let
 in
 tools.mergeAttrSets [
   {
-    "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+    "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+        enable-hot-corners = false;
+        accent-color = "purple";
+    };
     "org/gnome/mutter".workspaces-only-on-primary = false;
     "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
-    "org/gnome/desktop/interface".enable-hot-corners = false;
     "org/gnome/desktop/wm/preferences".button-layout = "appmenu:minimize,close";
   }
   favorite-apps
