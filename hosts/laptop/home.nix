@@ -4,6 +4,7 @@
   bobymoby = {
 
     gnome.enable = true;
+    # kde.enable = true;
 
     # wayland.hyprland = {
     #   enable = true;
@@ -20,7 +21,7 @@
       web.enable = true;
       neovim.enable = true;
       integrated.enable = true;
-      mobile.enable = true;
+            #mobile.enable = true;
       jetbrains-tools.enable = true;
       zed.enable = true;
     };
