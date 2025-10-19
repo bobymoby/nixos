@@ -21,6 +21,7 @@
     ])
     ++ (with mySpecialArgs.pkgsLatest; [
       google-chrome
-      webcord-vencord
+      #   webcord-vencord
+      vesktop
     ]);
 }

@@ -15,8 +15,8 @@ in
       ])
     ];
     xkb-options = [
-      "terminate:ctrl_alt_bksp"
-      "grp:lalt_lshift_toggle"
+      #   "terminate:ctrl_alt_bksp"
+      "grp:alt_shift_toggle"
     ];
   };
 }

@@ -3,7 +3,7 @@ let
     "kitty"
     "google-chrome"
     "spotify"
-    "webcord"
+    "vesktop"
     "code"
     "idea-ultimate"
     "nemo"

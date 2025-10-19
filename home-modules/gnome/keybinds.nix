@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, tools, ... }:
 let
   keybinds-list = [
     {
@@ -18,14 +18,16 @@ let
     "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom${toString index}/"
   ) (lib.range 0 (lib.length keybinds-list - 1));
 in
-{
-  "org/gnome/settings-daemon/plugins/media-keys" = {
-    inherit custom-keybindings;
-  };
-  "org/gnome/shell/keybindings" = {
-    screenshot = [ ];
-    show-screenshot-ui = [ "<Shift><Super>s" ];
-    close = [ "<Shift><Super>q" ];
-  };
-}
-// keybinds
+tools.mergeAttrSets [
+  {
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      inherit custom-keybindings;
+    };
+    "org/gnome/desktop/wm/keybindings".close = [ "<Shift><Super>q" ];
+    "org/gnome/shell/keybindings" = {
+      screenshot = [ ];
+      show-screenshot-ui = [ "<Shift><Super>s" ];
+    };
+  }
+  keybinds
+]
