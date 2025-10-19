@@ -15,6 +15,12 @@
       gnome.games.enable = false;
       displayManager.defaultSession = "gnome";
     };
+
+    programs.kdeconnect = {
+      enable = true;
+      package = pkgs.gnomeExtensions.gsconnect;
+    };
+
     # environment.systemPackages = [ pkgs.gnomeExtensions.appindicator  ];
     services.udev.packages = [ pkgs.gnome-settings-daemon ];
   };

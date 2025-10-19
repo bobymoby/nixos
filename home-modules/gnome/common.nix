@@ -13,6 +13,7 @@ let
   extensions = import ./extensions.nix { inherit gnome-extensions; };
   weather = import ./weather.nix { inherit lib; };
   input = import ./input.nix { inherit lib; };
+  background = import ./background.nix;
 
 in
 tools.mergeAttrSets [
@@ -28,4 +29,5 @@ tools.mergeAttrSets [
   extensions
   weather
   input
+  background
 ]
