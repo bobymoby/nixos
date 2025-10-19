@@ -36,7 +36,7 @@
     kernelParams = [ "quiet" ];
 
     # kernelPackages = pkgs.linuxPackages_cachyos;
-    kernelPackages = pkgs.linuxPackages_latest;
+    # kernelPackages = pkgs.linuxPackages_latest;
     initrd.systemd.enable = true;
     loader.efi.canTouchEfiVariables = true;
   };

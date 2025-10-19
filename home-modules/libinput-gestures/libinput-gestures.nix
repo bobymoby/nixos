@@ -29,8 +29,8 @@ in
       packages = [
         pkgs.libinput-gestures
       ]
-      ++ lib.optionals isUsingHyprland [ pkgs.ydotool ]
-      ++ lib.optionals isUsingi3 [ pkgs.xdotool ];
+      ++ (lib.optional isUsingHyprland pkgs.ydotool)
+      ++ (lib.optional isUsingi3 pkgs.xdotool);
       file.".config/libinput-gestures.conf".source = configPath;
     };
   };

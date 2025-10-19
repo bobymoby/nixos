@@ -33,7 +33,7 @@
             "temperature"
             "custom/nixpkgs-behind"
           ]
-          ++ (lib.optionals config.bobymoby.wayland.waybar.useLaptopConfig [ "battery" ])
+          ++ (lib.optional config.bobymoby.wayland.waybar.useLaptopConfig "battery")
           ++ [ "clock" ];
 
           # "hyprland/workspaces" = {

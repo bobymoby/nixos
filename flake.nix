@@ -1,6 +1,6 @@
 {
   inputs = {
-    # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-latest.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -73,7 +73,7 @@
       mkSystem = tools.mkSystem {
         inherit inputs mySpecialArgs;
         extraModules = [
-          #inputs.chaotic.nixosModules.default
+          inputs.chaotic.nixosModules.default
           #   inputs.lix-module.nixosModules.default
           inputs.niri.nixosModules.niri
         ];
@@ -81,7 +81,7 @@
       mkHome = tools.mkHome {
         inherit inputs mySpecialArgs pkgs;
         extraModules = [
-          # inputs.chaotic.homeManagerModules.default
+          inputs.chaotic.homeManagerModules.default
           inputs.plasma-manager.homeModules.plasma-manager
 
           inputs.niri.homeModules.niri

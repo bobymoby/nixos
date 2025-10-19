@@ -19,8 +19,8 @@ let
     gnome-extensions = extensions;
     inherit lib tools;
   };
-  pc-only = import ./pc-only.nix { inherit lib config; };
-  laptop-only = import ./laptop-only.nix { inherit lib config; };
+  pc-only = import ./pc-only.nix { inherit lib; };
+  laptop-only = import ./laptop-only.nix { inherit lib; };
 in
 {
   options.bobymoby.gnome = {
@@ -32,11 +32,13 @@ in
   config = lib.mkIf config.bobymoby.gnome.enable {
     dconf = {
       enable = true;
-      settings = tools.mergeAttrSets [
-        common
-        pc-only
-        laptop-only
-      ];
+      settings = tools.mergeAttrSets (
+        [
+          common
+        ]
+        ++ (lib.optional config.bobymoby.gnome.use-pc-config pc-only)
+        ++ (lib.optional config.bobymoby.gnome.use-laptop-config laptop-only)
+      );
     };
 
     home.file.".gradient.png".source = ../../assets/gradient.png;
