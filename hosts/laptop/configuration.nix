@@ -8,11 +8,11 @@
   # hardware.openrazer.enable = true; # razer mouse control
 
   bobymoby = {
-    desktop-environment.hyprland = {
-      enable = true;
-      #   autoStart = true;
-    };
-    # desktop-environment.gnome.enable = true;
+    # desktop-environment.hyprland = {
+    #   enable = true;
+    #   #   autoStart = true;
+    # };
+    desktop-environment.gnome.enable = true;
     login-manager.gdm.enable = true;
     shell.zsh.enable = true;
     virtualization.enable = true;

@@ -3,12 +3,12 @@
 {
   bobymoby = {
 
-    # gnome.enable = true;
+    gnome.enable = true;
 
-    wayland.hyprland = {
-      enable = true;
-      useLaptopConfig = true;
-    };
+    # wayland.hyprland = {
+    #   enable = true;
+    #   useLaptopConfig = true;
+    # };
 
     shell.zsh.enable = true;
     terminal.kitty.enable = true;
