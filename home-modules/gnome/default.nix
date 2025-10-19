@@ -12,6 +12,7 @@ let
     # dash-to-dock
     blur-my-shell
     vitals
+    gsconnect
   ];
 
   common = import ./common.nix {
@@ -37,6 +38,8 @@ in
         laptop-only
       ];
     };
+
+    home.file.".gradient.png".source = ../../assets/gradient.png;
 
     home.packages =
       (with pkgs; [
