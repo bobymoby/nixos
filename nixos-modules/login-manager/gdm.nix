@@ -6,7 +6,10 @@
   config = lib.mkIf config.bobymoby.login-manager.gdm.enable {
     services = {
       xserver.enable = true;
-      displayManager.gdm.enable = true;
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
+      };
     };
   };
 }
