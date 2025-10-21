@@ -38,6 +38,8 @@
     icu
   ];
 
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+
   #   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   #   services.logmein-hamachi.enable = true;

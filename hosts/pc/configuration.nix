@@ -23,7 +23,7 @@
     # netdata.enable = true;
   };
 
-    # boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  # boot.kernelPackages = pkgs.linuxPackages_cachyos;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   services.ratbagd.enable = true; # needed for piper

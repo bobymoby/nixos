@@ -26,7 +26,10 @@ tools.mergeAttrSets [
       inherit custom-keybindings;
     };
     "org/gnome/desktop/wm/keybindings" = {
-      close = [ "<Shift><Super>q" ];
+      close = [
+        "<Shift><Super>q"
+        "<Alt>F4"
+      ];
       show-desktop = [ "<Super>d" ];
     };
     "org/gnome/shell/keybindings" = {
