@@ -18,6 +18,7 @@
       #   stremio
       playerctl
       mpv
+      tesseract
     ])
     ++ (with mySpecialArgs.pkgsLatest; [
       google-chrome

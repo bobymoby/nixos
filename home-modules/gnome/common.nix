@@ -23,9 +23,15 @@ tools.mergeAttrSets [
       enable-hot-corners = false;
       accent-color = "purple";
     };
-    "org/gnome/mutter".workspaces-only-on-primary = false;
+    "org/gnome/mutter" = {
+        workspaces-only-on-primary = false;
+        dynamic-workspaces = false;
+    };
     "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
-    "org/gnome/desktop/wm/preferences".button-layout = "appmenu:minimize,close";
+    "org/gnome/desktop/wm/preferences" = {
+        button-layout = "appmenu:minimize,close";
+        num-workspaces = 12;
+    };
   }
   favorite-apps
   keybinds
