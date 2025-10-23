@@ -24,13 +24,13 @@ tools.mergeAttrSets [
       accent-color = "purple";
     };
     "org/gnome/mutter" = {
-        workspaces-only-on-primary = false;
-        dynamic-workspaces = false;
+      workspaces-only-on-primary = false;
+      dynamic-workspaces = false;
     };
     "org/gnome/desktop/peripherals/mouse".accel-profile = "flat";
     "org/gnome/desktop/wm/preferences" = {
-        button-layout = "appmenu:minimize,close";
-        num-workspaces = 12;
+      button-layout = "appmenu:minimize,close";
+      num-workspaces = 12;
     };
   }
   favorite-apps
