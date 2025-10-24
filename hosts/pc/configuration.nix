@@ -15,8 +15,9 @@
     #   enable = true;
     #   wayland.enable = true;
     # };
-    desktop-environment.gnome.enable = true;
-    login-manager.gdm.enable = true;
+    # desktop-environment.gnome.enable = true;
+    # login-manager.gdm.enable = true;
+    gnome.enable = true;
     shell.zsh.enable = true;
     virtualization.enable = true;
     debug.enable = false;

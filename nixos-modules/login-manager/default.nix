@@ -1,4 +1,9 @@
-{ config, tools, ... }:
+{
+  lib,
+  config,
+  tools,
+  ...
+}:
 let
   enabledLoginManagerCount = tools.enabledSubmoduleCount config.bobymoby.login-manager;
 in
@@ -16,5 +21,10 @@ in
         message = "Only 1 login manager can be enabled at a time";
       }
     ];
+
+    bobymoby.login-manager = {
+      gdm.enable = lib.mkIf config.bobymoby.gnome.enable true;
+      sddm.enable = lib.mkIf config.bobymoby.kde.enable true;
+    };
   };
 }

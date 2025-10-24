@@ -3,8 +3,8 @@
 {
   bobymoby = {
 
-    gnome.enable = true;
-    # kde.enable = true;
+    # gnome.enable = true;
+    kde.enable = true;
 
     # wayland.hyprland = {
     #   enable = true;

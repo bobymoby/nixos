@@ -10,6 +10,6 @@
     ./X11
     ./notifications
     ./gnome
-    ./kde/kde.nix
+    ./kde
   ];
 }

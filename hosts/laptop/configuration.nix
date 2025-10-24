@@ -12,8 +12,9 @@
     #   enable = true;
     #   #   autoStart = true;
     # };
-    desktop-environment.gnome.enable = true;
-    login-manager.gdm.enable = true;
+    # desktop-environment.gnome.enable = true;
+    # login-manager.gdm.enable = true;
+    kde.enable = true;
     shell.zsh.enable = true;
     virtualization.enable = true;
     # netdata.enable = true;
