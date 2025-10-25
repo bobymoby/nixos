@@ -83,7 +83,7 @@ in
         neofetch
         fastfetch
         lshw # list gpus
-
+        # fwupd
         gnome-system-monitor
         gnome-software
         eog # image viewer

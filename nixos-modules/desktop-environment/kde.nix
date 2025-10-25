@@ -1,4 +1,10 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+
 {
   options.bobymoby.desktop-environment.kde.enable =
     lib.mkEnableOption "Enable KDE Plasma";
@@ -8,5 +14,8 @@
       xserver.enable = true; # optional
       desktopManager.plasma6.enable = true;
     };
+
+    environment.etc."opt/chrome/native-messaging-hosts/org.kde.plasma.browser_integration.json".source =
+      "${pkgs.kdePackages.plasma-browser-integration}/etc/opt/chrome/native-messaging-hosts/org.kde.plasma.browser_integration.json";
   };
 }
