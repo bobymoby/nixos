@@ -13,7 +13,7 @@
           variant = "phonetic";
         }
       ];
-      numlockOnStartup = "off";
+      numlockOnStartup = "on";
     };
     touchpads = [
       {

@@ -29,11 +29,14 @@
         sessionRestore.restoreOpenApplicationsOnLogin = "startWithEmptySession";
       };
 
+      workspace.enableMiddleClickPaste = false;
+
       configFile = {
         kdeglobals.General = {
           TerminalApplication = "kitty";
           TerminalService = "kitty.desktop";
         };
+        systemsettingsrc.systemsettings_sidebar_mode.HighlightNonDefaultSettings = true;
       };
     };
     services.gpg-agent = {
