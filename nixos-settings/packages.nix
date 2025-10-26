@@ -15,7 +15,37 @@ let
   #   export __VK_LAYER_NV_optimus=NVIDIA_only
   #   exec -a "$0" "$@"
   # '';
-  btopCuda = pkgs.btop.override { cudaSupport = true; };
+  extended-find = pkgs.writeShellScriptBin "findr" ''
+    dir=$1
+    shift
+    find $dir -regextype posix-extended $*
+  '';
+  my-fhs =
+    let
+      base = pkgs.appimageTools.defaultFhsEnvArgs;
+    in
+    pkgs.buildFHSEnv (
+      base
+      // {
+        name = "fhs";
+        targetPkgs =
+          pk:
+          # pkgs.buildFHSEnv provides only a minimal FHS environment,
+          # lacking many basic packages needed by most software.
+          # Therefore, we need to add them manually.
+          #
+          # pkgs.appimageTools provides basic packages required by most software.
+          (base.targetPkgs pk)
+          ++ (with pk; [
+            pkg-config
+            ncurses
+            # Feel free to add more packages here if needed.
+          ]);
+        profile = "export FHS=1";
+        runScript = "zsh";
+        extraOutputsToInstall = [ "dev" ];
+      }
+    );
 in
 {
   options.bobymoby.useDefaultPackages = lib.mkOption {
@@ -36,72 +66,73 @@ in
     documentation.man.generateCaches = true;
 
     services.xserver.excludePackages = with pkgs; [ xterm ];
-    environment.systemPackages =
-      (with pkgs; [
-        # nvidia-offload
-        #
-        # xorg+i3
-        #
-        # polybarFull
-        # xclip
-        # maim
-        # dex
-        # xss-lock
-        glib
-        xdg-utils
-        # lxappearance
-        # xorg.xinit
+    environment.systemPackages = with pkgs; [
+      # nvidia-offload
+      #
+      # xorg+i3
+      #
+      # polybarFull
+      # xclip
+      # maim
+      # dex
+      # xss-lock
+      glib
+      xdg-utils
+      # lxappearance
+      # xorg.xinit
 
-        pavucontrol
-        pamixer
+      pavucontrol
+      pamixer
 
-        #
-        # misc
-        #
-        unpFull # extract any archive
-        #
-        # editors + utils
-        #
-        # nixd
-        #
-        # terminal + minor utils
-        #
-        gitFull
-        libnotify
-        killall
-        eza # ls alternative
-        jq # json parser
-        nh # nix cli helper
-        # kitty
+      #
+      # misc
+      #
+      unpFull # extract any archive
+      unrar
 
-        #
-        # system monitoring
-        #
-        htop
-        btopCuda
-        # nvtopPackages.full
-        neofetch
-        fastfetch
-        lshw # list gpus
-        # fwupd
-        gnome-system-monitor
-        gnome-software
-        eog # image viewer
+      #
+      # editors + utils
+      #
+      # nixd
+      #
+      # terminal + minor utils
+      #
+      gitFull
+      libnotify
+      killall
+      eza # ls alternative
+      jq # json parser
+      nh # nix cli helper
+      extended-find
+      # kitty
 
-        libGL
-        ripgrep
+      #
+      # system monitoring
+      #
+      htop
+      # nvtopPackages.full
+      neofetch
+      fastfetch
+      lshw
+      # fwupd
+      gnome-system-monitor
+      gnome-software
+      eog # image viewer
 
-        # cachix
-        # (python3.withPackages(ps: [ps.pytorch-bin]))
-        # obsidian
+      libGL
+      ripgrep
 
-        # inputs.quickshell.packages.${mySpecialArgs.system}.default
-      ])
-      ++ (with mySpecialArgs.pkgsLatest; [
-        vscode
-        vscode.fhs
-        code-cursor
-        emacs
-      ]);
+      my-fhs
+
+      # cachix
+      # (python3.withPackages(ps: [ps.pytorch-bin]))
+      # obsidian
+
+      # inputs.quickshell.packages.${mySpecialArgs.system}.default
+      vscode
+      vscode.fhs
+      code-cursor
+      emacs
+    ];
   };
 }

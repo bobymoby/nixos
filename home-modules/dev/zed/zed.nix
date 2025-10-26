@@ -1,7 +1,7 @@
 {
   config,
   lib,
-  mySpecialArgs,
+  pkgs,
   ...
 }:
 
@@ -15,7 +15,7 @@
         recursive = true;
       };
 
-      packages = with mySpecialArgs.pkgsLatest; [
+      packages = with pkgs; [
         zed-editor
       ];
     };

@@ -14,18 +14,6 @@ in
   options.bobymoby.dev.neovim.enable = lib.mkEnableOption "Enable Neovim";
 
   config = lib.mkIf config.bobymoby.dev.neovim.enable {
-    # home = {
-    #   file.".config/nvim" = {
-    #     source = ./config;
-    #     recursive = true;
-    #   };
-
-    #   packages = with config.mySpecialArgs.pkgsLatest; [
-    #     neovim
-    #     # neovim-nightly
-    #     # neovim-nightly-bin
-    #   ];
-    # };
     programs.neovim = {
       enable = true;
 

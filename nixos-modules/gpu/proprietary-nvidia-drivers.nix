@@ -1,6 +1,12 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 let
+  btopCuda = pkgs.btop.override { cudaSupport = true; };
   nvidiaPackages = config.boot.kernelPackages.nvidiaPackages;
   driver-version =
     if config.bobymoby.gpu.proprietary-nvidia-drivers.use-production then
@@ -59,5 +65,7 @@ in
         enable32Bit = true;
       };
     };
+
+    environment.systemPackages = with pkgs; [ btopCuda ];
   };
 }

@@ -63,7 +63,7 @@ Run
 -   `nh os switch`
 -   `nh home switch`
 -   `nh ... -u`
--   `nix flake lock --update-input nixpkgs --update-input home-manager`
+-   `nix flake update`
 
 # Options
 
@@ -150,4 +150,18 @@ mkdir -p /mnt/boot
 sudo mount -o umask=077 (boot partition) /mnt/boot
 cd (nixos configuration folder)
 sudo nixos-install --flake .#(output name)
+```
+
+# Delete home manager backups
+
+List backups:
+
+```bash
+find ~ -regextype posix-extended -regex '^.*(\.\.bak|\.bak.+)$'
+```
+
+Delete backups:
+
+```bash
+find ~ -regextype posix-extended -regex '^.*(\.\.bak|\.bak.+)$' -delete
 ```
