@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 # https://nixos.wiki/wiki/Fish#Setting_fish_as_your_shell

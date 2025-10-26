@@ -66,6 +66,6 @@ in
       };
     };
 
-    environment.systemPackages = with pkgs; [ btopCuda ];
+    environment.systemPackages = [ btopCuda ];
   };
 }

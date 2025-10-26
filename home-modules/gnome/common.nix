@@ -6,7 +6,6 @@
 }:
 
 let
-  inherit (lib.hm.gvariant) mkTuple;
 
   favorite-apps = import ./favorite-apps.nix;
   keybinds = import ./keybinds.nix { inherit lib tools; };

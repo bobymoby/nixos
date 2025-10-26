@@ -1,9 +1,7 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
-  tools,
   mySpecialArgs,
   ...
 }:

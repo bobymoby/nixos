@@ -1,5 +1,3 @@
-{ config, ... }:
-
 {
   imports = [
     ./dunst/dunst.nix

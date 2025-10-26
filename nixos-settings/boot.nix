@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 # let
 #https://github.com/NixOS/nixpkgs/blob/nixos-23.05/pkgs/data/themes/adi1090x-plymouth-themes/shas.nix
 #https://github.com/adi1090x/plymouth-themes/tree/master
