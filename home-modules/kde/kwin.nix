@@ -7,6 +7,8 @@
         number = 5;
         rows = 1;
       };
+      cornerBarrier = false;
+      edgeBarrier = 0;
     };
     configFile.kwinrc = {
       "org.kde.kdecoration2" = {
