@@ -43,6 +43,11 @@ in
       plugins = [
         zsh-nix-shell
       ];
+
+      #   initContent = lib.mkMerge [
+      #     (lib.mkOrder 500 "zmodload zsh/zprof")
+      #     (lib.mkOrder 1500 "zprof")
+      #   ];
     };
   };
 }

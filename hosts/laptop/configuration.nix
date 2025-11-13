@@ -16,7 +16,10 @@
     # login-manager.gdm.enable = true;
     kde.enable = true;
     shell.zsh.enable = true;
-    virtualization.enable = true;
+    virtualization = {
+      enable = true;
+      enable-qemu = true;
+    };
     # netdata.enable = true;
   };
 

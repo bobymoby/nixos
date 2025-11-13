@@ -8,6 +8,9 @@ import pkgs {
   inherit system overlays;
   config = {
     allowUnfree = true;
-    permittedInsecurePackages = [ "qtwebengine-5.15.19" ];
+    permittedInsecurePackages = [
+      "qtwebengine-5.15.19"
+      "ventoy-qt5-1.1.07"
+    ];
   };
 }

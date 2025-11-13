@@ -114,8 +114,8 @@ in
       fastfetch
       lshw
       # fwupd
-      gnome-system-monitor
-      gnome-software
+      #   gnome-system-monitor
+      #   gnome-software
       eog # image viewer
 
       libGL
@@ -126,6 +126,8 @@ in
       # cachix
       # (python3.withPackages(ps: [ps.pytorch-bin]))
       # obsidian
+
+      ventoy-full-qt
 
       # inputs.quickshell.packages.${mySpecialArgs.system}.default
       vscode
