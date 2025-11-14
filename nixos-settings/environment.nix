@@ -1,6 +1,4 @@
 {
-  lib,
-  config,
   pkgs,
   ...
 }:
@@ -20,6 +18,7 @@
 
     GSETTINGS_SCHEMA_DIR = "${pkgs.gtk3}/share/gsettings-schemas/${pkgs.gtk3.name}/glib-2.0/schemas";
 
-    NIXOS_OZONE_WL = lib.mkIf config.bobymoby.desktop-environment.hyprland.enable "1";
+    # NIXOS_OZONE_WL = lib.mkIf config.bobymoby.desktop-environment.hyprland.enable "1";
+    NIXOS_OZONE_WL = "1";
   };
 }

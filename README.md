@@ -165,3 +165,9 @@ Delete backups:
 ```bash
 find ~ -regextype posix-extended -regex '^.*(\.\.bak|\.bak.+)$' -delete
 ```
+
+# Nix Repl
+
+```bash
+nix repl --expr 'import <nixpkgs>{}'
+```

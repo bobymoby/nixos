@@ -3,7 +3,6 @@
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # nixpkgs-latest.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
     home-manager = {
@@ -41,16 +40,20 @@
     let
       systems = import ./tools/systems.nix;
       system = systems.x86_64-linux;
-      tools = import ./tools { inherit system; };
-      overlays = import ./overlays { inherit inputs system; };
-      pkgs = tools.mkPkgs {
+      mkPkgs = import ./tools/mkPkgs.nix { inherit system; };
+      pkgs = mkPkgs {
         inherit inputs overlays;
         pkgs = inputs.nixpkgs;
       };
-      pkgsStable = tools.mkPkgs {
+      pkgsStable = mkPkgs {
         inherit inputs overlays;
         pkgs = inputs.nixpkgs-stable;
       };
+      tools = import ./tools {
+        inherit system;
+        lib = pkgs.lib;
+      };
+      overlays = import ./overlays { inherit inputs system; };
       pointerTheme = {
         name = "Bibata-Modern-Ice";
         package = pkgs.bibata-cursors;

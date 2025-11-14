@@ -1,4 +1,4 @@
-{ system }:
+{ system, lib }:
 {
   inputs,
   mySpecialArgs,
@@ -6,7 +6,7 @@
 }:
 confFile:
 let
-  tools = import ./. { inherit system; };
+  tools = import ./. { inherit system lib; };
   outputs = inputs.self.outputs;
 in
 inputs.nixpkgs.lib.nixosSystem {

@@ -1,3 +1,4 @@
-attrSet:
-(builtins.hasAttr "enable" attrSet)
-&& (builtins.typeOf attrSet.enable) == "bool"
+let
+  inherit (builtins) typeOf hasAttr;
+in
+attrSet: (hasAttr "enable" attrSet) && (typeOf attrSet.enable) == "bool"

@@ -127,13 +127,13 @@ in
       # (python3.withPackages(ps: [ps.pytorch-bin]))
       # obsidian
 
-      ventoy-full-qt
+      #   ventoy-full-qt
 
       # inputs.quickshell.packages.${mySpecialArgs.system}.default
       vscode
       vscode.fhs
-      code-cursor
-      emacs
+      #   code-cursor
+      #   emacs
     ];
   };
 }

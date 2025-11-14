@@ -1,10 +1,10 @@
-{ system }:
+{ system, lib }:
 let
   systems = import ./systems.nix;
 
   # Flake utilities
-  mkHome = import ./mkHome.nix { inherit system; };
-  mkSystem = import ./mkSystem.nix { inherit system; };
+  mkHome = import ./mkHome.nix { inherit system lib; };
+  mkSystem = import ./mkSystem.nix { inherit system lib; };
   mkPkgs = import ./mkPkgs.nix { inherit system; };
   mkFormatter = import ./mkFormatter.nix;
 
@@ -15,7 +15,9 @@ let
   enabledSubmoduleCount = import ./enabledSubmoduleCount.nix;
   hasEnabledModules = import ./hasEnabledModules.nix;
   getEnabledModules = import ./getEnabledModules.nix;
-  mergeAttrSets = import ./mergeAttrSets.nix;
+  mergeAttrSets = import ./mergeAttrSets.nix { inherit lib; };
+  enabledAttrsToList = import ./enabledAttrsToList.nix { inherit lib; };
+  listToPackageSet = import ./listToPackageSet.nix;
 
   tools = {
     inherit
@@ -31,6 +33,8 @@ let
       hasEnabledModules
       getEnabledModules
       mergeAttrSets
+      enabledAttrsToList
+      listToPackageSet
       ;
   };
 in

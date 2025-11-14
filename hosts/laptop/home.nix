@@ -22,7 +22,10 @@
       neovim.enable = true;
       integrated.enable = true;
       #mobile.enable = true;
-      jetbrains-tools.enable = true;
+      jetbrains-tools = {
+        enable = true;
+        rider = false;
+      };
       zed.enable = true;
     };
   };

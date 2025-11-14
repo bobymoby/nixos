@@ -8,7 +8,8 @@
 let
   toLua = str: "lua << EOF\n${str}\nEOF\n";
   # toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-  toLuaFile = file: toLua (builtins.readFile file);
+  #   toLuaFile = file: toLua (builtins.readFile file);
+  toLuaFile = file: file |> builtins.readFile |> toLua;
 in
 {
   options.bobymoby.dev.neovim.enable = lib.mkEnableOption "Enable Neovim";

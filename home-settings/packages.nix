@@ -17,9 +17,10 @@
     #   stremio
     playerctl
     mpv
-    tesseract
+    # tesseract
     google-chrome
     #   webcord-vencord
     vesktop
+    ventoy-full-qt
   ];
 }

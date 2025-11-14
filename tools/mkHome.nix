@@ -1,4 +1,4 @@
-{ system }:
+{ system, lib }:
 {
   inputs,
   pkgs,
@@ -7,7 +7,7 @@
 }:
 confFile:
 let
-  tools = import ./. { inherit system; };
+  tools = import ./. { inherit system lib; };
   outputs = inputs.self.outputs;
   # overlays = mySpecialArgs.overlays;
   # pkgs = import ./mkPkgs.nix { inherit system; } { inherit inputs overlays; };
