@@ -20,6 +20,7 @@ in
       experimental-features = [
         "nix-command"
         "flakes"
+        "pipe-operators"
       ];
       substituters = [
         "https://nix-community.cachix.org"
