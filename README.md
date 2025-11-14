@@ -157,13 +157,13 @@ sudo nixos-install --flake .#(output name)
 List backups:
 
 ```bash
-find ~ -regextype posix-extended -regex '^.*(\.\.bak|\.bak.+)$'
+find ~ -regextype posix-extended -regex '^.*hm-bak.*$'
 ```
 
 Delete backups:
 
 ```bash
-find ~ -regextype posix-extended -regex '^.*(\.\.bak|\.bak.+)$' -delete
+find ~ -regextype posix-extended -regex '^.*hm-bak.*$' -delete
 ```
 
 # Nix Repl

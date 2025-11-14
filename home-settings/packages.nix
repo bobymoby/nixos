@@ -22,5 +22,6 @@
     #   webcord-vencord
     vesktop
     ventoy-full-qt
+    krita
   ];
 }

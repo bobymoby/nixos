@@ -17,6 +17,8 @@
 
   options.bobymoby.kde = {
     enable = lib.mkEnableOption "Enable KDE Plasma";
+    use-pc-config = lib.mkEnableOption "Use pc-config for KDE settings";
+    use-laptop-config = lib.mkEnableOption "Use laptop-config for KDE settings";
   };
 
   config = lib.mkIf config.bobymoby.kde.enable {
@@ -37,6 +39,7 @@
           TerminalService = "kitty.desktop";
         };
         systemsettingsrc.systemsettings_sidebar_mode.HighlightNonDefaultSettings = true;
+        plasmaparc.General.AudioFeedback = false;
       };
     };
     services.gpg-agent = {

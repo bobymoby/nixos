@@ -4,7 +4,10 @@
   bobymoby = {
 
     # gnome.enable = true;
-    kde.enable = true;
+    kde = {
+      enable = true;
+      use-laptop-config = true;
+    };
 
     # wayland.hyprland = {
     #   enable = true;

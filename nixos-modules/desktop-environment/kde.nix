@@ -17,6 +17,12 @@
 
     programs.kdeconnect.enable = true;
 
+    environment.plasma6.excludePackages = with pkgs.kdePackages; [
+      konsole
+      elisa
+      khelpcenter
+    ];
+
     environment.etc."opt/chrome/native-messaging-hosts/org.kde.plasma.browser_integration.json".source =
       "${pkgs.kdePackages.plasma-browser-integration}/etc/opt/chrome/native-messaging-hosts/org.kde.plasma.browser_integration.json";
   };

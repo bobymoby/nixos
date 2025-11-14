@@ -21,7 +21,10 @@
         LayoutName = "compact";
         HighlightWindows = false;
       };
-      Plugins.fadingpopupsEnabled = false;
+      Plugins = {
+        fadingpopupsEnabled = false;
+        zoomEnabled = false;
+      };
     };
   };
 }

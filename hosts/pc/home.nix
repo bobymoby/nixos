@@ -15,7 +15,10 @@
     #   enable = true;
     #   use-pc-config = true;
     # };
-    kde.enable = true;
+    kde = {
+      enable = true;
+      use-pc-config = true;
+    };
 
     shell.zsh.enable = true;
     terminal.kitty.enable = true;

@@ -8,6 +8,10 @@
         criticalLevel = 10;
         criticalAction = "nothing";
       };
+      AC = lib.mkIf config.bobymoby.kde.use-pc-config {
+        autoSuspend.action = "nothing";
+        dimDisplay.enable = false;
+      };
     };
     configFile.powerdevilrc = {
       "LowBattery/Display".UseProfileSpecificDisplayBrightness = false;
