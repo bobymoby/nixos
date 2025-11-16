@@ -24,7 +24,10 @@ in
 
     bobymoby.login-manager = {
       gdm.enable = lib.mkIf config.bobymoby.gnome.enable true;
-      sddm.enable = lib.mkIf config.bobymoby.kde.enable true;
+      sddm = lib.mkIf config.bobymoby.kde.enable {
+        enable = true;
+        wayland.enable = true;
+      };
     };
   };
 }

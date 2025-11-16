@@ -14,13 +14,27 @@
           }
           {
             # name = "org.kde.plasma.icontasks";
-            iconTasks.launchers = [
-              "preferred://browser"
-              "applications:spotify.desktop"
-              "applications:vesktop.desktop"
-              "applications:code.desktop"
-              "applications:idea-ultimate.desktop"
-            ];
+            iconTasks = {
+              launchers = [
+                "preferred://browser"
+                "applications:spotify.desktop"
+                "applications:vesktop.desktop"
+                "applications:code.desktop"
+                "applications:idea-ultimate.desktop"
+              ];
+              appearance = {
+                indicateAudioStreams = false;
+                iconSpacing = "small";
+              };
+              behavior = {
+                showTasks = {
+                  onlyInCurrentScreen = false;
+                  onlyInCurrentDesktop = false;
+                  onlyInCurrentActivity = false;
+                  onlyMinimized = false;
+                };
+              };
+            };
           }
           {
             name = "org.kde.plasma.marginsseparator";

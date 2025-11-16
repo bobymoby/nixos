@@ -1,5 +1,9 @@
 { pkgs, ... }:
-
+let
+  google-chrome-touchpad-overscroll = pkgs.google-chrome.override {
+    commandLineArgs = "--enable-features=TouchpadOverscrollHistoryNavigation";
+  };
+in
 {
   home.packages = with pkgs; [
     qbittorrent
@@ -18,7 +22,7 @@
     playerctl
     mpv
     # tesseract
-    google-chrome
+    google-chrome-touchpad-overscroll
     #   webcord-vencord
     vesktop
     ventoy-full-qt

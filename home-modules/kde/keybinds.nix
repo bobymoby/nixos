@@ -45,6 +45,8 @@
         "Window to Desktop 3" = "Meta+#";
         "Window to Desktop 4" = "Meta+$";
         "Window to Desktop 5" = "Meta+%";
+        "Window Quick Tile Top" = [ ];
+        "Window Maximize" = "Meta+Up";
       };
       "services/org.kde.konsole.desktop"."_launch" = [ ];
     };
