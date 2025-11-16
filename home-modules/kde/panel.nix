@@ -5,7 +5,9 @@
     panels = [
       {
         height = 50;
-        floating = true;
+        floating = false;
+        opacity = "opaque";
+        screen = "all";
         widgets = [
           {
             name = "org.kde.plasma.kickoff";
