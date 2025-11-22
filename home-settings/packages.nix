@@ -27,5 +27,6 @@ in
     vesktop
     ventoy-full-qt
     krita
+    bitwarden-desktop
   ];
 }

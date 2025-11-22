@@ -94,6 +94,10 @@
       nixosConfigurations = {
         BobiLaptopNixOS = mkSystem ./hosts/laptop/configuration.nix;
         BobiNixOS = mkSystem ./hosts/pc/configuration.nix;
+        installer = inputs.nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./iso/iso.nix ];
+        };
       };
 
       homeModules.default = ./home-modules;

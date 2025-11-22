@@ -12,14 +12,17 @@
   };
 
   config = lib.mkIf config.bobymoby.virtualization.enable {
-    virtualisation.docker.enable = true;
     environment.systemPackages = with pkgs; [ distrobox ];
-    virtualisation.libvirtd = lib.mkIf config.bobymoby.virtualization.enable-qemu {
-      enable = true;
-      qemu = {
-        package = pkgs.qemu_kvm;
-        runAsRoot = true;
-        swtpm.enable = true;
+    virtualisation = {
+      docker.enable = true;
+
+      libvirtd = lib.mkIf config.bobymoby.virtualization.enable-qemu {
+        enable = true;
+        qemu = {
+          package = pkgs.qemu_kvm;
+          runAsRoot = true;
+          swtpm.enable = true;
+        };
       };
     };
 
