@@ -25,6 +25,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
+
     # lix-module = {
     #   url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -74,6 +76,7 @@
           inputs.chaotic.nixosModules.default
           #   inputs.lix-module.nixosModules.default
           inputs.niri.nixosModules.niri
+          inputs.nixos-facter-modules.nixosModules.facter
         ];
       };
       mkHome = tools.mkHome {

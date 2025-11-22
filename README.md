@@ -34,6 +34,7 @@ Fix `/hosts/**/hardware-config/hardware-configuration.nix`
 Run
 
 -   ```bash
+    sudo nix run github:nix-community/nixos-facter > facter.json
     nix build --no-link .#homeConfigurations.bobymoby@Bobi<Laptop>NixOS.activationPackage
     "$(nix path-info .#homeConfigurations.bobymoby@Bobi<Laptop>NixOS.activationPackage)"/activate
     FLAKE="/etc/nixos"
@@ -42,6 +43,7 @@ Run
     sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
     reboot
     ```
+
 -   load easyeffects preset(should not be necessary after latest commits)
 
 # Windows setup

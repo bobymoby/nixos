@@ -75,6 +75,7 @@ in
       # maim
       # dex
       # xss-lock
+      icu
       glib
       xdg-utils
       # lxappearance

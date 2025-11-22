@@ -17,6 +17,7 @@ in
   nix = {
     nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
     settings = {
+      warn-dirty = false;
       experimental-features = [
         "nix-command"
         "flakes"

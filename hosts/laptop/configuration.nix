@@ -26,21 +26,9 @@
   #programs.niri.enable = true;
 
   networking.firewall = {
-    allowedTCPPorts = [
-      7777
-      25565
-      3000
-      5000
-    ];
-    allowedUDPPorts = [
-      7777
-      25565
-    ];
+    allowedTCPPorts = [ ];
+    allowedUDPPorts = [ ];
   };
-
-  environment.systemPackages = with pkgs; [
-    icu
-  ];
 
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
 

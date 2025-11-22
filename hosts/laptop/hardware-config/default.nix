@@ -33,4 +33,6 @@
   environment.sessionVariables.LIBVA_DRIVER_NAME = "iHD";
 
   services.fwupd.enable = true;
+
+  facter.reportPath = ./facter.json;
 }
