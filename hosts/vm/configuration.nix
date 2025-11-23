@@ -1,6 +1,5 @@
 {
   inputs,
-  config,
   pkgs,
   ...
 }:
@@ -30,7 +29,7 @@
 
   networking = {
     networkmanager.enable = true;
-    hostname = "nixos-vm";
+    hostName = "nixos-vm";
   };
 
   time.timeZone = "Europe/Sofia";

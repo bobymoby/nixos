@@ -1,7 +1,7 @@
 { pkgs, modulesPath, ... }:
 
 {
-  imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-graphical-calamares-gnome.nix") ];
+  imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-minimal-new-kernel.nix") ];
   environment.systemPackages = with pkgs; [
     vscode
     gitFull
