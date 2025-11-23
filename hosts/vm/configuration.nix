@@ -18,7 +18,7 @@
   };
 
   services = {
-    spice-vdagent.enable = true;
+    spice-vdagentd.enable = true;
     qemuGuest.enable = true;
 
     xserver.xkb = {

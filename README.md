@@ -173,3 +173,10 @@ find ~ -regextype posix-extended -regex '^.*hm-bak.*$' -delete
 ```bash
 nix repl --expr 'import <nixpkgs>{}'
 ```
+
+# Build iso
+
+```bash
+nix build .#nixosConfigurations.installer.config.system.build.isoImage
+nix build .#nixosConfigurations.installer-vm.config.system.build.isoImage
+```
