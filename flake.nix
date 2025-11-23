@@ -109,18 +109,6 @@
           };
           modules = [ ./iso/iso.nix ];
         };
-        installer-vm = inputs.nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = {
-            inherit
-              inputs
-              tools
-              mySpecialArgs
-              ;
-            inherit (inputs.self) outputs;
-          };
-          modules = [ ./iso/iso-vm.nix ];
-        };
         vm = inputs.nixpkgs.lib.nixosSystem {
           inherit system;
           specialArgs = {
