@@ -98,8 +98,28 @@
         BobiLaptopNixOS = mkSystem ./hosts/laptop/configuration.nix;
         BobiNixOS = mkSystem ./hosts/pc/configuration.nix;
         installer = inputs.nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
+          inherit system;
+          specialArgs = {
+            inherit
+              inputs
+              tools
+              mySpecialArgs
+              ;
+            inherit (inputs.self) outputs;
+          };
           modules = [ ./iso/iso.nix ];
+        };
+        vm = inputs.nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = {
+            inherit
+              inputs
+              tools
+              mySpecialArgs
+              ;
+            inherit (inputs.self) outputs;
+          };
+          modules = [ ./hosts/vm/configuration.nix ];
         };
       };
 
