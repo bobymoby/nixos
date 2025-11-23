@@ -2,12 +2,13 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 
 {
   # programs.wofi.enable = true;
-  options.bobymoby.wayland.wofi.enable = lib.mkEnableOption "Enable wofi";
+  options.bobymoby.wayland.wofi.enable = tools.mkEnableOption "Enable wofi";
 
   config = lib.mkIf config.bobymoby.wayland.wofi.enable {
     home = {

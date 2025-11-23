@@ -8,6 +8,8 @@ let
   mkPkgs = import ./mkPkgs.nix { inherit system; };
   mkFormatter = import ./mkFormatter.nix;
 
+  mkEnableOption = import ./mkEnableOption.nix { inherit lib; };
+
   # Nix lang utilities
   isZero = import ./isZero.nix;
   isSet = import ./isSet.nix;
@@ -26,6 +28,9 @@ let
       mkSystem
       mkPkgs
       mkFormatter
+
+        mkEnableOption
+
       isZero
       isSet
       hasEnableOption

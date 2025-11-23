@@ -1,7 +1,12 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  tools,
+  ...
+}:
 
 {
-  options.bobymoby.bluetooth.enable = lib.mkEnableOption "Enable Bluetooth";
+  options.bobymoby.bluetooth.enable = tools.mkEnableOption "Enable Bluetooth";
 
   config = lib.mkIf config.bobymoby.bluetooth.enable {
     services.blueman.enable = true;

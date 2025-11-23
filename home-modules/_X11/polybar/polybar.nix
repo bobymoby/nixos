@@ -6,7 +6,7 @@
 }:
 
 {
-  options.bobymoby.X11.polybar.enable = lib.mkEnableOption "Enable Polybar";
+  options.bobymoby.X11.polybar.enable = tools.mkEnableOption "Enable Polybar";
 
   config = lib.mkIf config.bobymoby.X11.polybar.enable {
     home.file.".config/polybar" = {

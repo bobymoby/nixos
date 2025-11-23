@@ -1,9 +1,14 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  tools,
+  ...
+}:
 
 {
   options.bobymoby.login-manager.sddm = {
-    enable = lib.mkEnableOption "Enable SDDM";
-    wayland.enable = lib.mkEnableOption "Enable Wayland";
+    enable = tools.mkEnableOption "Enable SDDM";
+    wayland.enable = tools.mkEnableOption "Enable Wayland";
   };
 
   config = lib.mkIf config.bobymoby.login-manager.sddm.enable {

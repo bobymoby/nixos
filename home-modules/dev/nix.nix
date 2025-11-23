@@ -2,11 +2,13 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 
 {
-  options.bobymoby.dev.nix.enable = lib.mkEnableOption "Enable Nix dev packages";
+  options.bobymoby.dev.nix.enable =
+    tools.mkEnableOption "Enable Nix dev packages";
 
   config = lib.mkIf config.bobymoby.dev.nix.enable {
     home.packages = with pkgs; [

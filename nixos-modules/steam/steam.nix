@@ -1,7 +1,12 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  tools,
+  ...
+}:
 
 {
-  options.bobymoby.steam.enable = lib.mkEnableOption "Enable Steam";
+  options.bobymoby.steam.enable = tools.mkEnableOption "Enable Steam";
 
   config = lib.mkIf config.bobymoby.steam.enable {
     programs.steam = {

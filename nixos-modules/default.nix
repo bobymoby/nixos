@@ -9,5 +9,6 @@
     ./steam/steam.nix
     ./virtualization/virtualization.nix
     ./desktop-environment
+    ./systemd-services
   ];
 }

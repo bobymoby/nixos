@@ -2,11 +2,12 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 
 {
-  options.bobymoby.wayland.rofi.enable = lib.mkEnableOption "Enable rofi";
+  options.bobymoby.wayland.rofi.enable = tools.mkEnableOption "Enable rofi";
 
   config = lib.mkIf config.bobymoby.wayland.rofi.enable {
     programs.rofi = {

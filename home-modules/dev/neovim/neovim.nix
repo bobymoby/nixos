@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 
@@ -12,7 +13,7 @@ let
   toLuaFile = file: file |> builtins.readFile |> toLua;
 in
 {
-  options.bobymoby.dev.neovim.enable = lib.mkEnableOption "Enable Neovim";
+  options.bobymoby.dev.neovim.enable = tools.mkEnableOption "Enable Neovim";
 
   config = lib.mkIf config.bobymoby.dev.neovim.enable {
     programs.neovim = {

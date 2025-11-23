@@ -11,7 +11,7 @@
   # class_g -> wm_class[1]
 
   options.bobymoby.X11.picom.enable =
-    lib.mkEnableOption "Enable picom compositor";
+    tools.mkEnableOption "Enable picom compositor";
 
   config = lib.mkIf config.bobymoby.X11.picom.enable {
     home = {

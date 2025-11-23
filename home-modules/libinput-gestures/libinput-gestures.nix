@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 let
@@ -16,7 +17,7 @@ let
       null;
 in
 {
-  options.bobymoby.libinput-gestures.enable = lib.mkEnableOption "Enable libinput-gestures";
+  options.bobymoby.libinput-gestures.enable = tools.mkEnableOption "Enable libinput-gestures";
 
   config = lib.mkIf config.bobymoby.libinput-gestures.enable {
     assertions = [

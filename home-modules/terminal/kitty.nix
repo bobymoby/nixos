@@ -1,7 +1,12 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  tools,
+  ...
+}:
 {
   options.bobymoby.terminal.kitty = {
-    enable = lib.mkEnableOption "Enable Kitty";
+    enable = tools.mkEnableOption "Enable Kitty";
   };
 
   config.programs.kitty = lib.mkIf config.bobymoby.terminal.kitty.enable {

@@ -2,11 +2,12 @@
   config,
   lib,
   pkgs,
+  tools,
   ...
 }:
 
 {
-  options.bobymoby.dev.zed.enable = lib.mkEnableOption "Enable Zed";
+  options.bobymoby.dev.zed.enable = tools.mkEnableOption "Enable Zed";
 
   config = lib.mkIf config.bobymoby.dev.zed.enable {
     home = {

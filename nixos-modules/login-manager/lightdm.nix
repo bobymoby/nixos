@@ -1,13 +1,14 @@
 {
   lib,
   config,
+  tools,
   mySpecialArgs,
   ...
 }:
 
 {
   options.bobymoby.login-manager.lightdm.enable =
-    lib.mkEnableOption "Enable LightDM";
+    tools.mkEnableOption "Enable LightDM";
 
   config = lib.mkIf config.bobymoby.login-manager.lightdm.enable {
     services.xserver = {

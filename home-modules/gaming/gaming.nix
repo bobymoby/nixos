@@ -2,14 +2,15 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 
 {
   options.bobymoby.gaming = {
-    enable = lib.mkEnableOption "Enable gaming";
-    withTools = lib.mkEnableOption "Enable gaming tools";
-    withWine = lib.mkEnableOption "Enable wine";
+    enable = tools.mkEnableOption "Enable gaming";
+    withTools = tools.mkEnableOption "Enable gaming tools";
+    withWine = tools.mkEnableOption "Enable wine";
   };
 
   config = lib.mkIf config.bobymoby.gaming.enable {

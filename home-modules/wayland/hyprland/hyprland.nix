@@ -20,9 +20,9 @@ let
 in
 {
   options.bobymoby.wayland.hyprland = {
-    enable = lib.mkEnableOption "Enable Hyprland";
-    useLaptopConfig = lib.mkEnableOption "Use laptop configuration";
-    usePcConfig = lib.mkEnableOption "Use PC configuration";
+    enable = tools.mkEnableOption "Enable Hyprland";
+    useLaptopConfig = tools.mkEnableOption "Use laptop configuration";
+    usePcConfig = tools.mkEnableOption "Use PC configuration";
   };
 
   config = lib.mkIf config.bobymoby.wayland.hyprland.enable {

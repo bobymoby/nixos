@@ -3,6 +3,7 @@ let
   overlays = mySpecialArgs.overlays;
 in
 {
+  documentation.nixos.includeAllModules = true;
   nixpkgs = {
     inherit overlays;
     config = {

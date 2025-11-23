@@ -2,11 +2,13 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 
 {
-  options.bobymoby.desktop-environment.i3.enable = lib.mkEnableOption "Enable i3";
+  options.bobymoby.desktop-environment.i3.enable =
+    tools.mkEnableOption "Enable i3";
 
   config = lib.mkIf config.bobymoby.desktop-environment.i3.enable {
     environment.pathsToLink = [

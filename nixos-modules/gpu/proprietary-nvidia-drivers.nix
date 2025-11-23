@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 
@@ -18,15 +19,15 @@ let
 in
 {
   options.bobymoby.gpu.proprietary-nvidia-drivers = {
-    enable = lib.mkEnableOption "enable proprietary nvidia drivers";
+    enable = tools.mkEnableOption "enable proprietary nvidia drivers";
     prime = {
-      enable = lib.mkEnableOption "enable prime";
-      sync = lib.mkEnableOption "enable prime sync";
-      offload = lib.mkEnableOption "enable prime offload";
+      enable = tools.mkEnableOption "enable prime";
+      sync = tools.mkEnableOption "enable prime sync";
+      offload = tools.mkEnableOption "enable prime offload";
     };
-    use-beta = lib.mkEnableOption "use beta packages";
-    use-production = lib.mkEnableOption "use production packages";
-    forceFullCompositionPipeline = lib.mkEnableOption "forceFullCompositionPipeline";
+    use-beta = tools.mkEnableOption "use beta packages";
+    use-production = tools.mkEnableOption "use production packages";
+    forceFullCompositionPipeline = tools.mkEnableOption "forceFullCompositionPipeline";
   };
   # boot.extraModulePackages = [ config.boot.kernelPackages.nvidia_x11 ];
   # boot.initrd.kernelModules = [ "nvidia" ];

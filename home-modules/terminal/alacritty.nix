@@ -1,13 +1,14 @@
 {
   lib,
   config,
+  tools,
   ...
 }:
 
 {
   options.bobymoby.terminal.alacritty = {
-    enable = lib.mkEnableOption "Enable Alacritty";
-    debugInfo.enable = lib.mkEnableOption "Enable debugging";
+    enable = tools.mkEnableOption "Enable Alacritty";
+    debugInfo.enable = tools.mkEnableOption "Enable debugging";
   };
 
   config = lib.mkIf config.bobymoby.terminal.alacritty.enable {

@@ -1,10 +1,15 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  tools,
+  ...
+}:
 
 {
   options.bobymoby.wayland.waybar = {
-    enable = lib.mkEnableOption "Enable waybar";
-    usePcConfig = lib.mkEnableOption "Use pc configuration";
-    useLaptopConfig = lib.mkEnableOption "Use laptop configuration";
+    enable = tools.mkEnableOption "Enable waybar";
+    usePcConfig = tools.mkEnableOption "Use pc configuration";
+    useLaptopConfig = tools.mkEnableOption "Use laptop configuration";
   };
 
   config = lib.mkIf config.bobymoby.wayland.waybar.enable {

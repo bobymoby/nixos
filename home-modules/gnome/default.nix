@@ -24,9 +24,9 @@ let
 in
 {
   options.bobymoby.gnome = {
-    enable = lib.mkEnableOption "Enable gnome specific settings";
-    use-pc-config = lib.mkEnableOption "Use pc specific gnome settings";
-    use-laptop-config = lib.mkEnableOption "Use laptop specific gnome settings";
+    enable = tools.mkEnableOption "Enable gnome specific settings";
+    use-pc-config = tools.mkEnableOption "Use pc specific gnome settings";
+    use-laptop-config = tools.mkEnableOption "Use laptop specific gnome settings";
   };
 
   config = lib.mkIf config.bobymoby.gnome.enable {

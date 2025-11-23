@@ -1,8 +1,13 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  tools,
+  ...
+}:
 {
   options.bobymoby.niri = {
-    enable = lib.mkEnableOption "Enable niri home module";
-    enable-dms = lib.mkEnableOption "Enable Dank Material Shell integration";
+    enable = tools.mkEnableOption "Enable niri home module";
+    enable-dms = tools.mkEnableOption "Enable Dank Material Shell integration";
   };
 
   config = lib.mkIf config.bobymoby.niri.enable {

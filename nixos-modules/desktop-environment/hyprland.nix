@@ -10,8 +10,8 @@ let
 in
 {
   options.bobymoby.desktop-environment.hyprland = {
-    enable = lib.mkEnableOption "Enable Hyprland";
-    autoStart = lib.mkEnableOption "Auto-start Hyprland";
+    enable = tools.mkEnableOption "Enable Hyprland";
+    autoStart = tools.mkEnableOption "Auto-start Hyprland";
   };
 
   config = lib.mkIf config.bobymoby.desktop-environment.hyprland.enable {

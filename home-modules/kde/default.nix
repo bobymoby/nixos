@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 {
@@ -16,9 +17,9 @@
   ];
 
   options.bobymoby.kde = {
-    enable = lib.mkEnableOption "Enable KDE Plasma";
-    use-pc-config = lib.mkEnableOption "Use pc-config for KDE settings";
-    use-laptop-config = lib.mkEnableOption "Use laptop-config for KDE settings";
+    enable = tools.mkEnableOption "Enable KDE Plasma";
+    use-pc-config = tools.mkEnableOption "Use pc-config for KDE settings";
+    use-laptop-config = tools.mkEnableOption "Use laptop-config for KDE settings";
   };
 
   config = lib.mkIf config.bobymoby.kde.enable {

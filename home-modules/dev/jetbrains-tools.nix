@@ -8,7 +8,7 @@
 
 {
   options.bobymoby.dev.jetbrains-tools = {
-    enable = lib.mkEnableOption "Enable JetBrains tools";
+    enable = tools.mkEnableOption "Enable JetBrains tools";
     rider = lib.mkOption {
       type = lib.types.bool;
       default = true;

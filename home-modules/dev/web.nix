@@ -2,12 +2,13 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 
 {
   options.bobymoby.dev.web = {
-    enable = lib.mkEnableOption "Enable web dev packages";
+    enable = tools.mkEnableOption "Enable web dev packages";
     desktopEntries.dbeaver-xwayland.enable = lib.mkOption {
       type = lib.types.bool;
       default = true;

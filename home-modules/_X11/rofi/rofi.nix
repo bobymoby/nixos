@@ -6,7 +6,7 @@
 }:
 
 {
-  options.bobymoby.X11.rofi.enable = lib.mkEnableOption "Enable rofi";
+  options.bobymoby.X11.rofi.enable = tools.mkEnableOption "Enable rofi";
 
   config = lib.mkIf config.bobymoby.X11.rofi.enable {
     programs.rofi = {

@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  tools,
+  ...
+}:
 
 {
   imports = [
@@ -9,8 +14,8 @@
   ];
 
   options.bobymoby = {
-    gnome.enable = lib.mkEnableOption "Enable Gnome suite";
-    kde.enable = lib.mkEnableOption "Enable kde suite";
+    gnome.enable = tools.mkEnableOption "Enable Gnome suite";
+    kde.enable = tools.mkEnableOption "Enable kde suite";
   };
 
   config.bobymoby.desktop-environment = {

@@ -7,7 +7,7 @@
     ./shell
     ./terminal
     ./wayland
-    ./X11
+    # ./X11
     ./notifications
     ./gnome
     ./kde

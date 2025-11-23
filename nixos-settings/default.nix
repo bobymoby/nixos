@@ -1,7 +1,6 @@
 {
   imports = [
     ./ssh/ssh.nix
-    ./systemd-services
 
     ./boot.nix
     ./common-settings.nix

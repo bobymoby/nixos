@@ -2,11 +2,12 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 
 {
-  options.bobymoby.shell.zsh.enable = lib.mkEnableOption "Enable zsh";
+  options.bobymoby.shell.zsh.enable = tools.mkEnableOption "Enable zsh";
 
   config = lib.mkIf config.bobymoby.shell.zsh.enable {
     programs.zsh.enable = true;

@@ -2,13 +2,14 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 let
   zsh-nix-shell = import ./plugins/zsh-nix-shell.nix { inherit pkgs; };
 in
 {
-  options.bobymoby.shell.zsh.enable = lib.mkEnableOption "Enable zsh";
+  options.bobymoby.shell.zsh.enable = tools.mkEnableOption "Enable zsh";
 
   config = lib.mkIf config.bobymoby.shell.zsh.enable {
     home.file.".config/custom-ohmyzsh" = {

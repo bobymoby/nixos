@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 
@@ -10,7 +11,7 @@ let
 in
 {
   options.bobymoby.notifications.dunst.enable =
-    lib.mkEnableOption "Dunst notification daemon";
+    tools.mkEnableOption "Dunst notification daemon";
   config = lib.mkIf config.bobymoby.notifications.dunst.enable {
     home = {
       packages = with pkgs; [ dunst ];

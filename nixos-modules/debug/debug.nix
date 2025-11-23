@@ -2,13 +2,14 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 
 {
   options.bobymoby.debug = {
-    enable = lib.mkEnableOption "Enable debugging";
-    man-pages = lib.mkEnableOption "Enable Man Pages";
+    enable = tools.mkEnableOption "Enable debugging";
+    man-pages = tools.mkEnableOption "Enable Man Pages";
   };
 
   config = lib.mkIf config.bobymoby.debug.enable {

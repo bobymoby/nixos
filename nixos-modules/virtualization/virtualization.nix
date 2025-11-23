@@ -2,13 +2,14 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 
 {
   options.bobymoby.virtualization = {
-    enable = lib.mkEnableOption "Enable Virtualization";
-    enable-qemu = lib.mkEnableOption "Enable QEMU";
+    enable = tools.mkEnableOption "Enable Virtualization";
+    enable-qemu = tools.mkEnableOption "Enable QEMU";
   };
 
   config = lib.mkIf config.bobymoby.virtualization.enable {

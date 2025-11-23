@@ -2,12 +2,13 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 
 {
   options.bobymoby.desktop-environment.kde.enable =
-    lib.mkEnableOption "Enable KDE Plasma";
+    tools.mkEnableOption "Enable KDE Plasma";
 
   config = lib.mkIf config.bobymoby.desktop-environment.kde.enable {
     services = {

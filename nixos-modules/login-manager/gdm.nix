@@ -1,7 +1,12 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  tools,
+  ...
+}:
 
 {
-  options.bobymoby.login-manager.gdm.enable = lib.mkEnableOption "Enable GDM";
+  options.bobymoby.login-manager.gdm.enable = tools.mkEnableOption "Enable GDM";
 
   config = lib.mkIf config.bobymoby.login-manager.gdm.enable {
     services = {

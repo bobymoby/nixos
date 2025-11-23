@@ -1,12 +1,13 @@
 {
   lib,
   config,
+  tools,
   ...
 }:
 
 {
   options.bobymoby.notifications.mako.enable =
-    lib.mkEnableOption "Mako notifications";
+    tools.mkEnableOption "Mako notifications";
 
   config = lib.mkIf config.bobymoby.notifications.mako.enable {
     # home.packages = with pkgs; [ mako ];

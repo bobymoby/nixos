@@ -2,11 +2,12 @@
   lib,
   config,
   pkgs,
+  tools,
   ...
 }:
 
 {
-  options.bobymoby.easyeffects.enable = lib.mkEnableOption "Enable easyeffects";
+  options.bobymoby.easyeffects.enable = tools.mkEnableOption "Enable easyeffects";
 
   config = lib.mkIf config.bobymoby.easyeffects.enable {
     home = {

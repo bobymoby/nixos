@@ -1,7 +1,12 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  tools,
+  ...
+}:
 
 {
-  options.bobymoby.netdata.enable = lib.mkEnableOption "Enable Netdata";
+  options.bobymoby.netdata.enable = tools.mkEnableOption "Enable Netdata";
 
   config = lib.mkIf config.bobymoby.netdata.enable {
     services.netdata = {
