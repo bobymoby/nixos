@@ -81,5 +81,11 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    gitFull
+    lshw
+    neovim
+  ];
+
   system.stateVersion = "25.05";
 }

@@ -119,7 +119,10 @@
               ;
             inherit (inputs.self) outputs;
           };
-          modules = [ ./hosts/vm/configuration.nix ];
+          modules = [
+            ./hosts/vm/configuration.nix
+            inputs.nixos-facter-modules.nixosModules.facter
+          ];
         };
       };
 
