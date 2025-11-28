@@ -2,13 +2,11 @@
 
 {
   imports = [
-    (modulesPath + "/installer/cd-dvd/installation-cd-minimal-new-kernel.nix")
+    (modulesPath + "/installer/cd-dvd/installation-cd-minimal-new-kernel-no-zfs.nix")
   ];
   environment.systemPackages = with pkgs; [
-    vscode
     gitFull
     lshw
-    bitwarden-desktop
     neovim
   ];
   isoImage.squashfsCompression = "gzip -Xcompression-level 1";

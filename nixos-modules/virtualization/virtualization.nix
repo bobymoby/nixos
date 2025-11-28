@@ -3,9 +3,12 @@
   config,
   pkgs,
   tools,
+  mySpecialArgs,
   ...
 }:
-
+let
+  inherit (mySpecialArgs) pkgsStable;
+in
 {
   options.bobymoby.virtualization = {
     enable = tools.mkEnableOption "Enable Virtualization";
@@ -20,7 +23,7 @@
       libvirtd = lib.mkIf config.bobymoby.virtualization.enable-qemu {
         enable = true;
         qemu = {
-          package = pkgs.qemu_kvm;
+          package = pkgsStable.qemu_full;
           runAsRoot = true;
           swtpm.enable = true;
         };
