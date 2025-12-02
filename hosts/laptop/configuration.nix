@@ -32,7 +32,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
-  #   boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   #   services.logmein-hamachi.enable = true;
   #   programs.haguichi.enable = true;

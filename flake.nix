@@ -107,7 +107,10 @@
               ;
             inherit (inputs.self) outputs;
           };
-          modules = [ ./iso/iso.nix ];
+          modules = [
+            ./iso/iso.nix
+            inputs.chaotic.nixosModules.default
+          ];
         };
         vm = inputs.nixpkgs.lib.nixosSystem {
           inherit system;

@@ -29,7 +29,7 @@ let
       mkPkgs
       mkFormatter
 
-        mkEnableOption
+      mkEnableOption
 
       isZero
       isSet

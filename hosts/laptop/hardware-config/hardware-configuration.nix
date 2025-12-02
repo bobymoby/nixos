@@ -1,13 +1,15 @@
 {
   config,
   lib,
-  modulesPath,
   mySpecialArgs,
+  modulesPath,
   ...
 }:
 
 {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
+  imports = [
+    (modulesPath + "/installer/scan/not-detected.nix")
+  ];
 
   boot.initrd.availableKernelModules = [
     "xhci_pci"
@@ -20,40 +22,55 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-uuid/60b2e7fe-8847-436c-8e22-eda493228aef";
-      fsType = "ext4";
-    };
+  fileSystems."/" = {
+    device = "/dev/mapper/cryptroot";
+    fsType = "btrfs";
+    options = [
+      "subvol=subvol_root"
+      "noatime"
+      "compress=zstd"
+    ];
+  };
 
-    "/boot" = {
-      device = "/dev/disk/by-uuid/5C69-D966";
-      fsType = "vfat";
-      options = [
-        "fmask=0022"
-        "dmask=0022"
-      ];
-    };
+  boot.initrd.luks.devices."cryptroot".device =
+    "/dev/disk/by-uuid/c7dac5e6-5c18-427a-8457-33142547c749";
 
-    #"/windowsC" = {
-    #  device = "/dev/disk/by-uuid/8ACE7041CE702799";
-    #  fsType = "ntfs-3g";
-    #  options = [
-    #    "rw"
-    #    "uid=1000"
-    #  ];
-    #};
+  fileSystems."/home" = {
+    device = "/dev/mapper/cryptroot";
+    fsType = "btrfs";
+    options = [
+      "subvol=subvol_home"
+      "noatime"
+      "compress=zstd"
+    ];
+  };
+
+  fileSystems."/nix" = {
+    device = "/dev/mapper/cryptroot";
+    fsType = "btrfs";
+    options = [
+      "subvol=subvol_nix"
+      "noatime"
+      "compress=zstd"
+    ];
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/5C69-D966";
+    fsType = "vfat";
+    options = [
+      "fmask=0022"
+      "dmask=0022"
+    ];
   };
 
   swapDevices = [
-    { device = "/dev/disk/by-uuid/30b9deef-b374-45b7-b85a-f0daf95ba2d3"; }
+    {
+      device = "/swapfile";
+      size = 8 * 1024;
+    }
   ];
-
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp3s0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
-
   nixpkgs.hostPlatform = lib.mkForce mySpecialArgs.system;
-  powerManagement.cpuFreqGovernor = lib.mkDefault "ondemand";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

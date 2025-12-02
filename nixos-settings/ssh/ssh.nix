@@ -8,6 +8,8 @@
     };
   };
 
+  programs.ssh.startAgent = true;
+
   # networking.firewall.allowedTCPPorts = [ 631 5901 80 443 ];
 
   users.users."bobymoby".openssh.authorizedKeys.keyFiles = [ ./authorized_keys ];
