@@ -14,12 +14,17 @@
     # };
     # desktop-environment.gnome.enable = true;
     # login-manager.gdm.enable = true;
-    kde.enable = true;
+    # kde.enable = true;
+
+    login-manager.gdm.enable = true;
+    desktop-environment.niri.enable = true;
+
     shell.zsh.enable = true;
     virtualization = {
       enable = true;
       enable-qemu = true;
     };
+    yubikey.enable = true;
     # netdata.enable = true;
   };
 

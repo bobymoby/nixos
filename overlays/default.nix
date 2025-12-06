@@ -10,6 +10,7 @@ let
   overlays = [
     # use-stable-electron
     # overlay2
+    inputs.niri.overlays.niri
   ];
 in
 overlays

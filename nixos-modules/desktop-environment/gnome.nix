@@ -6,8 +6,7 @@
   ...
 }:
 {
-  options.bobymoby.desktop-environment.gnome.enable =
-    tools.mkEnableOption "Enable GNOME";
+  options.bobymoby.desktop-environment.gnome.enable = tools.mkEnableOption "Enable GNOME";
 
   config = lib.mkIf config.bobymoby.desktop-environment.gnome.enable {
     services = {
@@ -23,7 +22,6 @@
     };
 
     services.gnome.gnome-keyring.enable = true;
-    security.pam.services.gdm.enableGnomeKeyring = true;
 
     # environment.systemPackages = [ pkgs.gnomeExtensions.appindicator  ];
     services.udev.packages = [ pkgs.gnome-settings-daemon ];

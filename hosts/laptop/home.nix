@@ -5,7 +5,7 @@
 
     # gnome.enable = true;
     kde = {
-      enable = true;
+      # enable = true;
       use-laptop-config = true;
     };
 
@@ -13,6 +13,10 @@
     #   enable = true;
     #   useLaptopConfig = true;
     # };
+
+    wayland = {
+      niri.enable = true;
+    };
 
     shell.zsh.enable = true;
     terminal.kitty.enable = true;

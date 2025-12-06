@@ -11,6 +11,7 @@
     ./i3.nix
     ./kde.nix
     ./gnome.nix
+    ./niri.nix
   ];
 
   options.bobymoby = {

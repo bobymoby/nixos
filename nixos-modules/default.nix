@@ -10,5 +10,6 @@
     ./virtualization/virtualization.nix
     ./desktop-environment
     ./systemd-services
+    ./yubikey/yubikey.nix
   ];
 }
