@@ -17,7 +17,7 @@
     # kde.enable = true;
 
     login-manager.gdm.enable = true;
-    desktop-environment.niri.enable = true;
+    desktop-environment.hyprland.enable = true;
 
     shell.zsh.enable = true;
     virtualization = {
@@ -35,9 +35,9 @@
     allowedUDPPorts = [ ];
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  # boot.kernelPackages = pkgs.linuxPackages_cachyos;
 
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   #   services.logmein-hamachi.enable = true;
   #   programs.haguichi.enable = true;

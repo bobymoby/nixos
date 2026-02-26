@@ -89,6 +89,7 @@ in
       #
       unpFull # extract any archive
       unrar
+      kdePackages.ark
 
       #
       # editors + utils
@@ -133,7 +134,7 @@ in
       # inputs.quickshell.packages.${mySpecialArgs.system}.default
       vscode
       vscode.fhs
-      #   code-cursor
+      code-cursor-fhs
       #   emacs
     ];
   };

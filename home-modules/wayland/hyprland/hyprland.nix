@@ -53,7 +53,7 @@ in
           source = ./assets;
           recursive = true;
         };
-        ".config/hypr/hyprlock.conf".source = configPath + "/hyprlock.conf";
+        # ".config/hypr/hyprlock.conf".source = configPath + "/hyprlock.conf";
         ".config/hypr/hypridle.conf".source = configPath + "/hypridle.conf";
         ".config/hypr/mocha.conf".source = ./common/mocha.conf;
         # ".config/hypr/hyprpaper.conf".source = ./extras/hyprpaper.conf;
@@ -62,7 +62,7 @@ in
       packages = with pkgs; [
         hyprshot
         hypridle
-        hyprlock
+        # hyprlock
         # hyprpaper
         swww
       ];
@@ -70,13 +70,17 @@ in
     wayland.windowManager.hyprland = {
       enable = true;
       plugins = with pkgs.hyprlandPlugins; [
-        hyprexpo
+        # hyprexpo
       ];
 
       extraConfig = ''
         source = ~/.config/hypr/mocha.conf
         $terminalClean = ${enabledTerminal}
-        ${builtins.readFile ./common/hyprexpo.conf}
+      ''
+      # + ''
+      #   ${builtins.readFile ./common/hyprexpo.conf}
+      # ''
+      + ''
         ${builtins.readFile ./common/scripts.conf}
 
         ${builtins.readFile ./common/binds.conf}

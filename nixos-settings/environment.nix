@@ -20,5 +20,6 @@
 
     # NIXOS_OZONE_WL = lib.mkIf config.bobymoby.desktop-environment.hyprland.enable "1";
     NIXOS_OZONE_WL = "1";
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
   };
 }

@@ -10,7 +10,10 @@ let
   overlays = [
     # use-stable-electron
     # overlay2
-    inputs.niri.overlays.niri
+    # inputs.niri.overlays.niri
+    # (final: prev: {
+    #   stdenv = prev.llvmPackages.stdenv;
+    # })
   ];
 in
 overlays

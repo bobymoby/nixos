@@ -19,6 +19,11 @@
       default = true;
       description = "Install JetBrains IntelliJ IDEA Ultimate IDE";
     };
+    clion = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Install JetBrains CLion IDE";
+    };
   };
 
   config = lib.mkIf config.bobymoby.dev.jetbrains-tools.enable {

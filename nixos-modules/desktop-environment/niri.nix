@@ -17,5 +17,6 @@
       package = pkgs.niri-unstable;
     };
     bobymoby.systemd-services.authentication-agent.enable = true;
+    # programs.xwayland.enable = true;
   };
 }

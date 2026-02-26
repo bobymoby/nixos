@@ -15,7 +15,11 @@
     # };
 
     wayland = {
-      niri.enable = true;
+      # niri.enable = true;
+      hyprland = {
+        enable = true;
+        useLaptopConfig = true;
+      };
     };
 
     shell.zsh.enable = true;

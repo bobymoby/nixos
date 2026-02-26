@@ -85,9 +85,9 @@
           inputs.chaotic.homeManagerModules.default
           inputs.plasma-manager.homeModules.plasma-manager
 
-          inputs.niri.homeModules.niri
-          inputs.dankMaterialShell.homeModules.dankMaterialShell.default
-          inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
+          # inputs.niri.homeModules.niri
+          # inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+          # inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
         ];
       };
     in
