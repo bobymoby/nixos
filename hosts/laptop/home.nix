@@ -23,7 +23,7 @@
     };
 
     shell.zsh.enable = true;
-    terminal.kitty.enable = true;
+    terminal.alacritty.enable = true;
 
     easyeffects.enable = true;
 

@@ -16,7 +16,7 @@ let
       ./specific/laptop
     else
       null;
-  enabledTerminal = builtins.elemAt (tools.getEnabledModules config.bobymoby.terminal) 0;
+  enabledTerminal = builtins.head (tools.getEnabledModules config.bobymoby.terminal);
 in
 {
   options.bobymoby.wayland.hyprland = {
@@ -53,7 +53,7 @@ in
           source = ./assets;
           recursive = true;
         };
-        # ".config/hypr/hyprlock.conf".source = configPath + "/hyprlock.conf";
+        ".config/hypr/hyprlock.conf".source = configPath + "/hyprlock.conf";
         ".config/hypr/hypridle.conf".source = configPath + "/hypridle.conf";
         ".config/hypr/mocha.conf".source = ./common/mocha.conf;
         # ".config/hypr/hyprpaper.conf".source = ./extras/hyprpaper.conf;
@@ -62,9 +62,11 @@ in
       packages = with pkgs; [
         hyprshot
         hypridle
-        # hyprlock
+        hyprlock
         # hyprpaper
         swww
+        cliphist
+        wl-clipboard
       ];
     };
     wayland.windowManager.hyprland = {

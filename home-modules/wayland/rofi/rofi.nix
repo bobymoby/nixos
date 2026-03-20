@@ -14,8 +14,8 @@
       enable = true;
       #   package = pkgs.rofi-wayland;
       # theme = ./spotlight-dark.rasi;
-      # terminal = "${pkgs.alacritty}/bin/alacritty";
-      terminal = "${pkgs.kitty}/bin/kitty";
+      terminal = "${pkgs.alacritty}/bin/alacritty";
+      # terminal = "${pkgs.kitty}/bin/kitty";
     };
 
     home.file.".config/rofi" = {

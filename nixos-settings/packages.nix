@@ -47,13 +47,20 @@ let
     );
 in
 {
-  options.bobymoby.useDefaultPackages = lib.mkOption {
-    default = true;
-    type = lib.types.bool;
-    description = "Use default packages";
+  options.bobymoby = {
+    default-packages.enable = lib.mkOption {
+      default = true;
+      type = lib.types.bool;
+      description = "Enable default packages";
+    };
+    man-pages.enable = lib.mkOption {
+      default = true;
+      type = lib.types.bool;
+      description = "Enable man pages";
+    };
   };
 
-  config = lib.mkIf config.bobymoby.useDefaultPackages {
+  config = lib.mkIf config.bobymoby.default-packages.enable {
     services.flatpak.enable = true;
     xdg.portal.enable = true;
 
@@ -62,7 +69,10 @@ in
       # libraries = with pkgs; [ ];
     };
 
-    documentation.man.generateCaches = true;
+    # programs.nix-index.enable = true;
+    # programs.command-not-found.enable = false;
+
+    documentation.man.cache.enable = config.bobymoby.man-pages.enable;
 
     services.xserver.excludePackages = with pkgs; [ xterm ];
     environment.systemPackages = with pkgs; [
@@ -112,7 +122,7 @@ in
       #
       htop
       # nvtopPackages.full
-      neofetch
+      # neofetch
       fastfetch
       lshw
       # fwupd

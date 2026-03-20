@@ -10,7 +10,7 @@
     "nvidia-drm.fbdev=1"
   ];
 
-  programs.light.enable = true; # backlight control(brightness)
+  # programs.light.enable = true; # backlight control(brightness)
 
   environment.systemPackages = with pkgs; [ brightnessctl ];
 
@@ -33,6 +33,11 @@
   environment.sessionVariables.LIBVA_DRIVER_NAME = "iHD";
 
   services.fwupd.enable = true;
+
+  # networking = {
+  #   useNetworkd = true;
+  #   dhcpcd.enable = false;
+  # };
 
   facter.reportPath = ./facter.json;
 }

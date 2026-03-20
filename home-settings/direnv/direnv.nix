@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
 {
   config = {
@@ -9,6 +14,8 @@
       nix-direnv.enable = true;
       # git.ignores = [ ".direnv" ];
     };
+
+    home.packages = with pkgs; [ devenv ];
 
     home.file.".config/direnv/direnvrc".source = ./direnvrc;
   };

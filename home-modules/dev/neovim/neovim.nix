@@ -26,7 +26,7 @@ in
       # extraConfig = lib.fileContents ./init.vim;
       # extraLuaConfig = lib.fileContents ./init.lua;
 
-      extraLuaConfig = ''
+      initLua = ''
         ${builtins.readFile ./options.lua}
       '';
 

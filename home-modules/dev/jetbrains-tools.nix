@@ -14,7 +14,7 @@
       default = true;
       description = "Install JetBrains Rider IDE";
     };
-    idea-ultimate = lib.mkOption {
+    idea = lib.mkOption {
       type = lib.types.bool;
       default = true;
       description = "Install JetBrains IntelliJ IDEA Ultimate IDE";

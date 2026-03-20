@@ -15,6 +15,7 @@
     # desktop-environment.gnome.enable = true;
     # login-manager.gdm.enable = true;
     # kde.enable = true;
+    man-pages.enable = false;
 
     login-manager.gdm.enable = true;
     desktop-environment.hyprland.enable = true;
@@ -22,7 +23,7 @@
     shell.zsh.enable = true;
     virtualization = {
       enable = true;
-      enable-qemu = true;
+      enable-qemu = false;
     };
     yubikey.enable = true;
     # netdata.enable = true;

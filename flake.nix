@@ -1,9 +1,8 @@
 {
   inputs = {
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
-
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -27,6 +26,7 @@
 
     nixos-facter-modules.url = "github:numtide/nixos-facter-modules";
 
+    # chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     # lix-module = {
     #   url = "https://git.lix.systems/lix-project/nixos-module/archive/2.93.0.tar.gz";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -44,6 +44,10 @@
       system = systems.x86_64-linux;
       mkPkgs = import ./tools/mkPkgs.nix { inherit system; };
       pkgs = mkPkgs {
+        inherit inputs overlays;
+        pkgs = inputs.nixpkgs;
+      };
+      pkgsSmall = mkPkgs {
         inherit inputs overlays;
         pkgs = inputs.nixpkgs;
       };
@@ -68,12 +72,13 @@
           overlays
           system
           pkgsStable
+          pkgsSmall
           ;
       };
       mkSystem = tools.mkSystem {
         inherit inputs mySpecialArgs;
         extraModules = [
-          inputs.chaotic.nixosModules.default
+          # inputs.chaotic.nixosModules.default
           #   inputs.lix-module.nixosModules.default
           inputs.niri.nixosModules.niri
           inputs.nixos-facter-modules.nixosModules.facter
@@ -82,10 +87,10 @@
       mkHome = tools.mkHome {
         inherit inputs mySpecialArgs pkgs;
         extraModules = [
-          inputs.chaotic.homeManagerModules.default
           inputs.plasma-manager.homeModules.plasma-manager
 
           # inputs.niri.homeModules.niri
+          # inputs.chaotic.homeManagerModules.default
           # inputs.dankMaterialShell.homeModules.dankMaterialShell.default
           # inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
         ];

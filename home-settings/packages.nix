@@ -3,7 +3,7 @@ let
   google-chrome-touchpad-overscroll = pkgs.google-chrome.override {
     commandLineArgs = "--enable-features=TouchpadOverscrollHistoryNavigation";
   };
-  inherit (mySpecialArgs) pkgsStable;
+  inherit (mySpecialArgs) pkgsStable pkgsSmall;
 in
 {
   home.packages = with pkgs; [
@@ -19,7 +19,7 @@ in
     nemo
     nautilus
     kdePackages.dolphin
-    pkgsStable.stremio
+    # pkgsStable.stremio
     playerctl
     mpv
     # tesseract
@@ -27,7 +27,7 @@ in
     #   webcord-vencord
     vesktop
     ventoy-full-qt
-    krita
+    pkgsStable.krita
     bitwarden-desktop
   ];
 }
