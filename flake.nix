@@ -114,7 +114,6 @@
           };
           modules = [
             ./iso/iso.nix
-            inputs.chaotic.nixosModules.default
           ];
         };
         vm = inputs.nixpkgs.lib.nixosSystem {

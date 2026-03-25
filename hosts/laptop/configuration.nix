@@ -23,7 +23,7 @@
     shell.zsh.enable = true;
     virtualization = {
       enable = true;
-      enable-qemu = false;
+      enable-qemu = true;
     };
     yubikey.enable = true;
     # netdata.enable = true;
