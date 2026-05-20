@@ -32,7 +32,7 @@ in
       };
       oh-my-zsh = {
         enable = true;
-        theme = "robbyrussell-nix";
+        theme = "robbyrussell";
         plugins = [
           "git"
           "sudo"

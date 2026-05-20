@@ -1,8 +1,10 @@
 { pkgs, ... }:
 
 {
-  home.username = "bobymoby";
-  home.homeDirectory = "/home/bobymoby";
+  home = rec {
+    username = "bobymoby";
+    homeDirectory = "/home/${username}";
+  };
   programs.home-manager.enable = true;
 
   nix.package = pkgs.nix;

@@ -47,29 +47,29 @@ in
       #   nvim-treesitter.withAllGrammars
       # ];
 
-      plugins = with pkgs.vimPlugins; [
-        {
-          plugin = dracula-nvim;
-          config = "colorscheme dracula";
-        }
-        lualine-nvim
-        nvim-web-devicons
-        {
-          plugin = nvim-treesitter.withAllGrammars;
-          config = toLuaFile ./plugin/treesitter.lua;
-        }
-        vim-nix
-        {
-          plugin = telescope-nvim;
-          config = toLuaFile ./plugin/telescope.lua;
-        }
-        {
-          plugin = comment-nvim;
-          config = toLua "require(\"Comment\").setup()";
-        }
+      # plugins = with pkgs.vimPlugins; [
+      #   {
+      #     plugin = dracula-nvim;
+      #     config = "colorscheme dracula";
+      #   }
+      #   lualine-nvim
+      #   nvim-web-devicons
+      #   {
+      #     plugin = nvim-treesitter.withAllGrammars;
+      #     config = toLuaFile ./plugin/treesitter.lua;
+      #   }
+      #   vim-nix
+      #   {
+      #     plugin = telescope-nvim;
+      #     config = toLuaFile ./plugin/telescope.lua;
+      #   }
+      #   {
+      #     plugin = comment-nvim;
+      #     config = toLua "require(\"Comment\").setup()";
+      #   }
 
-        telescope-fzf-native-nvim
-      ];
+      #   telescope-fzf-native-nvim
+      # ];
     };
   };
 }

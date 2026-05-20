@@ -64,7 +64,7 @@ in
         hypridle
         hyprlock
         # hyprpaper
-        swww
+        awww
         cliphist
         wl-clipboard
       ];

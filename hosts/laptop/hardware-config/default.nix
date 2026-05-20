@@ -40,4 +40,19 @@
   # };
 
   facter.reportPath = ./facter.json;
+
+  # services.thermald.enable = true;
+  services.tlp = {
+    enable = true;
+    pd.enable = true;
+    settings = {
+      TLP_PERSISTENT_DEFAULT = 1;
+      TLP_DEFAULT_MODE = "BAT";
+    };
+  };
+
+  # Keep ELAN I2C touchpad awake — runtime PM suspend causes ~2min sluggishness on wake.
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="i2c", KERNELS=="i2c-DELL0A71:00", ATTR{power/control}="on"
+  '';
 }

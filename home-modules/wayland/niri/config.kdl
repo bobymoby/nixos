@@ -215,7 +215,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+Return hotkey-overlay-title="Open a Terminal: kitty" repeat=false { spawn "kitty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" repeat=false { spawn "alacritty"; }
     Mod+D hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-modi" "drun" "-show" "drun" "-show-icons" "-theme" "~/.config/rofi/launcher.rasi" "-scroll-method" "1"; }
     Mod+Shift+D hotkey-overlay-title="Application switcher" { spawn "rofi" "-show" "window" "-normal-window" "-show-icons" "-theme" "~/.config/rofi/launcher.rasi" "-scroll-method" "1"; }
     Mod+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
