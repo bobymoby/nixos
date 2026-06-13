@@ -28,7 +28,7 @@
         # sync = true;
         offload = true;
       };
-      use-production = true;
+      # use-production = true;
     };
     bluetooth.enable = true;
   };

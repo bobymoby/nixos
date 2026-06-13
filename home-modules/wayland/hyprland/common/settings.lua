@@ -14,7 +14,7 @@ hl.config({
   },
 
   cursor = {
-    no_hardware_cursors = true,
+    no_hardware_cursors = 0,
   },
 
   master = {
