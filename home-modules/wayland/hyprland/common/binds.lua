@@ -11,12 +11,65 @@ local shutdownMenu =
   "rofi -normal-window -show power-menu -modi \"power-menu:~/.config/rofi/rofi-power-menu.sh --choices=shutdown/suspend/reboot\" -theme ~/.config/rofi/launcher.rasi -scroll-method 1"
 local cliphist = "cliphist list | rofi -dmenu -theme ~/.config/rofi/launcher.rasi -scroll-method 1 | cliphist decode | wl-copy"
 
--- Scripts (old: scripts.conf).
-local movetoworkspaceScript = "~/.config/hypr/scripts/move-to-workspace.sh"
+-- Notification helper scripts (kept as scripts: not config-option toggles).
 local mediaScript = "~/.config/hypr/scripts/media.sh"
-local killactiveScript = "~/.config/hypr/scripts/killactive.sh"
-local disableAnimationsScript = "~/.config/hypr/scripts/disable-animations.sh"
-local hideallScript = "~/.config/hypr/scripts/hide-all.sh"
+
+-- The following used to be separate .sh files that shelled out to `hyprctl`.
+-- They are now native Lua callbacks using Hyprland's API (hl.get_config /
+-- hl.config to read & flip config options, hl.get_active_window + hl.dispatch
+-- for window state). The "restore" branches mirror common/settings.lua.
+
+-- Game mode (old disable-animations.sh): strip eye-candy for performance, then
+-- restore the configured look.
+local function gameModeToggle()
+  if hl.get_config("animations.enabled") then
+    hl.config({
+      animations = { enabled = false },
+      general = { gaps_in = 0, gaps_out = 0, border_size = 1 },
+      decoration = { rounding = 0, blur = { enabled = false }, shadow = { enabled = false } },
+    })
+  else
+    hl.config({
+      animations = { enabled = true },
+      general = { gaps_in = 5, gaps_out = 15, border_size = 1 },
+      decoration = { rounding = 15, blur = { enabled = true }, shadow = { enabled = true } },
+    })
+  end
+end
+
+-- Hide all windows (old hide-all.sh): drop every window to zero opacity, then
+-- restore full opacity.
+local function hideAllToggle()
+  if hl.get_config("decoration.active_opacity") == 1.0 then
+    hl.config({ decoration = { active_opacity = 0.0, inactive_opacity = 0.0 } })
+  else
+    hl.config({ decoration = { active_opacity = 1.0, inactive_opacity = 1.0 } })
+  end
+end
+
+-- killactive (old killactive.sh): never close a window on a special workspace
+-- (negative id) so scratchpads aren't killed by accident.
+local function killActive()
+  local w = hl.get_active_window()
+  if w ~= nil and w.workspace ~= nil and w.workspace.id >= 0 then
+    hl.dispatch(hl.dsp.window.close())
+  end
+end
+
+-- movetoworkspace (old move-to-workspace.sh): refuse to drag a window out of a
+-- special workspace, except special:magic. Returns the per-workspace callback.
+local function moveToWorkspace(ws)
+  return function()
+    local w = hl.get_active_window()
+    if w == nil then
+      return
+    end
+    if w.workspace ~= nil and w.workspace.id < 0 and w.workspace.name ~= "special:magic" then
+      return
+    end
+    hl.dispatch(hl.dsp.window.move({ workspace = ws }))
+  end
+end
 
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
@@ -31,15 +84,15 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region --clipboa
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("loginctl lock-session"))
 
 -- Hyprland specific
-hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd(killactiveScript))
+hl.bind(mainMod .. " + SHIFT + Q", killActive)
 hl.bind(mainMod .. " + CTRL + SHIFT + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exit())
 hl.bind(mainMod .. " + SHIFT + C", hl.dsp.exec_cmd("hyprctl reload"))
-hl.bind(mainMod .. " + SHIFT + O", hl.dsp.exec_cmd(disableAnimationsScript))
+hl.bind(mainMod .. " + SHIFT + O", gameModeToggle)
 hl.bind(mainMod .. " + SPACE", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + M", hl.dsp.layout("swapwithmaster master"))
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(hideallScript))
+hl.bind(mainMod .. " + L", hideAllToggle)
 
 -- Move/resize
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
@@ -73,8 +126,8 @@ hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
 -- Workspaces. Plain: focus. SHIFT: move via script. CTRL+SHIFT: force move.
 local function workspaceBinds(key, ws)
   hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = ws }))
-  hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.exec_cmd(movetoworkspaceScript .. " " .. ws))
   hl.bind(mainMod .. " + CTRL + SHIFT + " .. key, hl.dsp.window.move({ workspace = ws }))
+  hl.bind(mainMod .. " + SHIFT + " .. key, moveToWorkspace(ws))
 end
 
 for i = 1, 9 do

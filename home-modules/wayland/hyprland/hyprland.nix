@@ -84,7 +84,7 @@ in
         ".config/hypr/hypridle.conf".source = configPath + "/hypridle.conf";
         ".config/hypr/mocha.conf".source = ./common/mocha.conf;
         # ".config/hypr/hyprpaper.conf".source = ./extras/hyprpaper.conf;
-        ".config/hypr/hyprland.lua".text = hyprlandLua;
+        # ".config/hypr/hyprland.lua".text = hyprlandLua;
       };
 
       packages = with pkgs; [
@@ -102,7 +102,9 @@ in
       plugins = with pkgs.hyprlandPlugins; [
         # hyprexpo
       ];
+      configType = "lua";
 
+      extraConfig = hyprlandLua;
       # The actual configuration lives in ~/.config/hypr/hyprland.lua (assembled
       # above and written via home.file). Hyprland >= 0.55 prefers the .lua entry
       # point over the hyprland.conf this module still generates.

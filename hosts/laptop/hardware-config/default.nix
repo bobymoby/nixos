@@ -8,6 +8,12 @@
 
   boot.kernelParams = [
     "nvidia-drm.fbdev=1"
+    # Fix runaway/stuck key repeat: the i8042 controller intermittently drops
+    # key-release events, so a key auto-repeats until another key is pressed.
+    # nomux is the usual fix; reset+nopnp harden the controller init.
+    "i8042.reset"
+    "i8042.nomux"
+    "i8042.nopnp"
   ];
 
   # programs.light.enable = true; # backlight control(brightness)
