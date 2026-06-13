@@ -48,6 +48,7 @@
     settings = {
       TLP_PERSISTENT_DEFAULT = 1;
       TLP_DEFAULT_MODE = "BAT";
+      USB_AUTOSUSPEND = 0;
     };
   };
 

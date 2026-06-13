@@ -145,6 +145,8 @@ in
       vscode
       vscode.fhs
       code-cursor-fhs
+
+      claude-code
       #   emacs
     ];
   };

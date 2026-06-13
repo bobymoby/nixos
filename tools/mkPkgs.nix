@@ -12,6 +12,7 @@ import pkgs {
       "qtwebengine-5.15.19"
       "ventoy-qt5-1.1.10"
       "ventoy-qt5-1.1.12"
+      "electron-39.8.10"
     ];
   };
 }
